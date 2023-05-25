@@ -4,13 +4,17 @@ import { PDFViewer } from '@react-pdf/renderer';
 import Head from "../components/head"
 import Line from "../components/line"
 
+const white = "#ffffff"
+const light_blue = "#D6EAF8";
+const Light_Beige = "#F5F5DC";
+
 const styles = StyleSheet.create({
   page: {
-    backgroundColor: '#ffffff',
+    backgroundColor: white,
     padding: 20,
-    alignItems: 'center',
   },
 });
+
 
 const Resume = () => (
   <Document>

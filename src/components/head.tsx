@@ -1,26 +1,36 @@
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
-import { PDFViewer } from '@react-pdf/renderer';
+import { Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 
 
 const styles = StyleSheet.create({
-  page: {
-    backgroundColor: '#ffffff',
-    padding: 20,
-    alignItems: 'center',
-  },
+
   section: {
-    marginBottom: 10,
-    textAlign: 'center',
-  },
-  heading: {
-    fontSize: 18,
-    fontWeight: 'bold',
     marginBottom: 5,
   },
 
-  content: {
+  heading: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+
+  text: {
     fontSize: 12,
-    marginBottom: 3,
+    marginLeft: 3,
+    marginRight: 3,
+  },
+
+  separator: {
+    width: 1,
+    height: '100%',
+    backgroundColor: 'black',
+    marginLeft: 5,
+    marginRight: 5,
   },
 
 });
@@ -29,8 +39,17 @@ const Head = () => {
 
   return <>
     <View style={styles.section}>
-      <Text style={styles.heading}>John Doe</Text>
-      <Text style={styles.content}>Front-end Developer</Text>
+      <Text style={styles.heading}>Yicong (Eddy) Luo</Text>
+    </View>
+
+    <View style={styles.row}>
+      <Text style={styles.text}>+1 647-564-3772</Text>
+      <View style={styles.separator} />
+      <Text style={styles.text}>m1662576219@gmail.com</Text>
+      <View style={styles.separator} />
+      <Link src="https://github.com/Ratbuyer">
+        <Text style={styles.text}>https://github.com/Ratbuyer</Text>
+      </Link>
     </View>
   </>
 };
