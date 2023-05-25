@@ -7,9 +7,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Line = () => {
+const Line = () => (<View style={styles.horizontalLine} />);
 
-  return <View style={styles.horizontalLine} />
-};
 
 export default Line;

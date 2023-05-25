@@ -27,11 +27,11 @@ const Skills = () => {
   const libraries: string[] = [
     "Node.js", "Next.js", "React",
     "MUI", "Tailwind CSS", "tRPC", "Django", "Prisma ORM", "CUDA",
-  ]
+  ];
 
   const softwares: string[] = [
     "Git", "Linux", "Latex", "Postman", "MySQL Workbench",
-  ]
+  ];
 
   return <>
     <View style={{marginBottom: 10}}>
