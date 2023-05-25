@@ -2,12 +2,12 @@ import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
 import { useState } from "react";
 
-import Head from "../components/head";
-import Education from "../components/education";
-import Skills from "../components/skills";
-import Experience from "../components/experience";
-import Projects from "../components/projects";
-import Awards from "../components/awards";
+import Head from "../samples/eddy/head";
+import Education from "../samples/eddy/education";
+import Skills from "../samples/eddy/skills";
+import Experience from "../samples/eddy/experience";
+import Projects from "../samples/eddy/projects";
+import Awards from "../samples/eddy/awards";
 
 const white = "#ffffff";
 const light_blue = "#D6EAF8";

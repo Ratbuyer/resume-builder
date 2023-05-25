@@ -1,5 +1,5 @@
 import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
-import Line from "../components/line"
+import Line from "../../components/line"
 
 
 const styles = StyleSheet.create({

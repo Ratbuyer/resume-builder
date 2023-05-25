@@ -1,5 +1,5 @@
 import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
-import Line from "../components/line"
+import Line from "../../components/line"
 
 //Fonts
 // 'Courier',

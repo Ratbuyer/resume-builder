@@ -1,6 +1,6 @@
 import { Page, Text, View, Document, StyleSheet, Link } from '@react-pdf/renderer';
-import Line from "../components/line"
-import Separator from './seperator';
+import Line from "../../components/line"
+import Separator from '../../components/seperator';
 
 //Fonts
 // 'Courier',

@@ -1,14 +1,6 @@
 import { Page, Text, View, Document, StyleSheet, Link } from '@react-pdf/renderer';
-import Line from "./line"
-import Separator from './seperator';
+import Line from "../../components/line"
 
-//Fonts
-// 'Courier',
-// 'Courier-Bold',
-// 'Courier-Oblique',
-// 'Courier-BoldOblique',
-
-const bullet = "•";
 
 const styles = StyleSheet.create({
   award: { fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier-Bold' },
