@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
 const Education = () => {
 
   return <>
-    <View>
+    <View style={{ marginBottom:10}}>
 
       <Text style={{ fontSize: 12, marginBottom: 3, }}>Education</Text>
       <Line />

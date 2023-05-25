@@ -1,8 +1,10 @@
 import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
+import { useState } from "react";
 
 import Head from "../components/head"
 import Education from "../components/education"
+import Skills from "../components/skills"
 
 const white = "#ffffff"
 const light_blue = "#D6EAF8";
@@ -17,21 +19,26 @@ const styles = StyleSheet.create({
 });
 
 
-const Resume = () => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <Head />
-      <Education />
-    </Page>
-  </Document>
-);
+const Resume = () => {
+  return <>
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <Head />
+        <Education />
+        <Skills />
+      </Page>
+    </Document>
+  </>
+};
 
 
 const App = () => {
+
+
   return <>
     <div style={{ height: '100vh' }}>
       <PDFViewer width="100%" height="100%">
-        <Resume />
+        <Resume/>
       </PDFViewer>
     </div>
   </>
