@@ -1,4 +1,4 @@
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Link } from '@react-pdf/renderer';
 import Line from "../components/line"
 
 //Fonts
@@ -25,9 +25,11 @@ const Experience = () => {
       <Line />
 
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-        <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier-Bold' }}>
-          University of Toronto
-        </Text>
+        <Link src="">
+          <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier-Bold' }}>
+            Company A
+          </Text>
+        </Link>
         <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>
           Jan 2023 - Present
         </Text>
@@ -35,7 +37,7 @@ const Experience = () => {
 
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
         <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, }}>
-          Software Engineer
+          Web Developer
         </Text>
         <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>
           Toronto, ON
@@ -43,73 +45,7 @@ const Experience = () => {
       </View>
 
       <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }}>
-        {bullet} Translate UI designs on Adobe XD into Typescript React codes
-      </Text>
-
-      <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }}>
-        {bullet} Communicated with UI designer and manager to resolve design and codes conflicts
-      </Text>
-
-      <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, marginBottom: 10 }}>
-        {bullet} Extracted repeated components and Tailwind CSS styles to improve overall code quality and adhere to SOLID
-        principles
-      </Text>
-
-
-
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-        <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier-Bold' }}>
-          University of Toronto
-        </Text>
-        <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>
-          Jan 2023 - Present
-        </Text>
-      </View>
-
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-        <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, }}>
-          Software Engineer
-        </Text>
-        <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>
-          Toronto, ON
-        </Text>
-      </View>
-
-      <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }}>
-        {bullet} Translate UI designs on Adobe XD into Typescript React codes
-      </Text>
-
-      <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }}>
-        {bullet} Communicated with UI designer and manager to resolve design and codes conflicts
-      </Text>
-
-      <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3,marginBottom: 10 }}>
-        {bullet} Extracted repeated components and Tailwind CSS styles to improve overall code quality and adhere to SOLID
-        principles
-      </Text>
-
-
-
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-        <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier-Bold' }}>
-          University of Toronto
-        </Text>
-        <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>
-          Jan 2023 - Present
-        </Text>
-      </View>
-
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-        <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, }}>
-          Software Engineer
-        </Text>
-        <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>
-          Toronto, ON
-        </Text>
-      </View>
-
-      <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }}>
-        {bullet} Translate UI designs on Adobe XD into Typescript React codes
+        {bullet} Translate UI designs on Adobe XD and Figma into Typescript React codes
       </Text>
 
       <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }}>
@@ -120,7 +56,6 @@ const Experience = () => {
         {bullet} Extracted repeated components and Tailwind CSS styles to improve overall code quality and adhere to SOLID
         principles
       </Text>
-
 
     </View>
   </>

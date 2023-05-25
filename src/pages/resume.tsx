@@ -6,6 +6,8 @@ import Head from "../components/head";
 import Education from "../components/education";
 import Skills from "../components/skills";
 import Experience from "../components/experience";
+import Projects from "../components/projects";
+import Awards from "../components/awards";
 
 const white = "#ffffff";
 const light_blue = "#D6EAF8";
@@ -28,6 +30,8 @@ const Resume = () => {
         <Education />
         <Skills />
         <Experience />
+        <Projects />
+        <Awards />
       </Page>
     </Document>
   </>

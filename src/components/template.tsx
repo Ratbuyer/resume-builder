@@ -1,5 +1,6 @@
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Link } from '@react-pdf/renderer';
 import Line from "../components/line"
+import Separator from './seperator';
 
 //Fonts
 // 'Courier',
@@ -21,7 +22,7 @@ const Template = () => {
 
   return <>
     <View>
-      <Text style={{ fontSize: 12, marginBottom: 3, }}>template</Text>
+      <Text style={{ fontSize: 12, marginBottom: 10, marginTop: 10 }}>template</Text>
       <Line />
     </View>
   </>

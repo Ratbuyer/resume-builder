@@ -48,7 +48,7 @@ const Head = () => {
       <Text style={styles.text}>m1662576219@gmail.com</Text>
       <View style={styles.separator} />
       <Link src="https://github.com/Ratbuyer">
-        <Text style={styles.text}>https://github.com/Ratbuyer</Text>
+        <Text style={styles.text}>github.com/Ratbuyer</Text>
       </Link>
     </View>
   </>

@@ -1,14 +1,14 @@
 import dynamic from "next/dynamic";
 
-const Template = dynamic(() => import("./resume"), {
+const PDF = dynamic(() => import("./resume"), {
   loading: () => <p>Loading...</p>,
   ssr: false,
 });
 
-const View = () => {
+const Index = () => {
   return <>
-    <Template></Template>
+    <PDF />
   </>
 }
 
-export default View;
+export default Index;

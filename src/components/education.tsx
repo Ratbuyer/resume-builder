@@ -18,7 +18,7 @@ const Education = () => {
         <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier-Bold' }}>
           University of Toronto
         </Text>
-        <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>
+        <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, }}>
           Sep 2020 - Jun 2024
         </Text>
       </View>
@@ -27,7 +27,7 @@ const Education = () => {
         <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, }}>
           Honours Bachelor of Science in Computer Science
         </Text>
-        <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>
+        <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3,}}>
           Toronto, ON
         </Text>
       </View>
