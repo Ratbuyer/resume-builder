@@ -21,7 +21,7 @@ const Skills = () => {
     "JavaScript/Typescript",
     "HTML/CSS",
     "Racket",
-    "Haskel",
+    "Haskell",
   ];
 
   const libraries: string[] = [
