@@ -2,11 +2,12 @@ import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
 import { useState } from "react";
 
-import Head from "../components/head"
-import Education from "../components/education"
-import Skills from "../components/skills"
+import Head from "../components/head";
+import Education from "../components/education";
+import Skills from "../components/skills";
+import Experience from "../components/experience";
 
-const white = "#ffffff"
+const white = "#ffffff";
 const light_blue = "#D6EAF8";
 const Light_Beige = "#F5F5DC";
 
@@ -26,6 +27,7 @@ const Resume = () => {
         <Head />
         <Education />
         <Skills />
+        <Experience />
       </Page>
     </Document>
   </>

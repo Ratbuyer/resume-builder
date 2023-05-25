@@ -34,7 +34,7 @@ const Skills = () => {
   ]
 
   return <>
-    <View>
+    <View style={{marginBottom: 10}}>
       <Text style={{ fontSize: 12, marginBottom: 3, }}>Skills</Text>
       <Line />
 
