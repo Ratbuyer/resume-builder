@@ -2,7 +2,7 @@ import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
 
 import Head from "../components/head"
-import Line from "../components/line"
+import Education from "../components/education"
 
 const white = "#ffffff"
 const light_blue = "#D6EAF8";
@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   page: {
     backgroundColor: white,
     padding: 20,
+    fontFamily: "Courier",
   },
 });
 
@@ -20,7 +21,7 @@ const Resume = () => (
   <Document>
     <Page size="A4" style={styles.page}>
       <Head />
-      <Line />
+      <Education />
     </Page>
   </Document>
 );
