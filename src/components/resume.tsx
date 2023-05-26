@@ -1,6 +1,5 @@
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Document, StyleSheet } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
-import { useState } from "react";
 
 import Head from "../samples/eddy/head";
 import Education from "../samples/eddy/education";
@@ -44,7 +43,7 @@ const App = () => {
   return <>
     <div style={{ height: '100vh' }}>
       <PDFViewer width="100%" height="100%">
-        <Resume/>
+        <Resume />
       </PDFViewer>
     </div>
   </>

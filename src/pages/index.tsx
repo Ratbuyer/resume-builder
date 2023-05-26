@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Loading from "../components/loading";
 
-const PDF = dynamic(() => import("./resume"), {
+const PDF = dynamic(() => import("../components/resume"), {
   loading: () => <Loading />,
   ssr: false,
 });
