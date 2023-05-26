@@ -1,4 +1,4 @@
-import { Page, Text, View, Document, StyleSheet, Link } from '@react-pdf/renderer';
+import { Text, View, StyleSheet } from '@react-pdf/renderer';
 import Line from "../../components/line"
 
 
@@ -15,7 +15,7 @@ const Awards = () => {
       <Line />
 
       <Text style={styles.award}>
-        Dean's List Scholar - 2022 Winter
+        Dean&apos; s List Scholar - 2022 Winter
       </Text>
 
       <Text style={styles.award}>

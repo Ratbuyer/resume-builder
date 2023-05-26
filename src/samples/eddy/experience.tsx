@@ -1,4 +1,4 @@
-import { Page, Text, View, Document, StyleSheet, Link } from '@react-pdf/renderer';
+import { Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 import Line from "../../components/line"
 
 //Fonts
