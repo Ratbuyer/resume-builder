@@ -9,7 +9,7 @@ import Projects from "../samples/eddy/projects";
 import Awards from "../samples/eddy/awards";
 
 const white = "#ffffff";
-const light_blue = "#D6EAF8";
+const light_blue = "#BFDBFE";
 const light_beige = "#F5F5DC";
 
 const styles = StyleSheet.create({

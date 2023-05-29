@@ -12,11 +12,11 @@ const Index = () => {
   return <>
     <div className="flex h-screen">
 
-      <div className="flex-1 p-4 text-center" /* Left */>
+      <div className="flex-1 p-3 text-center" /* Left */>
         <Form />
       </div>
 
-      <div className="flex-1 p-4" /* Right */>
+      <div className="flex-1 p-3" /* Right */>
         <PDF />
       </div>
 
