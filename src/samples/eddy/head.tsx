@@ -43,13 +43,25 @@ const Head = () => {
     </View>
 
     <View style={styles.row}>
+
       <Text style={styles.text}>+1 647-564-3772</Text>
+
       <View style={styles.separator} />
+
       <Text style={styles.text}>m1662576219@gmail.com</Text>
+
       <View style={styles.separator} />
+
       <Link src="https://github.com/Ratbuyer">
-        <Text style={styles.text}>github.com/Ratbuyer</Text>
+        <Text style={styles.text}>Github</Text>
       </Link>
+
+      <View style={styles.separator} />
+
+      <Link src="https://www.linkedin.com/in/yicong-luo-8a068a25b/">
+        <Text style={styles.text}>Linkedin</Text>
+      </Link>
+
     </View>
   </>
 };
