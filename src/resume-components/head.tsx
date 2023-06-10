@@ -11,14 +11,6 @@ type HeaderType = {
   linkedin: string;
 };
 
-const header: HeaderType = {
-  name: "Yicong (Eddy) Luo",
-  phone: "+ 1 647-564-3772",
-  email: "m1662576219@gmail.com",
-  github: "https://github.com/Ratbuyer",
-  linkedin: "https://www.linkedin.com/in/yicong-luo-8a068a25b/"
-};
-
 
 const styles = StyleSheet.create({
 
@@ -46,7 +38,7 @@ const styles = StyleSheet.create({
 
 });
 
-const Head = () => {
+const Head = ({header} : {header : HeaderType}) => {
 
   return <>
     <View style={styles.section}>
