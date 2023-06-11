@@ -2,8 +2,8 @@ import dynamic from "next/dynamic";
 import Loading from "../components/loading";
 import Form from "../components/pages/form";
 import { useState } from "react";
+import { educationListType } from "~/components/types";
 
-// !important : Do not use other ways to import resume
 const PDF = dynamic(() => import("../components/resume/resume"), {
   loading: () => <Loading />,
   ssr: false,
@@ -22,12 +22,12 @@ const Index = () => {
 
   const [educationList, setEducationList] = useState([
     {
-      school: "School 1", degree: "Degree 1",
-      duration: "Sep 2020 - Jun 2024", location: "Toronto, ON"
+      school: "School 0", degree: "Degree 0",
+      duration: "Sep 2020 - Jun 2024", location: "Location 0"
     },
     {
-      school: "School 2", degree: "Degree 2",
-      duration: "Sep 2019 - Jun 2023", location: "London, ON"
+      school: "School 1", degree: "Degree 1",
+      duration: "Sep 2019 - Jun 2023", location: "Location 1"
     },
   ]);
 
@@ -36,11 +36,12 @@ const Index = () => {
 
     const form = e.target as HTMLFormElement;
 
-    const name = e.currentTarget.elements.namedItem("name") as HTMLInputElement;
-    const phone = e.currentTarget.elements.namedItem("phone") as HTMLInputElement;
-    const email = e.currentTarget.elements.namedItem("email") as HTMLInputElement;
-    const github = e.currentTarget.elements.namedItem("github") as HTMLInputElement;
-    const linkedin = e.currentTarget.elements.namedItem("linkedin") as HTMLInputElement;
+    const name = form.elements.namedItem("name") as HTMLInputElement;
+    const phone = form.elements.namedItem("phone") as HTMLInputElement;
+    const email = form.elements.namedItem("email") as HTMLInputElement;
+    const github = form.elements.namedItem("github") as HTMLInputElement;
+    const linkedin = form.elements.namedItem("linkedin") as HTMLInputElement;
+
     setHeader({
       name: name.value,
       phone: phone.value,
@@ -49,7 +50,16 @@ const Index = () => {
       linkedin: linkedin.value
     });
 
-    console.log(form.dataset.educationCount);
+    let n : any = [];
+
+    for (let i = 0; i < Number(form.dataset.educationCount); i++) {
+      const school = form.elements.namedItem("school" + i) as HTMLInputElement;
+      const duration = form.elements.namedItem("duration" + i) as HTMLInputElement;
+      
+      n = [...n, { school: school.value }];
+    }
+
+    console.log(n);
   };
 
   return <>
@@ -58,9 +68,9 @@ const Index = () => {
       <div className="flex-1 p-3 text-center overflow-auto">
         <Form
           func={handleSubmit}
-          header={header} 
+          header={header}
           educationListprop={educationList}
-          />
+        />
       </div>
 
       <div className="flex-1 p-3 ml-2">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Refresh from "../../../public/refresh.svg";
 import { PlusIcon } from "./icons";
@@ -18,6 +18,7 @@ const Form = (
 
   const [educationList, setEducationList] = useState(educationListprop);
 
+  useEffect(() => { setEducationList(educationList) }, [educationList]);
 
 
   return <form onSubmit={func} data-education-count={educationList.length}>
@@ -81,24 +82,37 @@ const Form = (
 
     {educationList.map((education, index) => (
 
-      <div key={index} className="mb-2">
+      <div key={index} className="mb-5">
 
         <div className="flex flex-row justify justify-between mb-2">
 
-          <button type="button" onClick={() => { }}
-            className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
-            <MinusIcon />
-          </button>
-
           <input type="text" name={"school" + index}
-            defaultValue={educationListprop[index]?.school} placeholder={"School" + index}
+            defaultValue={educationList[index]?.school} placeholder={"School " + index}
             className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
           </input>
 
           <input type="text" name={"duration" + index}
-            defaultValue={educationListprop[index]?.duration} placeholder={"Duration1" + index}
+            defaultValue={educationList[index]?.duration} placeholder={"Duration " + index}
+            className="w-1/2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+          >
+          </input>
+
+        </div>
+
+        <div className="flex flex-row justify justify-between mb-2">
+
+          <input type="text" name={"degree" + index}
+            defaultValue={educationList[index]?.degree} placeholder={"Degree " + index}
+            className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+          >
+          </input>
+
+          <input type="text" name={"location" + index}
+            defaultValue={educationList[index]?.location} placeholder={"Location " + index}
             className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
@@ -109,10 +123,26 @@ const Form = (
       </div>
     ))}
 
-    <button type="button" onClick={() => { }}
+    <div className ="flex flex-row justify-between">
+    <button type="button" onClick={() => {
+      const updatedEducationList = [...educationList];
+      updatedEducationList.splice(educationList.length - 1, 1);
+      setEducationList(updatedEducationList);
+      console.log(updatedEducationList);
+    }}
+      className="w-10 h-10 mr-3 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+      <MinusIcon />
+    </button>
+
+    <button type="button" onClick={() => {
+      setEducationList([...educationList, { school: "", degree: "", duration: "", location: "" }])
+    }}
       className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
       <PlusIcon />
     </button>
+
+    </div>
+
 
   </form>
 
