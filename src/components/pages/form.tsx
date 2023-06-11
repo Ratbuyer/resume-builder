@@ -36,7 +36,7 @@ const Form = (
     <hr className="border-none bg-gray-300 h-0.5 mt-2" />
 
     <div className="mb-2 mt-2">
-      <input type="text" id="name" name="name"
+      <input type="text" id="name" name="name" required
         defaultValue={header.name} placeholder="Name"
         className="w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
@@ -45,14 +45,14 @@ const Form = (
     </div>
 
     <div className="flex flex-row justify justify-between mb-2">
-      <input type="text" id="phone" name="phone"
+      <input type="text" id="phone" name="phone" required
         defaultValue={header.phone} placeholder="Phone"
         className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
       >
       </input>
 
-      <input type="text" id="email" name="email"
+      <input type="text" id="email" name="email" required
         defaultValue={header.email} placeholder="Email"
         className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
@@ -86,15 +86,15 @@ const Form = (
 
         <div className="flex flex-row justify justify-between mb-2">
 
-          <input type="text" name={"school" + index}
-            defaultValue={educationList[index]?.school} placeholder={"School " + index}
+          <input type="text" name={"school" + index} required
+            defaultValue={education.school} placeholder={"School " + index}
             className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
           </input>
 
-          <input type="text" name={"duration" + index}
-            defaultValue={educationList[index]?.duration} placeholder={"Duration " + index}
+          <input type="text" name={"duration" + index} required
+            defaultValue={education.duration} placeholder={"Duration " + index}
             className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
@@ -104,15 +104,15 @@ const Form = (
 
         <div className="flex flex-row justify justify-between mb-2">
 
-          <input type="text" name={"degree" + index}
-            defaultValue={educationList[index]?.degree} placeholder={"Degree " + index}
+          <input type="text" name={"degree" + index} required
+            defaultValue={education.degree} placeholder={"Degree " + index}
             className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
           </input>
 
-          <input type="text" name={"location" + index}
-            defaultValue={educationList[index]?.location} placeholder={"Location " + index}
+          <input type="text" name={"location" + index} required
+            defaultValue={education.location} placeholder={"Location " + index}
             className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
@@ -128,7 +128,6 @@ const Form = (
       const updatedEducationList = [...educationList];
       updatedEducationList.splice(educationList.length - 1, 1);
       setEducationList(updatedEducationList);
-      console.log(updatedEducationList);
     }}
       className="w-10 h-10 mr-3 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
       <MinusIcon />

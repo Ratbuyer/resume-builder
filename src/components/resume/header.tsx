@@ -1,15 +1,7 @@
 import { Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 
 import Separator from '~/components/resume/seperator';
-
-
-type HeaderType = {
-  name: string;
-  phone: string;
-  email: string;
-  github: string;
-  linkedin: string;
-};
+import * as type from '~/components/types';
 
 
 const styles = StyleSheet.create({
@@ -38,7 +30,7 @@ const styles = StyleSheet.create({
 
 });
 
-const Head = ({header} : {header : HeaderType}) => {
+const Header = ({ header }: { header: type.headerType }) => {
 
   return <>
     <View style={styles.section}>
@@ -53,20 +45,22 @@ const Head = ({header} : {header : HeaderType}) => {
 
       <Text style={styles.text}>{header.email}</Text>
 
-      <Separator />
+      {header.github ? <>
+        <Separator />
+        <Link src={header.github}>
+          <Text style={styles.text}>Github</Text>
+        </Link>
+      </> : null}
 
-      <Link src={header.github}>
-        <Text style={styles.text}>Github</Text>
-      </Link>
-
-      <Separator />
-
-      <Link src={header.linkedin}>
-        <Text style={styles.text}>Linkedin</Text>
-      </Link>
+      {header.linkedin ? <>
+        <Separator />
+        <Link src={header.linkedin}>
+          <Text style={styles.text}>Linkedin</Text>
+        </Link>
+      </> : null}
 
     </View>
   </>
 };
 
-export default Head;
+export default Header;

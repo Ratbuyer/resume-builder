@@ -1,8 +1,8 @@
 import { Page, Document, StyleSheet } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
 
-import Head from "./head";
-import Education from "../../samples/eddy/education";
+import Head from "./header";
+import Education from "./education";
 import Skills from "../../samples/eddy/skills";
 import Experience from "../../samples/eddy/experience";
 import Projects from "../../samples/eddy/projects";
@@ -14,7 +14,13 @@ const white = "#ffffff";
 const light_blue = "#BFDBFE";
 const light_beige = "#F5F5DC";
 
-const Resume = ({ header }: { header: type.headerType }) => {
+const Resume = ({
+  header,
+  educationList, }:
+  {
+    header: type.headerType,
+    educationList: type.educationListType
+  }) => {
 
   return <>
     <div style={{ height: '100vh' }}>
@@ -22,6 +28,7 @@ const Resume = ({ header }: { header: type.headerType }) => {
         <Document>
           <Page size="A4" style={{ backgroundColor: white, padding: 20, fontFamily: "Courier", }}>
             <Head header={header} />
+            <Education educationList={educationList} />
           </Page>
         </Document>
       </PDFViewer>

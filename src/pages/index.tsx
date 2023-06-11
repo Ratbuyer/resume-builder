@@ -22,11 +22,11 @@ const Index = () => {
 
   const [educationList, setEducationList] = useState([
     {
-      school: "School 0", degree: "Degree 0",
+      school: "University of Example 0", degree: "Bachelor of Science",
       duration: "Sep 2020 - Jun 2024", location: "Location 0"
     },
     {
-      school: "School 1", degree: "Degree 1",
+      school: "University of Example 1", degree: "Master of Aplied Science",
       duration: "Sep 2019 - Jun 2023", location: "Location 1"
     },
   ]);
@@ -50,16 +50,17 @@ const Index = () => {
       linkedin: linkedin.value
     });
 
-    let n : any = [];
+    let n : educationListType = [];
 
     for (let i = 0; i < Number(form.dataset.educationCount); i++) {
       const school = form.elements.namedItem("school" + i) as HTMLInputElement;
       const duration = form.elements.namedItem("duration" + i) as HTMLInputElement;
-      
-      n = [...n, { school: school.value }];
+      const degree = form.elements.namedItem("degree" + i) as HTMLInputElement;
+      const location = form.elements.namedItem("location" + i) as HTMLInputElement;
+      n = [...n, { school: school.value, duration: duration.value, degree: degree.value, location: location.value }];
     }
-
-    console.log(n);
+    
+    setEducationList(n);
   };
 
   return <>
@@ -74,7 +75,7 @@ const Index = () => {
       </div>
 
       <div className="flex-1 p-3 ml-2">
-        <PDF header={header} />
+        <PDF header={header} educationList={educationList} />
       </div>
 
     </div>
