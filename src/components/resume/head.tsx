@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 
-import Separator from '~/resume-components/seperator';
+import Separator from '~/components/resume/seperator';
 
 
 type HeaderType = {

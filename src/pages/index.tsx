@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
-import Loading from "../resume-components/loading";
-import Form from "../pages-components/form";
+import Loading from "../components/loading";
+import Form from "../components/pages/form";
 import { useState } from "react";
 
 // !important : Do not use other ways to import resume
-const PDF = dynamic(() => import("../resume-components/resume"), {
+const PDF = dynamic(() => import("../components/resume/resume"), {
   loading: () => <Loading />,
   ssr: false,
 });

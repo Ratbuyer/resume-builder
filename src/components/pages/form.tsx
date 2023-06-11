@@ -1,44 +1,19 @@
 import { useState } from "react";
 
-import Refresh from "../../public/refresh.svg";
+import Refresh from "../../../public/refresh.svg";
+import { PlusIcon } from "./icons";
+import { MinusIcon } from "./icons";
 
-type submitFunc = (e: React.FormEvent<HTMLFormElement>) => void;
-
-type HeaderType = {
-  name: string;
-  phone: string;
-  email: string;
-  github: string;
-  linkedin: string;
-};
-
-type EducationListType = {
-  school: string;
-  degree: string;
-  duration: string;
-  location: string;
-}[];
-
-const plusIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-gray-600">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 12H6"></path>
-  </svg>
-)
-
-const minusIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-gray-600">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 12H6"></path>
-  </svg>
-)
+import * as type from "../types";
 
 const Form = (
   { func,
     header,
     educationListprop }:
     {
-      func: submitFunc,
-      header: HeaderType,
-      educationListprop: EducationListType
+      func: type.submitFunc,
+      header: type.headerType,
+      educationListprop: type.educationListType
     }) => {
 
   const [educationList, setEducationList] = useState(educationListprop);
@@ -112,9 +87,7 @@ const Form = (
 
           <button type="button" onClick={() => { }}
             className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-gray-600">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 12H6"></path>
-            </svg>
+            <MinusIcon />
           </button>
 
           <input type="text" name={"school" + index}
@@ -130,10 +103,16 @@ const Form = (
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
           </input>
+
         </div>
 
       </div>
     ))}
+
+    <button type="button" onClick={() => { }}
+      className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+      <PlusIcon />
+    </button>
 
   </form>
 
