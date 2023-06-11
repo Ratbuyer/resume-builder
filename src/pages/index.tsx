@@ -14,11 +14,22 @@ const Index = () => {
 
   const [header, setHeader] = useState({
     name: "Name",
-    phone: "Phone",
-    email: "Email",
-    github: "",
-    linkedin: "",
+    phone: "+1 111-111-1111",
+    email: "Example@gmail.com",
+    github: "github.com",
+    linkedin: "linkedin.com",
   });
+
+  const [educationList, setEducationList] = useState([
+    {
+      school: "School 1", degree: "Degree 1",
+      duration: "Sep 2020 - Jun 2024", location: "Toronto, ON"
+    },
+    {
+      school: "School 2", degree: "Degree 2",
+      duration: "Sep 2019 - Jun 2023", location: "London, ON"
+    },
+  ]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,8 +55,12 @@ const Index = () => {
   return <>
     <div className="flex h-screen">
 
-      <div className="flex-1 p-3 overflow-auto">
-        <Form func={handleSubmit} />
+      <div className="flex-1 p-3 text-center overflow-auto">
+        <Form
+          func={handleSubmit}
+          header={header} 
+          educationListprop={educationList}
+          />
       </div>
 
       <div className="flex-1 p-3 ml-2">
