@@ -3,7 +3,7 @@ import { PDFViewer } from '@react-pdf/renderer';
 
 import Head from "./header";
 import Education from "./education";
-import Skills from "../../samples/eddy/skills";
+import Skills from "./skills";
 import Experience from "../../samples/eddy/experience";
 import Projects from "../../samples/eddy/projects";
 import Awards from "../../samples/eddy/awards";
@@ -16,10 +16,13 @@ const light_beige = "#F5F5DC";
 
 const Resume = ({
   header,
-  educationList, }:
+  educationList, 
+  skillsList,
+}:
   {
     header: type.headerType,
     educationList: type.educationListType
+    skillsList: type.skillsListType
   }) => {
 
   return <>
@@ -29,6 +32,7 @@ const Resume = ({
           <Page size="A4" style={{ backgroundColor: white, padding: 20, fontFamily: "Courier", }}>
             <Head header={header} />
             <Education educationList={educationList} />
+            <Skills skillsList={skillsList}/>
           </Page>
         </Document>
       </PDFViewer>

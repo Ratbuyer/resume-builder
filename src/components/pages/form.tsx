@@ -9,19 +9,25 @@ import * as type from "../types";
 const Form = (
   { func,
     header,
-    educationListprop }:
+    educationListprop,
+    skillsListprop }:
     {
       func: type.submitFunc,
       header: type.headerType,
-      educationListprop: type.educationListType
+      educationListprop: type.educationListType,
+      skillsListprop: type.skillsListType,
     }) => {
 
-  const [educationList, setEducationList] = useState(educationListprop);
+  const [educationList, setEducationList] = useState<type.educationListType>(educationListprop);
 
-  useEffect(() => { setEducationList(educationList) }, [educationList]);
+  const [skillsList, setSkillsList] = useState<type.skillsListType>(skillsListprop);
 
 
-  return <form onSubmit={func} data-education-count={educationList.length}>
+  return <form
+    onSubmit={func}
+    data-education-count={educationList.length}
+    data-skills-count={skillsList.length}
+  >
 
 
     <div className="fixed top-1/2 left-1/2">
@@ -30,6 +36,9 @@ const Form = (
         <Refresh />
       </button>
     </div>
+
+
+    {/* =======================header=========================== */}
 
 
     <h1 className="text-xl">Basic Information</h1>
@@ -76,9 +85,12 @@ const Form = (
       </input>
     </div>
 
+
+    {/* =======================education=========================== */}
+
+
     <h1 className="text-xl">Education</h1>
     <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
-
 
     {educationList.map((education, index) => (
 
@@ -103,7 +115,6 @@ const Form = (
         </div>
 
         <div className="flex flex-row justify justify-between mb-2">
-
           <input type="text" name={"degree" + index} required
             defaultValue={education.degree} placeholder={"Degree " + index}
             className="mr-1 w-1/2 bg-gray-50 border border-gray-300
@@ -117,32 +128,75 @@ const Form = (
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
           </input>
-
         </div>
 
       </div>
     ))}
 
-    <div className ="flex flex-row justify-between">
-    <button type="button" onClick={() => {
-      const updatedEducationList = [...educationList];
-      updatedEducationList.splice(educationList.length - 1, 1);
-      setEducationList(updatedEducationList);
-    }}
-      className="w-10 h-10 mr-3 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
-      <MinusIcon />
-    </button>
+    <div className="flex flex-row justify-between">
+      <button type="button" onClick={() => {
+        const updatedEducationList = [...educationList];
+        updatedEducationList.splice(educationList.length - 1, 1);
+        setEducationList(updatedEducationList);
+      }}
+        className="w-10 h-10 mr-3 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+        <MinusIcon />
+      </button>
 
-    <button type="button" onClick={() => {
-      setEducationList([...educationList, { school: "", degree: "", duration: "", location: "" }])
-    }}
-      className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
-      <PlusIcon />
-    </button>
-
+      <button type="button" onClick={() => {
+        setEducationList([...educationList, { school: "", degree: "", duration: "", location: "" }])
+      }}
+        className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+        <PlusIcon />
+      </button>
     </div>
 
 
+    {/* =======================skills=========================== */}
+
+
+    <h1 className="text-xl">Skills</h1>
+    <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
+
+    {skillsList.map((skill, index) => (
+      <div key={index}>
+        <input type="text" name={"skillName" + index} required
+          defaultValue={skill.name} placeholder={"Skill Name" + index}
+          className="w-full bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+        >
+        </input>
+
+        <textarea name={"skillList" + index} required
+          defaultValue={skill.skills} placeholder={"Skill List" + index}
+          className="mt-2 mb-5 w-full bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+        >
+        </textarea>
+
+      </div>
+    ))}
+
+    <div className="flex flex-row justify-between">
+      <button type="button" onClick={() => {
+        const skillsListcopy = [...skillsList];
+        skillsListcopy.splice(skillsList.length - 1, 1);
+        setSkillsList(skillsListcopy);
+      }}
+        className="w-10 h-10 mr-3 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+        <MinusIcon />
+      </button>
+
+      <button type="button" onClick={() => {
+        setSkillsList([...skillsList, { name: "", skills: "" }])
+      }}
+        className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+        <PlusIcon />
+      </button>
+    </div>
+
+
+    {/* =======================experience=========================== */}
   </form>
 
 };

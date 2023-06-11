@@ -14,3 +14,8 @@ export type educationListType = {
   duration: string;
   location: string;
 }[];
+
+export type skillsListType = {
+  name: string;
+  skills: string;
+}[];
