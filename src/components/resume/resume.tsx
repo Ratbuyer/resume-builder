@@ -16,11 +16,13 @@ const Resume = ({
   header,
   educationList,
   skillsList,
+  awardsList,
 }:
   {
     header: type.headerType,
     educationList: type.educationListType
     skillsList: type.skillsListType
+    awardsList: type.awardsListType
   }) => {
 
   return <>
@@ -31,6 +33,7 @@ const Resume = ({
             <Head header={header} />
             <Education educationList={educationList} />
             <Skills skillsList={skillsList} />
+            <Awards awardsList={awardsList} />
           </Page>
         </Document>
       </PDFViewer>

@@ -39,6 +39,11 @@ const Index = () => {
     { name: "Frameworks", skills: "React, Next.js, Node.js, Express.js, Tailwind CSS, Bootstrap" },
   ]);
 
+  const [awardsList, setAwardsList] = useState<type.awardsListType>([
+    { name: "xxx Award", description: "Award 1" },
+    { name: "xxxx Award", description: "Award 2" },
+  ]);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -81,6 +86,17 @@ const Index = () => {
     }
     setSkillsList(skillsCopy);
 
+    let awardsCopy: type.awardsListType = [];
+
+    console.log(form.dataset.awardsCount);
+
+    for (let i = 0; i < Number(form.dataset.awardsCount); i++) {
+      const name = form.elements.namedItem("awardName" + i) as HTMLInputElement;
+      console.log("hi12");
+      const description = form.elements.namedItem("description" + i) as HTMLInputElement;
+      awardsCopy = [...awardsCopy, { name: name.value, description: description.value }];
+    }
+    setAwardsList(awardsCopy);
   };
 
   return <>
@@ -93,6 +109,7 @@ const Index = () => {
           header={header}
           educationListprop={educationList}
           skillsListprop={skillsList}
+          awardsListprop={awardsList}
         />
       </div>
 
@@ -101,6 +118,7 @@ const Index = () => {
           header={header}
           educationList={educationList} 
           skillsList={skillsList}
+          awardsList={awardsList}
           />
       </div>
 

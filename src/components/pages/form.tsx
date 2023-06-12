@@ -10,23 +10,28 @@ const Form = (
   { func,
     header,
     educationListprop,
-    skillsListprop }:
+    skillsListprop,
+    awardsListprop }:
     {
       func: type.submitFunc,
       header: type.headerType,
       educationListprop: type.educationListType,
       skillsListprop: type.skillsListType,
+      awardsListprop: type.awardsListType,
     }) => {
 
   const [educationList, setEducationList] = useState<type.educationListType>(educationListprop);
 
   const [skillsList, setSkillsList] = useState<type.skillsListType>(skillsListprop);
 
+  const [awardsList, setAwardsList] = useState<type.awardsListType>(awardsListprop);
+
 
   return <form
     onSubmit={func}
     data-education-count={educationList.length}
     data-skills-count={skillsList.length}
+    data-awards-count={awardsList.length}
   >
 
 
@@ -206,6 +211,55 @@ const Form = (
         <p className="hidden mr-2 group-hover:block text-gray-600">add one skill</p>
         <button type="button" onClick={() => {
           setSkillsList([...skillsList, { name: "", skills: "" }])
+        }}
+          className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+          <PlusIcon />
+        </button>
+      </div>
+    </div>
+
+    {/* =======================award================================ */}
+        <h1 className="text-xl">Awards</h1>
+    <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
+
+    {awardsList.map((award, index) => (
+      <div key={index}>
+        <input type="text" name={"awardName" + index} required
+          defaultValue={award.name} placeholder={"Award Name" + index}
+          className="w-full bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+        >
+        </input>
+
+        <textarea name={"description" + index} required
+          defaultValue={award.description} placeholder={"Award Description" + index}
+          className="mt-2 mb-5 w-full bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+        >
+        </textarea>
+
+      </div>
+    ))}
+
+    <div className="flex flex-row justify-between">
+
+      <div className="flex group">
+        <button type="button" onClick={() => {
+          if (awardsList.length === 0) return;
+          const awardsListcopy = [...awardsList];
+          awardsListcopy.splice(awardsList.length - 1, 1);
+          setAwardsList(awardsListcopy);
+        }}
+          className="w-10 h-10 mr-3 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+          <MinusIcon />
+        </button>
+        <p className="hidden group-hover:block text-gray-600">remove one award</p>
+      </div>
+
+      <div className="flex group">
+        <p className="hidden mr-2 group-hover:block text-gray-600">add one award</p>
+        <button type="button" onClick={() => {
+          setAwardsList([...awardsList, { name: "", description: "" }])
         }}
           className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
           <PlusIcon />
