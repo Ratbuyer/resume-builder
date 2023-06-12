@@ -10,13 +10,11 @@ import Awards from "../../samples/eddy/awards";
 
 import * as type from "../types";
 
-const white = "#ffffff";
-const light_blue = "#BFDBFE";
-const light_beige = "#F5F5DC";
+import { colorTable } from "../constants";
 
 const Resume = ({
   header,
-  educationList, 
+  educationList,
   skillsList,
 }:
   {
@@ -29,10 +27,10 @@ const Resume = ({
     <div style={{ height: '100vh' }}>
       <PDFViewer width="100%" height="100%">
         <Document>
-          <Page size="A4" style={{ backgroundColor: white, padding: 20, fontFamily: "Courier", }}>
+          <Page size="A4" style={{ backgroundColor: colorTable.ivory, padding: 20, fontFamily: "Courier", }}>
             <Head header={header} />
             <Education educationList={educationList} />
-            <Skills skillsList={skillsList}/>
+            <Skills skillsList={skillsList} />
           </Page>
         </Document>
       </PDFViewer>

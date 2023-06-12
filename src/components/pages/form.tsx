@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Refresh from "../../../public/refresh.svg";
 import { PlusIcon } from "./icons";
@@ -30,11 +30,13 @@ const Form = (
   >
 
 
-    <div className="fixed top-1/2 left-1/2">
+    <div className="fixed top-1/2 left-1/2 group flex">
       <button type="submit"
-        className="w-10 h-10 mt-2 bg-gray-100 flex items-center justify-center rounded-full">
+        className="w-10 h-10 mt-2 bg-gray-100 hover:scale-110 
+        flex items-center justify-center rounded-full">
         <Refresh />
       </button>
+      <p className="hidden group-hover:block ml-2 text-gray-600">reload pdf</p>
     </div>
 
 
@@ -134,21 +136,29 @@ const Form = (
     ))}
 
     <div className="flex flex-row justify-between">
-      <button type="button" onClick={() => {
-        const updatedEducationList = [...educationList];
-        updatedEducationList.splice(educationList.length - 1, 1);
-        setEducationList(updatedEducationList);
-      }}
-        className="w-10 h-10 mr-3 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
-        <MinusIcon />
-      </button>
+      <div className="group flex">
+        <button type="button" onClick={() => {
+          if (educationList.length === 0) return;
+          const updatedEducationList = [...educationList];
+          updatedEducationList.splice(educationList.length - 1, 1);
+          setEducationList(updatedEducationList);
+        }}
+          className="w-10 h-10 mr-3 mt-1 border hover:scale-110
+           bg-gray-100 flex items-center justify-center rounded-full">
+          <MinusIcon />
+        </button>
+        <p className="hidden group-hover:block text-gray-600">remove one education</p>
+      </div>
 
-      <button type="button" onClick={() => {
-        setEducationList([...educationList, { school: "", degree: "", duration: "", location: "" }])
-      }}
-        className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
-        <PlusIcon />
-      </button>
+      <div className="flex group">
+        <p className="hidden mr-2 group-hover:block text-gray-600">add one education</p>
+        <button type="button" onClick={() => {
+          setEducationList([...educationList, { school: "", degree: "", duration: "", location: "" }])
+        }}
+          className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+          <PlusIcon />
+        </button>
+      </div>
     </div>
 
 
@@ -178,21 +188,29 @@ const Form = (
     ))}
 
     <div className="flex flex-row justify-between">
-      <button type="button" onClick={() => {
-        const skillsListcopy = [...skillsList];
-        skillsListcopy.splice(skillsList.length - 1, 1);
-        setSkillsList(skillsListcopy);
-      }}
-        className="w-10 h-10 mr-3 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
-        <MinusIcon />
-      </button>
 
-      <button type="button" onClick={() => {
-        setSkillsList([...skillsList, { name: "", skills: "" }])
-      }}
-        className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
-        <PlusIcon />
-      </button>
+      <div className="flex group">
+        <button type="button" onClick={() => {
+          if (skillsList.length === 0) return;
+          const skillsListcopy = [...skillsList];
+          skillsListcopy.splice(skillsList.length - 1, 1);
+          setSkillsList(skillsListcopy);
+        }}
+          className="w-10 h-10 mr-3 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+          <MinusIcon />
+        </button>
+        <p className="hidden group-hover:block text-gray-600">remove one skill</p>
+      </div>
+
+      <div className="flex group">
+        <p className="hidden mr-2 group-hover:block text-gray-600">add one skill</p>
+        <button type="button" onClick={() => {
+          setSkillsList([...skillsList, { name: "", skills: "" }])
+        }}
+          className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
+          <PlusIcon />
+        </button>
+      </div>
     </div>
 
 
