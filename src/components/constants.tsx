@@ -3,3 +3,4 @@ export const colorTable = {
   ivory : "#FFFFF0",
   lemon : "#FFFACD",
 };
+

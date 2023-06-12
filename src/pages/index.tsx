@@ -5,6 +5,7 @@ import { useState } from "react";
 import { educationListType } from "~/components/types";
 
 import * as type from "~/components/types";
+import Copyright from "~/components/copyright";
 
 const PDF = dynamic(() => import("../components/resume/resume"), {
   loading: () => <Loading />,
@@ -83,6 +84,7 @@ const Index = () => {
   };
 
   return <>
+
     <div className="flex h-screen">
 
       <div className="flex-1 p-3 text-center overflow-auto">
@@ -103,6 +105,8 @@ const Index = () => {
       </div>
 
     </div>
+
+    <Copyright />
   </>
 }
 
