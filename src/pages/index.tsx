@@ -5,6 +5,8 @@ import { useState } from "react";
 import { educationListType } from "~/components/types";
 
 import * as type from "~/components/types";
+import * as defaults from "~/components/default";
+
 import Copyright from "~/components/copyright";
 
 const PDF = dynamic(() => import("../components/resume/resume"), {
@@ -15,33 +17,10 @@ const PDF = dynamic(() => import("../components/resume/resume"), {
 
 const Index = () => {
 
-  const [header, setHeader] = useState<type.headerType>({
-    name: "Name",
-    phone: "+1 111-111-1111",
-    email: "Example@gmail.com",
-    github: "github.com",
-    linkedin: "linkedin.com",
-  });
-
-  const [educationList, setEducationList] = useState<type.educationListType>([
-    {
-      school: "University of Example 0", degree: "Bachelor of Science",
-      duration: "Sep 2020 - Jun 2024", location: "Location 0"
-    },
-    {
-      school: "University of Example 1", degree: "Master of Aplied Science",
-      duration: "Sep 2019 - Jun 2023", location: "Location 1"
-    },
-  ]);
-
-  const [skillsList, setSkillsList] = useState<type.skillsListType>([
-    { name: "Languages", skills: "C, C++, Python, Java, JavaScript, TypeScript" },
-    { name: "Frameworks", skills: "React, Next.js, Node.js, Express.js, Tailwind CSS, Bootstrap" },
-  ]);
-
-  const [awardsList, setAwardsList] = useState<type.awardsListType>([
-     "Award 1" , "Award 2"
-  ]);
+  const [header, setHeader] = useState<type.headerType>(defaults.header);
+  const [educationList, setEducationList] = useState<type.educationListType>(defaults.educationList);
+  const [skillsList, setSkillsList] = useState<type.skillsListType>(defaults.skillsList);
+  const [awardsList, setAwardsList] = useState<type.awardsListType>(defaults.awardsList);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -53,7 +32,6 @@ const Index = () => {
     const email = form.elements.namedItem("email") as HTMLInputElement;
     const github = form.elements.namedItem("github") as HTMLInputElement;
     const linkedin = form.elements.namedItem("linkedin") as HTMLInputElement;
-
     setHeader({
       name: name.value,
       phone: phone.value,
@@ -63,7 +41,6 @@ const Index = () => {
     });
 
     let educationCopy: educationListType = [];
-
     for (let i = 0; i < Number(form.dataset.educationCount); i++) {
       const school = form.elements.namedItem("school" + i) as HTMLInputElement;
       const duration = form.elements.namedItem("duration" + i) as HTMLInputElement;
@@ -82,9 +59,6 @@ const Index = () => {
     setSkillsList(skillsCopy);
 
     let awardsCopy: type.awardsListType = [];
-
-    console.log(form.dataset.awardsCount);
-
     for (let i = 0; i < Number(form.dataset.awardsCount); i++) {
       const award = form.elements.namedItem("award" + i) as HTMLInputElement;
       awardsCopy = [...awardsCopy, award.value];
