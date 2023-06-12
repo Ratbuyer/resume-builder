@@ -20,7 +20,4 @@ export type skillsListType = {
   skills: string;
 }[];
 
-export type awardsListType = {
-  name: string;
-  description: string;
-}[];
+export type awardsListType = string[];

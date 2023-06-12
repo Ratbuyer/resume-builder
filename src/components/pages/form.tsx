@@ -6,6 +6,7 @@ import { MinusIcon } from "./icons";
 
 import * as type from "../types";
 
+
 const Form = (
   { func,
     header,
@@ -20,10 +21,9 @@ const Form = (
       awardsListprop: type.awardsListType,
     }) => {
 
+
   const [educationList, setEducationList] = useState<type.educationListType>(educationListprop);
-
   const [skillsList, setSkillsList] = useState<type.skillsListType>(skillsListprop);
-
   const [awardsList, setAwardsList] = useState<type.awardsListType>(awardsListprop);
 
 
@@ -33,7 +33,6 @@ const Form = (
     data-skills-count={skillsList.length}
     data-awards-count={awardsList.length}
   >
-
 
     <div className="fixed top-1/2 left-1/2 group flex">
       <button type="submit"
@@ -148,7 +147,7 @@ const Form = (
           updatedEducationList.splice(educationList.length - 1, 1);
           setEducationList(updatedEducationList);
         }}
-          className="w-10 h-10 mr-3 mt-1 border hover:scale-110
+          className="w-10 h-10 mr-3 mt-1 border
            bg-gray-100 flex items-center justify-center rounded-full">
           <MinusIcon />
         </button>
@@ -218,26 +217,24 @@ const Form = (
       </div>
     </div>
 
+    {/* =======================experience=========================== */}
+
+
+    {/* =======================projects=========================== */}
+    
+
     {/* =======================award================================ */}
-        <h1 className="text-xl">Awards</h1>
+    <h1 className="text-xl">Awards</h1>
     <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
     {awardsList.map((award, index) => (
       <div key={index}>
-        <input type="text" name={"awardName" + index} required
-          defaultValue={award.name} placeholder={"Award Name" + index}
-          className="w-full bg-gray-50 border border-gray-300
+        <input type="text" name={"award" + index} required
+          defaultValue={award} placeholder={"Award" + index}
+          className="w-full mb-2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
         >
         </input>
-
-        <textarea name={"description" + index} required
-          defaultValue={award.description} placeholder={"Award Description" + index}
-          className="mt-2 mb-5 w-full bg-gray-50 border border-gray-300
-         text-gray-900 rounded-lg block p-2.5 outline-0"
-        >
-        </textarea>
-
       </div>
     ))}
 
@@ -259,7 +256,7 @@ const Form = (
       <div className="flex group">
         <p className="hidden mr-2 group-hover:block text-gray-600">add one award</p>
         <button type="button" onClick={() => {
-          setAwardsList([...awardsList, { name: "", description: "" }])
+          setAwardsList([...awardsList, ""])
         }}
           className="w-10 h-10 mr-1 mt-1 border bg-gray-100 flex items-center justify-center rounded-full">
           <PlusIcon />
@@ -268,7 +265,6 @@ const Form = (
     </div>
 
 
-    {/* =======================experience=========================== */}
   </form>
 
 };

@@ -6,7 +6,7 @@ import Education from "./education";
 import Skills from "./skills";
 import Experience from "../../samples/eddy/experience";
 import Projects from "../../samples/eddy/projects";
-import Awards from "../../samples/eddy/awards";
+import Awards from "./awards";
 
 import * as type from "../types";
 

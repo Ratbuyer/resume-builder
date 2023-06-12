@@ -40,8 +40,7 @@ const Index = () => {
   ]);
 
   const [awardsList, setAwardsList] = useState<type.awardsListType>([
-    { name: "xxx Award", description: "Award 1" },
-    { name: "xxxx Award", description: "Award 2" },
+     "Award 1" , "Award 2"
   ]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -75,12 +74,8 @@ const Index = () => {
     setEducationList(educationCopy);
     
     let skillsCopy: type.skillsListType = [];
-
-    console.log(form.dataset.skillsCount);
-
     for (let i = 0; i < Number(form.dataset.skillsCount); i++) {
       const name = form.elements.namedItem("skillName" + i) as HTMLInputElement;
-      console.log("hi");
       const skills = form.elements.namedItem("skillList" + i) as HTMLInputElement;
       skillsCopy = [...skillsCopy, { name: name.value, skills: skills.value }];
     }
@@ -91,10 +86,8 @@ const Index = () => {
     console.log(form.dataset.awardsCount);
 
     for (let i = 0; i < Number(form.dataset.awardsCount); i++) {
-      const name = form.elements.namedItem("awardName" + i) as HTMLInputElement;
-      console.log("hi12");
-      const description = form.elements.namedItem("description" + i) as HTMLInputElement;
-      awardsCopy = [...awardsCopy, { name: name.value, description: description.value }];
+      const award = form.elements.namedItem("award" + i) as HTMLInputElement;
+      awardsCopy = [...awardsCopy, award.value];
     }
     setAwardsList(awardsCopy);
   };
