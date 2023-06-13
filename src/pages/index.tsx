@@ -7,7 +7,6 @@ import { educationListType } from "~/components/types";
 import * as type from "~/components/types";
 import * as defaults from "~/components/default";
 
-import Copyright from "~/components/copyright";
 
 const PDF = dynamic(() => import("../components/resume/resume"), {
   loading: () => <Loading />,
@@ -90,8 +89,6 @@ const Index = () => {
       </div>
 
     </div>
-
-    <Copyright />
   </>
 }
 
