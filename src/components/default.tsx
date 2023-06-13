@@ -4,8 +4,8 @@ export const header: types.headerType = {
   name: "Name",
   phone: "+1 111-111-1111",
   email: "Example@gmail.com",
-  github: "github.com",
-  linkedin: "linkedin.com",
+  github: "",
+  linkedin: "",
 };
 
 export const educationList: types.educationListType = [
@@ -25,5 +25,6 @@ export const skillsList: types.skillsListType = [
 ];
 
 export const awardsList: types.awardsListType = [
-  "Award 1", "Award 2"
+  "Award 1", 
+  "Award 2",
 ];

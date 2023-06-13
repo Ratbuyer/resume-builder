@@ -1,0 +1,7 @@
+further ideas:
+
+setting button
+
+  background color
+  fonts
+  store inputs using local storage
