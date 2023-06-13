@@ -21,6 +21,7 @@ const Index = () => {
   const [skillsList, setSkillsList] = useState<type.skillsListType>(defaults.skillsList);
   const [awardsList, setAwardsList] = useState<type.awardsListType>(defaults.awardsList);
   const [experienceList, setExperienceList] = useState<type.experienceListType>(defaults.experienceList);
+  const [projectList, setProjectList] = useState<type.projectsListType>(defaults.projectList);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
@@ -69,17 +70,17 @@ const Index = () => {
 
     let experienceCopy: type.experienceListType = [];
 
-    for (let index = 0; index < Number(form.dataset.experienceCount); index++) {
+    for (let i = 0; i < Number(form.dataset.experienceCount); i++) {
 
-      const company = form.elements.namedItem("company" + index) as HTMLInputElement;
-      const title = form.elements.namedItem("title" + index) as HTMLInputElement;
-      const duration = form.elements.namedItem("experienceDuration" + index) as HTMLInputElement;
-      const location = form.elements.namedItem("experienceLocation" + index) as HTMLInputElement;
+      const company = form.elements.namedItem("company" + i) as HTMLInputElement;
+      const title = form.elements.namedItem("title" + i) as HTMLInputElement;
+      const duration = form.elements.namedItem("experienceDuration" + i) as HTMLInputElement;
+      const location = form.elements.namedItem("experienceLocation" + i) as HTMLInputElement;
 
       let contributionsCopy: string[] = [];
-      for (let j = 0; j < Number(form.dataset.contributionsList?.[index * 2]); j++) {
+      for (let j = 0; j < Number(form.dataset.experienceContributionsList?.[i * 2]); j++) {
         const contribution = form.elements.
-          namedItem("experience" + index + "contribution" + j) as HTMLInputElement;
+          namedItem("experience" + i + "contribution" + j) as HTMLInputElement;
         contributionsCopy = [...contributionsCopy, contribution.value];
       }
 
@@ -93,6 +94,33 @@ const Index = () => {
     }
 
     setExperienceList(experienceCopy);
+
+
+    let projectCopy: type.projectsListType = [];
+
+    for (let i = 0; i < Number(form.dataset.projectsCount); i++) {
+
+      const name = form.elements.namedItem("project" + i) as HTMLInputElement;
+      const description = form.elements.namedItem("projectDescription" + i) as HTMLInputElement;
+      const link = form.elements.namedItem("link" + i) as HTMLInputElement;
+
+      let contributionsCopy: string[] = [];
+      for (let j = 0; j < Number(form.dataset.projectContributionsList?.[i * 2]); j++) {
+        const contribution = form.elements.
+          namedItem("project" + i + "contribution" + j) as HTMLInputElement;
+        contributionsCopy = [...contributionsCopy, contribution.value];
+      }
+
+      projectCopy = [...projectCopy, {
+        name: name.value,
+        description: description.value,
+        link: link.value,
+        contributions: contributionsCopy
+      }];
+    }
+
+    setProjectList(projectCopy);
+
   };
 
   return <>
@@ -101,7 +129,7 @@ const Index = () => {
 
       <div className="flex-1 pt-0 p-2 text-center overflow-auto">
 
-        <header className="bg-gray-100 sticky top-0 flex flex-row justify-between items-center p-3">
+        <header className="bg-gray-100 sticky top-0 flex flex-row items-center p-3">
           <h1
             className="font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-gray-800 to-gray-200"
           >
@@ -116,16 +144,18 @@ const Index = () => {
           skillsListprop={skillsList}
           awardsListprop={awardsList}
           experienceListprop={experienceList}
+          projectListprop={projectList}
         />
       </div>
 
-      <div className="flex-1 pt-0 ml-2">
+      <div className="flex-1 pt-0 p-2 ml-2">
         <PDF
           header={header}
           educationList={educationList}
           skillsList={skillsList}
           awardsList={awardsList}
           experienceList={experienceList}
+          projectList={projectList}
         />
       </div>
 

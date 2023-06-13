@@ -11,6 +11,7 @@ const Form = (
     skillsListprop,
     awardsListprop,
     experienceListprop,
+    projectListprop,
   }:
     {
       func: types.submitFunc,
@@ -19,12 +20,14 @@ const Form = (
       skillsListprop: types.skillsListType,
       awardsListprop: types.awardsListType,
       experienceListprop: types.experienceListType,
+      projectListprop: types.projectsListType,
     }) => {
 
   const [educationList, setEducationList] = useState<types.educationListType>(educationListprop);
   const [skillsList, setSkillsList] = useState<types.skillsListType>(skillsListprop);
   const [awardsList, setAwardsList] = useState<types.awardsListType>(awardsListprop);
   const [experienceList, setExperienceList] = useState<types.experienceListType>(experienceListprop);
+  const [projectList, setProjectList] = useState<types.projectsListType>(projectListprop);
 
   const addEducation: React.MouseEventHandler<HTMLButtonElement> = () => {
     if (educationList.length === 0) return;
@@ -76,16 +79,44 @@ const Form = (
     setExperienceList(experienceListcopy);
   };
 
-  const removeContribution = (i: number, j: number) => {
+  const removeExperienceContribution = (i: number, j: number) => {
     const experienceListcopy = [...experienceList];
     experienceListcopy[i]?.contributions.splice(j, 1);
     setExperienceList(experienceListcopy);
   };
 
-  const addContribution = (i: number) => {
+  const addExperienceContribution = (i: number) => {
     const experienceListcopy = [...experienceList];
     experienceListcopy[i]?.contributions.push("");
     setExperienceList(experienceListcopy);
+  };
+
+  const removeProject = () => {
+    if (projectList.length === 0) return;
+    const projectListcopy = [...projectList];
+    projectListcopy.splice(projectList.length - 1, 1);
+    setProjectList(projectListcopy);
+  };
+
+  const addProject = () => {
+    setProjectList([...projectList, {
+      name: "",
+      link: "",
+      description: "",
+      contributions: [""],
+    }])
+  };
+
+  const removeProjectContribution = (i: number, j: number) => {
+    const projectListcopy = [...projectList];
+    projectListcopy[i]?.contributions.splice(j, 1);
+    setProjectList(projectListcopy);
+  };
+
+  const addProjectContribution = (i: number) => {
+    const projectListcopy = [...projectList];
+    projectListcopy[i]?.contributions.push("");
+    setProjectList(projectListcopy);
   };
 
   return <form
@@ -94,7 +125,9 @@ const Form = (
     data-skills-count={skillsList.length}
     data-awards-count={awardsList.length}
     data-experience-count={experienceList.length}
-    data-contributions-list={experienceList.map((e) => (e.contributions.length))}
+    data-experience-contributions-list={experienceList.map((e) => (e.contributions.length))}
+    data-projects-count={projectList.length}
+    data-project-contributions-list={projectList.map((e) => (e.contributions.length))}
   >
 
     <RefreshButton />
@@ -162,13 +195,11 @@ const Form = (
          text-gray-900 rounded-lg block p-2.5 outline-0"
             />
 
-
             <input type="text" name={"educationDuration" + index} required
               defaultValue={education.duration} placeholder={"Duration " + index}
               className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
             />
-
 
           </div>
 
@@ -269,7 +300,7 @@ const Form = (
 
             <div key={index1} className="flex flex-row">
               <RemoveButton func={
-                () => removeContribution(index0, index1)
+                () => removeExperienceContribution(index0, index1)
               } text="" />
               <input type="text" name={"experience" + index0 + "contribution" + index1}
                 defaultValue={contribution} placeholder={"Contribution " + index1}
@@ -279,7 +310,7 @@ const Form = (
             </div>
           ))}
 
-          <AddButtonStyle func={() => { addContribution(index0) }}
+          <AddButtonStyle func={() => { addExperienceContribution(index0) }}
             text="Add One Contribution" style="w-10 h-10 mt-1 border bg-gray-100 
       flex items-center justify-center rounded-full"/>
 
@@ -294,9 +325,65 @@ const Form = (
     </div>
 
     {/* =======================projects=========================== */}
+    <div className="projects">
+      <h1 className="text-xl">Projects</h1>
+      <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
+
+      {projectList.map((project, index0) => (
+        <div key={index0}>
+
+          <h2 className="text-l mb-2">Project {index0}</h2>
+
+          <input type="text" name={"project" + index0} required
+            defaultValue={project.name} placeholder={"Project Name " + index0}
+            className="w-full mb-2 bg-gray-50 border border-gray-300
+ text-gray-900 rounded-lg block p-2.5 outline-0"
+          />
+
+          <input type="text" name={"link" + index0}
+            defaultValue={project.link} placeholder={"Project Link " + index0}
+            className="w-full mb-2 bg-gray-50 border border-gray-300
+ text-gray-900 rounded-lg block p-2.5 outline-0"
+          />
+
+          <input type="text" name={"projectDescription" + index0}
+            defaultValue={project.description} placeholder={"Project Description " + index0}
+            className="w-full mb-2 bg-gray-50 border border-gray-300
+ text-gray-900 rounded-lg block p-2.5 outline-0"
+          />
+
+          {project.contributions.map((contribution, index1) => (
+
+            <div key={index1} className="flex flex-row">
+              <RemoveButton func={
+                () => removeProjectContribution(index0, index1)
+              } text="" />
+              <input type="text" name={"project" + index0 + "contribution" + index1}
+                defaultValue={contribution} placeholder={"Contribution " + index1}
+                className="w-full mb-2 bg-gray-50 border border-gray-300
+text-gray-900 rounded-lg block p-2.5 outline-0"
+              />
+            </div>
+          ))}
+
+          <AddButtonStyle func={() => { addProjectContribution(index0) }}
+            text="Add One Contribution" style="w-10 h-10 mt-1 border bg-gray-100 
+      flex items-center justify-center rounded-full"/>
+
+        </div>
+
+      ))}
+
+      <div className="flex flex-row justify-between mt-5">
+        <RemoveButton func={removeProject} text="Remove One Project" />
+        <AddButton func={addProject} text="Add One Project" />
+      </div>
+
+    </div>
 
 
-    {/* =======================award================================ */}
+
+    {/* =======================awards================================ */}
 
     <div className="awards">
       <h1 className="text-xl">Awards</h1>

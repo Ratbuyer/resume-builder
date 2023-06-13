@@ -16,10 +16,9 @@ const Experience = ({ experienceList }: { experienceList: types.experienceListTy
       <View key={index}>
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 3 }}>
-          <Text style={index > 1 ? {
-            fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily:
-              'Courier-Bold'
-          } : { fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier-Bold' }}>
+          <Text style={index > 0 ? {
+            fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier-Bold'
+          } : { fontSize: 10, marginLeft: 10, fontFamily: 'Courier-Bold' }}>
             {e.company}
           </Text>
           <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>

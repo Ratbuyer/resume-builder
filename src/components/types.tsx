@@ -28,5 +28,12 @@ export type experienceListType = {
   contributions: string[],
 }[];
 
+export type projectsListType = {
+  name: string,
+  link: string,
+  description: string,
+  contributions: string[],
+}[];
+
 export type awardsListType = string[];
 

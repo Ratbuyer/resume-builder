@@ -1,5 +1,5 @@
 export const colorTable = {
-  while: "#ffffff",
+  white: "#ffffff",
   ivory : "#FFFFF0",
   lemon : "#FFFACD",
 };
