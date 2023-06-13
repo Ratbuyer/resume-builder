@@ -20,4 +20,13 @@ export type skillsListType = {
   skills: string;
 }[];
 
+export type experienceListType = {
+  company: string,
+  title: string
+  duration: string,
+  location: string,
+  contributions: string[],
+}[];
+
 export type awardsListType = string[];
+

@@ -6,21 +6,25 @@ import { RefreshButton, AddButton, RemoveButton } from "./buttons";
 
 const Form = (
   { func,
-    header,
+    headerprop,
     educationListprop,
     skillsListprop,
-    awardsListprop }:
+    awardsListprop,
+    experienceListprop,
+  }:
     {
       func: types.submitFunc,
-      header: types.headerType,
+      headerprop: types.headerType,
       educationListprop: types.educationListType,
       skillsListprop: types.skillsListType,
       awardsListprop: types.awardsListType,
+      experienceListprop: types.experienceListType,
     }) => {
 
   const [educationList, setEducationList] = useState<types.educationListType>(educationListprop);
   const [skillsList, setSkillsList] = useState<types.skillsListType>(skillsListprop);
   const [awardsList, setAwardsList] = useState<types.awardsListType>(awardsListprop);
+  const [experienceList, setExperienceList] = useState<types.experienceListType>(experienceListprop);
 
   const addEducation: React.MouseEventHandler<HTMLButtonElement> = () => {
     if (educationList.length === 0) return;
@@ -60,6 +64,8 @@ const Form = (
     data-education-count={educationList.length}
     data-skills-count={skillsList.length}
     data-awards-count={awardsList.length}
+    data-experience-count={experienceList.length}
+    data-contributions-list={experienceList.map((e) => (e.contributions.length))}
   >
 
     <RefreshButton />
@@ -72,7 +78,7 @@ const Form = (
 
       <div className="mb-2 mt-2">
         <input type="text" id="name" name="name" required
-          defaultValue={header.name} placeholder="Name"
+          defaultValue={headerprop.name} placeholder="Name"
           className="w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
         >
@@ -81,14 +87,14 @@ const Form = (
 
       <div className="flex flex-row justify justify-between mb-2">
         <input type="text" id="phone" name="phone" required
-          defaultValue={header.phone} placeholder="Phone"
+          defaultValue={headerprop.phone} placeholder="Phone"
           className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
         >
         </input>
 
         <input type="text" id="email" name="email" required
-          defaultValue={header.email} placeholder="Email"
+          defaultValue={headerprop.email} placeholder="Email"
           className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
         >
@@ -97,14 +103,14 @@ const Form = (
 
       <div className="flex flex-row justify justify-between mb-2">
         <input type="text" id="github" name="github"
-          defaultValue={header.github} placeholder="Github Link"
+          defaultValue={headerprop.github} placeholder="Github Link"
           className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
         >
         </input>
 
         <input type="text" id="linkedin" name="linkedin"
-          defaultValue={header.linkedin} placeholder="Linkedin Link"
+          defaultValue={headerprop.linkedin} placeholder="Linkedin Link"
           className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
         >
@@ -131,7 +137,7 @@ const Form = (
             >
             </input>
 
-            <input type="text" name={"duration" + index} required
+            <input type="text" name={"educationDuration" + index} required
               defaultValue={education.duration} placeholder={"Duration " + index}
               className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
@@ -148,7 +154,7 @@ const Form = (
             >
             </input>
 
-            <input type="text" name={"location" + index} required
+            <input type="text" name={"educationLocation" + index} required
               defaultValue={education.location} placeholder={"Location " + index}
               className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
@@ -174,14 +180,14 @@ const Form = (
       {skillsList.map((skill, index) => (
         <div key={index}>
           <input type="text" name={"skillName" + index} required
-            defaultValue={skill.name} placeholder={"Skill Name" + index}
+            defaultValue={skill.name} placeholder={"Skill Name " + index}
             className="w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
           </input>
 
           <textarea name={"skillList" + index} required
-            defaultValue={skill.skills} placeholder={"Skill List" + index}
+            defaultValue={skill.skills} placeholder={"Skill List " + index}
             className="mt-2 mb-5 w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
@@ -198,6 +204,62 @@ const Form = (
 
     {/* =======================experience=========================== */}
 
+    <div className="experience">
+      <h1 className="text-xl">Experience</h1>
+      <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
+
+      {experienceList.map((experience, index0) => (
+        <div key={index0}>
+
+          <h2 className="text-l mb-2">Experience {index0}</h2>
+
+          <div className="flex flex-row justify justify-between mb-2">
+            <input type="text" name={"company" + index0} required
+              defaultValue={experience.company} placeholder={"Company " + index0}
+              className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+            >
+            </input>
+
+            <input type="text" name={"experienceDuration" + index0} required
+              defaultValue={experience.duration} placeholder={"Duration " + index0}
+              className="w-1/2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+            >
+            </input>
+          </div>
+
+          <div className="flex flex-row justify justify-between mb-2">
+            <input type="text" name={"title" + index0} required
+              defaultValue={experience.title} placeholder={"Title " + index0}
+              className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+            >
+            </input>
+
+            <input type="text" name={"experienceLocation" + index0} required
+              defaultValue={experience.location} placeholder={"Location " + index0}
+              className="w-1/2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+            >
+            </input>
+          </div>
+
+          {experience.contributions.map((contribution, index1) => (
+            <div key={index1}>
+              <input type="text" name={"experience" + index0 + "contribution" + index1} required
+                defaultValue={contribution} placeholder={"Contribution " + index1}
+                className="w-full mb-2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+              >
+              </input>
+            </div>
+          ))}
+
+        </div>
+      ))}
+
+    </div>
 
     {/* =======================projects=========================== */}
 
@@ -211,7 +273,7 @@ const Form = (
       {awardsList.map((award, index) => (
         <div key={index}>
           <input type="text" name={"award" + index} required
-            defaultValue={award} placeholder={"Award" + index}
+            defaultValue={award} placeholder={"Award " + index}
             className="w-full mb-2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           >
@@ -219,7 +281,7 @@ const Form = (
         </div>
       ))}
 
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between mt-5">
         <RemoveButton func={removeAwards} text="Remove One Award" />
         <AddButton func={addAwards} text="Add One Award" />
       </div>

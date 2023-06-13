@@ -20,8 +20,10 @@ const Index = () => {
   const [educationList, setEducationList] = useState<type.educationListType>(defaults.educationList);
   const [skillsList, setSkillsList] = useState<type.skillsListType>(defaults.skillsList);
   const [awardsList, setAwardsList] = useState<type.awardsListType>(defaults.awardsList);
+  const [experienceList, setExperienceList] = useState<type.experienceListType>(defaults.experienceList);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
     e.preventDefault();
 
     const form = e.target as HTMLFormElement;
@@ -42,13 +44,13 @@ const Index = () => {
     let educationCopy: educationListType = [];
     for (let i = 0; i < Number(form.dataset.educationCount); i++) {
       const school = form.elements.namedItem("school" + i) as HTMLInputElement;
-      const duration = form.elements.namedItem("duration" + i) as HTMLInputElement;
+      const duration = form.elements.namedItem("educationDuration" + i) as HTMLInputElement;
       const degree = form.elements.namedItem("degree" + i) as HTMLInputElement;
-      const location = form.elements.namedItem("location" + i) as HTMLInputElement;
+      const location = form.elements.namedItem("educationLocation" + i) as HTMLInputElement;
       educationCopy = [...educationCopy, { school: school.value, duration: duration.value, degree: degree.value, location: location.value }];
     }
     setEducationList(educationCopy);
-    
+
     let skillsCopy: type.skillsListType = [];
     for (let i = 0; i < Number(form.dataset.skillsCount); i++) {
       const name = form.elements.namedItem("skillName" + i) as HTMLInputElement;
@@ -63,6 +65,34 @@ const Index = () => {
       awardsCopy = [...awardsCopy, award.value];
     }
     setAwardsList(awardsCopy);
+
+
+    let experienceCopy: type.experienceListType = [];
+
+    for (let index = 0; index < Number(form.dataset.experienceCount); index++) {
+
+      const company = form.elements.namedItem("company" + index) as HTMLInputElement;
+      const title = form.elements.namedItem("title" + index) as HTMLInputElement;
+      const duration = form.elements.namedItem("experienceDuration" + index) as HTMLInputElement;
+      const location = form.elements.namedItem("experienceLocation" + index) as HTMLInputElement;
+
+      let contributionsCopy: string[] = [];
+      for (let j = 0; j < Number(form.dataset.contributionsList?.[index * 2]); j++) {
+        const contribution = form.elements.
+          namedItem("experience" + index + "contribution" + j) as HTMLInputElement;
+        contributionsCopy = [...contributionsCopy, contribution.value];
+      }
+
+      experienceCopy = [...experienceCopy, {
+        company: company.value,
+        title: title.value,
+        duration: duration.value,
+        location: location.value,
+        contributions: contributionsCopy
+      }];
+    }
+
+    setExperienceList(experienceCopy);
   };
 
   return <>
@@ -72,20 +102,21 @@ const Index = () => {
       <div className="flex-1 p-3 text-center overflow-auto">
         <Form
           func={handleSubmit}
-          header={header}
+          headerprop={header}
           educationListprop={educationList}
           skillsListprop={skillsList}
           awardsListprop={awardsList}
+          experienceListprop={experienceList}
         />
       </div>
 
       <div className="flex-1 p-3 ml-2">
         <PDF
           header={header}
-          educationList={educationList} 
+          educationList={educationList}
           skillsList={skillsList}
           awardsList={awardsList}
-          />
+        />
       </div>
 
     </div>

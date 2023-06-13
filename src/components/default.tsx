@@ -24,7 +24,32 @@ export const skillsList: types.skillsListType = [
   { name: "Frameworks", skills: "React, Next.js, Node.js, Express.js, Tailwind CSS, Bootstrap" },
 ];
 
+export const experienceList: types.experienceListType = [
+  {
+    company: "Company 0",
+    title: "Software Engineer",
+    duration: "Jan 2020 - Jun 2024",
+    location: "Location 0",
+    contributions: [
+      "Translate UI designs on Adobe XD and Figma into Typescript React codes",
+      "Developed a web application using React, Next.js, and Tailwind CSS",
+      `Extracted repeated components and Tailwind CSS styles to 
+      improve overall code quality and adhere to SOLID principles`,
+    ],
+  },
+  {
+    company: "Company 1",
+    title: "Software Engineer 1",
+    duration: "Jan 2020 - Jun 2024 1",
+    location: "Location 1",
+    contributions: [
+      "Translate UI designs on Adobe XD and Figma into Typescript React codes",
+      "Developed a web application using React, Next.js, and Tailwind CSS",
+    ],
+  }
+];
+
 export const awardsList: types.awardsListType = [
-  "Award 1", 
+  "Award 1",
   "Award 2",
 ];
