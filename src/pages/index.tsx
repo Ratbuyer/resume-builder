@@ -116,6 +116,7 @@ const Index = () => {
           educationList={educationList}
           skillsList={skillsList}
           awardsList={awardsList}
+          experienceList={experienceList}
         />
       </div>
 

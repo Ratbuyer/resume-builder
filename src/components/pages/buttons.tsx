@@ -16,13 +16,13 @@ export const RefreshButton = () => (
 export const AddButton = ({ func, text }:
   {
     func: React.MouseEventHandler<HTMLButtonElement>,
-    text: string
+    text: string,
   }) => (
   <div className="group flex">
     <p className="hidden group-hover:block text-gray-600">{text}</p>
     <button type="button" onClick={func}
-      className="w-10 h-10 ml-3 mt-1 border
-           bg-gray-100 flex items-center justify-center rounded-full">
+      className="w-10 h-10 ml-3 mt-1 border bg-gray-100 
+      flex items-center justify-center rounded-full">
       <PlusIcon />
     </button>
   </div>
@@ -31,16 +31,31 @@ export const AddButton = ({ func, text }:
 export const RemoveButton = ({ func, text }:
   {
     func: React.MouseEventHandler<HTMLButtonElement>,
-    text: string
+    text: string,
   }) => (
   <div className="group flex">
     <button type="button" onClick={func}
-      className="w-10 h-10 mr-3 mt-1 border
-           bg-gray-100 flex items-center justify-center rounded-full">
+      className="w-10 h-10 mr-3 mt-1 border bg-gray-100 
+      flex items-center justify-center rounded-full">
       <MinusIcon />
     </button>
     <p className="hidden group-hover:block text-gray-600">{text}</p>
   </div>
 );
 
+
+export const AddButtonStyle = ({ func, text, style }:
+  {
+    func: React.MouseEventHandler<HTMLButtonElement>,
+    text: string,
+    style: string,
+  }) => (
+  <div className="group flex">
+    <button type="button" onClick={func}
+      className={style}>
+      <PlusIcon />
+    </button>
+    <p className="hidden group-hover:block text-gray-600 ml-2">{text}</p>
+  </div>
+);
 

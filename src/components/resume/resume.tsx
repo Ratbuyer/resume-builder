@@ -4,7 +4,7 @@ import { PDFViewer } from '@react-pdf/renderer';
 import Head from "./header";
 import Education from "./education";
 import Skills from "./skills";
-// import Experience from "./experience";
+import Experience from "./experience";
 // import Projects from ".projects";
 import Awards from "./awards";
 
@@ -17,12 +17,14 @@ const Resume = ({
   educationList,
   skillsList,
   awardsList,
+  experienceList,
 }:
   {
     header: type.headerType,
     educationList: type.educationListType
     skillsList: type.skillsListType
     awardsList: type.awardsListType
+    experienceList: type.experienceListType
   }) => {
 
   return <>
@@ -33,6 +35,7 @@ const Resume = ({
             <Head header={header} />
             <Education educationList={educationList} />
             <Skills skillsList={skillsList} />
+            <Experience experienceList={experienceList}/>
             <Awards awardsList={awardsList} />
           </Page>
         </Document>

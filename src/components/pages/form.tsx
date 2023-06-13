@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import * as types from "../types";
-import { RefreshButton, AddButton, RemoveButton } from "./buttons";
+import { RefreshButton, AddButton, RemoveButton, AddButtonStyle } from "./buttons";
 
 
 const Form = (
@@ -37,27 +37,56 @@ const Form = (
     setEducationList([...educationList, { school: "", degree: "", duration: "", location: "" }])
   };
 
-  const addSkills: React.MouseEventHandler<HTMLButtonElement> = () => {
+  const addSkill: React.MouseEventHandler<HTMLButtonElement> = () => {
     setSkillsList([...skillsList, { name: "", skills: "" }])
   };
 
-  const removeSkills: React.MouseEventHandler<HTMLButtonElement> = () => {
+  const removeSkill: React.MouseEventHandler<HTMLButtonElement> = () => {
     if (skillsList.length === 0) return;
     const skillsListcopy = [...skillsList];
     skillsListcopy.splice(skillsList.length - 1, 1);
     setSkillsList(skillsListcopy);
   };
 
-  const addAwards = () => {
+  const addAward = () => {
     setAwardsList([...awardsList, ""])
   };
 
-  const removeAwards = () => {
+  const removeAward = () => {
     if (awardsList.length === 0) return;
     const awardsListcopy = [...awardsList];
     awardsListcopy.splice(awardsList.length - 1, 1);
     setAwardsList(awardsListcopy);
   }
+
+  const addExperience = () => {
+    setExperienceList([...experienceList, {
+      company: "",
+      title: "",
+      duration: "",
+      location: "",
+      contributions: [""],
+    }])
+  };
+
+  const removeExperience = () => {
+    if (experienceList.length === 0) return;
+    const experienceListcopy = [...experienceList];
+    experienceListcopy.splice(experienceList.length - 1, 1);
+    setExperienceList(experienceListcopy);
+  };
+
+  const removeContribution = (i: number, j: number) => {
+    const experienceListcopy = [...experienceList];
+    experienceListcopy[i]?.contributions.splice(j, 1);
+    setExperienceList(experienceListcopy);
+  };
+
+  const addContribution = (i: number) => {
+    const experienceListcopy = [...experienceList];
+    experienceListcopy[i]?.contributions.push("");
+    setExperienceList(experienceListcopy);
+  };
 
   return <form
     onSubmit={func}
@@ -81,8 +110,7 @@ const Form = (
           defaultValue={headerprop.name} placeholder="Name"
           className="w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-        >
-        </input>
+        />
       </div>
 
       <div className="flex flex-row justify justify-between mb-2">
@@ -90,15 +118,13 @@ const Form = (
           defaultValue={headerprop.phone} placeholder="Phone"
           className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-        >
-        </input>
+        />
 
         <input type="text" id="email" name="email" required
           defaultValue={headerprop.email} placeholder="Email"
           className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-        >
-        </input>
+        />
       </div>
 
       <div className="flex flex-row justify justify-between mb-2">
@@ -106,15 +132,15 @@ const Form = (
           defaultValue={headerprop.github} placeholder="Github Link"
           className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-        >
-        </input>
+        />
+
 
         <input type="text" id="linkedin" name="linkedin"
           defaultValue={headerprop.linkedin} placeholder="Linkedin Link"
           className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-        >
-        </input>
+        />
+
       </div>
     </div>
 
@@ -134,15 +160,15 @@ const Form = (
               defaultValue={education.school} placeholder={"School " + index}
               className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-            >
-            </input>
+            />
+
 
             <input type="text" name={"educationDuration" + index} required
               defaultValue={education.duration} placeholder={"Duration " + index}
               className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-            >
-            </input>
+            />
+
 
           </div>
 
@@ -151,15 +177,14 @@ const Form = (
               defaultValue={education.degree} placeholder={"Degree " + index}
               className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-            >
-            </input>
+            />
 
             <input type="text" name={"educationLocation" + index} required
               defaultValue={education.location} placeholder={"Location " + index}
               className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-            >
-            </input>
+            />
+
           </div>
 
         </div>
@@ -183,22 +208,20 @@ const Form = (
             defaultValue={skill.name} placeholder={"Skill Name " + index}
             className="w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-          >
-          </input>
+          />
 
           <textarea name={"skillList" + index} required
             defaultValue={skill.skills} placeholder={"Skill List " + index}
             className="mt-2 mb-5 w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-          >
-          </textarea>
+          />
 
         </div>
       ))}
 
       <div className="flex flex-row justify-between">
-        <RemoveButton func={removeSkills} text="Remove One Skill" />
-        <AddButton func={addSkills} text="Add One Skill" />
+        <RemoveButton func={removeSkill} text="Remove One Skill" />
+        <AddButton func={addSkill} text="Add One Skill" />
       </div>
     </div>
 
@@ -218,15 +241,14 @@ const Form = (
               defaultValue={experience.company} placeholder={"Company " + index0}
               className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-            >
-            </input>
+            />
 
             <input type="text" name={"experienceDuration" + index0} required
               defaultValue={experience.duration} placeholder={"Duration " + index0}
               className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-            >
-            </input>
+            />
+
           </div>
 
           <div className="flex flex-row justify justify-between mb-2">
@@ -234,30 +256,40 @@ const Form = (
               defaultValue={experience.title} placeholder={"Title " + index0}
               className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-            >
-            </input>
+            />
 
             <input type="text" name={"experienceLocation" + index0} required
               defaultValue={experience.location} placeholder={"Location " + index0}
               className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-            >
-            </input>
+            />
           </div>
 
           {experience.contributions.map((contribution, index1) => (
-            <div key={index1}>
-              <input type="text" name={"experience" + index0 + "contribution" + index1} required
+
+            <div key={index1} className="flex flex-row">
+              <RemoveButton func={
+                () => removeContribution(index0, index1)
+              } text="" />
+              <input type="text" name={"experience" + index0 + "contribution" + index1}
                 defaultValue={contribution} placeholder={"Contribution " + index1}
                 className="w-full mb-2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-              >
-              </input>
+              />
             </div>
           ))}
 
+          <AddButtonStyle func={() => { addContribution(index0) }}
+            text="Add One Contribution" style="w-10 h-10 mt-1 border bg-gray-100 
+      flex items-center justify-center rounded-full"/>
+
         </div>
       ))}
+
+      <div className="flex flex-row justify-between mt-5">
+        <RemoveButton func={removeExperience} text="Remove One Experience" />
+        <AddButton func={addExperience} text="Add One Experience" />
+      </div>
 
     </div>
 
@@ -276,14 +308,13 @@ const Form = (
             defaultValue={award} placeholder={"Award " + index}
             className="w-full mb-2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-          >
-          </input>
+          />
         </div>
       ))}
 
       <div className="flex flex-row justify-between mt-5">
-        <RemoveButton func={removeAwards} text="Remove One Award" />
-        <AddButton func={addAwards} text="Add One Award" />
+        <RemoveButton func={removeAward} text="Remove One Award" />
+        <AddButton func={addAward} text="Add One Award" />
       </div>
     </div>
 
