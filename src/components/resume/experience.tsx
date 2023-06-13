@@ -7,6 +7,8 @@ const bullet = "•";
 
 const Experience = ({ experienceList }: { experienceList: types.experienceListType }) => {
 
+  if (experienceList.length === 0) return null;
+
   return <>
 
     <Text style={{ fontSize: 12, marginBottom: 3, }}>Experience</Text>

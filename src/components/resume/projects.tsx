@@ -8,6 +8,8 @@ const bullet = "•";
 
 const Projects = ({ projectList }: { projectList: types.projectsListType }) => {
 
+  if (projectList.length === 0) return null;
+  
   return <>
     <View>
       <Text style={{ fontSize: 12, marginBottom: 3, marginTop: 10 }}>Projects</Text>

@@ -3,15 +3,11 @@ import { Text, View, } from '@react-pdf/renderer';
 import Line from "./line"
 
 import * as type from '~/components/types';
-import { singleQuote } from 'prettier.config.cjs';
 
-//Fonts
-// 'Courier',
-// 'Courier-Bold',
-// 'Courier-Oblique',
-// 'Courier-BoldOblique',
 
 const Awards = ({ awardsList }: { awardsList: type.awardsListType }) => {
+
+  if (awardsList.length === 0) return null;
 
   return <>
     <View style={{ marginBottom: 10 }}>

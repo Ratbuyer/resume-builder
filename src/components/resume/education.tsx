@@ -5,6 +5,8 @@ import * as type from "../../components/types";
 
 const Education = ({ educationList }: { educationList: type.educationListType }) => {
 
+  if (educationList.length === 0) return null;
+  
   return <>
     <View style={{ marginBottom: 10 }}>
 
