@@ -3,7 +3,7 @@ import { PlusIcon } from "./icons";
 import { MinusIcon } from "./icons";
 
 export const RefreshButton = () => (
-  <div className="fixed top-0 left-[45%] group">
+  <div className="fixed top-1/2 left-1/2 group flex">
     <button type="submit"
       className="w-10 h-10 mt-2 bg-gray-100 hover:scale-110 
         flex items-center justify-center rounded-full">

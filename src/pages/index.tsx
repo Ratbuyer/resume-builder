@@ -7,6 +7,8 @@ import { educationListType } from "~/components/types";
 import * as type from "~/components/types";
 import * as defaults from "~/components/default";
 
+import Copyright from "~/components/copyright";
+
 
 const PDF = dynamic(() => import("../components/resume/resume"), {
   loading: () => <Loading />,
@@ -129,13 +131,13 @@ const Index = () => {
 
       <div className="flex-1 pt-0 p-2 text-center overflow-auto">
 
-        <header className="bg-gray-100 sticky top-0 flex flex-row items-center p-3">
+        <nav className="bg-gray-100 sticky top-0 flex flex-row items-center p-3">
           <h1
             className="font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-gray-800 to-gray-200"
           >
             Resume Builder
           </h1>
-        </header>
+        </nav>
 
         <Form
           func={handleSubmit}
@@ -146,9 +148,11 @@ const Index = () => {
           experienceListprop={experienceList}
           projectListprop={projectList}
         />
+
+        <Copyright />
       </div>
 
-      <div className="flex-1 pt-0 p-2 ml-2">
+      <div className="flex-1 pt-0 pb-0 p-2 ml-2">
         <PDF
           header={header}
           educationList={educationList}

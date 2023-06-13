@@ -128,64 +128,67 @@ const Form = (
     data-experience-contributions-list={experienceList.map((e) => (e.contributions.length))}
     data-projects-count={projectList.length}
     data-project-contributions-list={projectList.map((e) => (e.contributions.length))}
+    className="ml-5 mr-5"
   >
 
     <RefreshButton />
 
 
-    {/* =======================header=========================== */}
-    <div className="header">
-      <h1 className="text-xl mt-3">Basic Information</h1>
+    {/* =======================contacts=========================== */}
+    <div className="contacts">
+      <h1 className="text-xl mt-3">Contacts</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2" />
 
-      <div className="mb-2 mt-2">
-        <input type="text" id="name" name="name" required
-          defaultValue={headerprop.name} placeholder="Name"
-          className="w-full bg-gray-50 border border-gray-300
+      <div className="mt-10 bg-gray-100 pt-2 pb-2 p-3 border rounded-xl">
+        <div className="mb-2 mt-2">
+          <input type="text" id="name" name="name" required
+            defaultValue={headerprop.name} placeholder="Name"
+            className="w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-        />
-      </div>
+          />
+        </div>
 
-      <div className="flex flex-row justify justify-between mb-2">
-        <input type="text" id="phone" name="phone" required
-          defaultValue={headerprop.phone} placeholder="Phone"
-          className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+        <div className="flex flex-row justify justify-between mb-2">
+          <input type="text" id="phone" name="phone" required
+            defaultValue={headerprop.phone} placeholder="Phone"
+            className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-        />
+          />
 
-        <input type="text" id="email" name="email" required
-          defaultValue={headerprop.email} placeholder="Email"
-          className="w-1/2 bg-gray-50 border border-gray-300
+          <input type="text" id="email" name="email" required
+            defaultValue={headerprop.email} placeholder="Email"
+            className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-        />
-      </div>
+          />
+        </div>
 
-      <div className="flex flex-row justify justify-between mb-2">
-        <input type="text" id="github" name="github"
-          defaultValue={headerprop.github} placeholder="Github Link"
-          className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+        <div className="flex flex-row justify justify-between mb-2">
+          <input type="text" id="github" name="github"
+            defaultValue={headerprop.github} placeholder="Github Link"
+            className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-        />
+          />
 
 
-        <input type="text" id="linkedin" name="linkedin"
-          defaultValue={headerprop.linkedin} placeholder="Linkedin Link"
-          className="w-1/2 bg-gray-50 border border-gray-300
+          <input type="text" id="linkedin" name="linkedin"
+            defaultValue={headerprop.linkedin} placeholder="Linkedin Link"
+            className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-        />
+          />
+        </div>
 
       </div>
     </div>
 
     {/* =======================education=========================== */}
 
-    <div className="education">
+    <div className="education mt-10">
       <h1 className="text-xl">Education</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
       {educationList.map((education, index) => (
 
-        <div key={index} className="mb-5">
+        <div key={index} className="mb-5 mt-10 p-3 bg-gray-100 pt-5 border rounded-xl">
 
           <div className="flex flex-row justify justify-between mb-2">
 
@@ -230,11 +233,11 @@ const Form = (
     {/* =======================skills=========================== */}
 
     <div className="skills">
-      <h1 className="text-xl">Skills</h1>
+      <h1 className="text-xl mt-10">Skills</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
       {skillsList.map((skill, index) => (
-        <div key={index}>
+        <div key={index} className="bg-gray-100 mt-10 pt-8 p-3 border rounded-xl">
           <input type="text" name={"skillName" + index} required
             defaultValue={skill.name} placeholder={"Skill Name " + index}
             className="w-full bg-gray-50 border border-gray-300
@@ -259,11 +262,11 @@ const Form = (
     {/* =======================experience=========================== */}
 
     <div className="experience">
-      <h1 className="text-xl">Experience</h1>
+      <h1 className="text-xl mt-10">Experience</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
       {experienceList.map((experience, index0) => (
-        <div key={index0}>
+        <div key={index0} className="bg-gray-100 p-3 mt-10 border rounded-xl">
 
           <h2 className="text-l mb-2">Experience {index0}</h2>
 
@@ -326,11 +329,11 @@ const Form = (
 
     {/* =======================projects=========================== */}
     <div className="projects">
-      <h1 className="text-xl">Projects</h1>
+      <h1 className="text-xl mt-10">Projects</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
       {projectList.map((project, index0) => (
-        <div key={index0}>
+        <div key={index0} className="bg-gray-100 p-3 mt-10 border rounded-xl">
 
           <h2 className="text-l mb-2">Project {index0}</h2>
 
@@ -386,18 +389,20 @@ text-gray-900 rounded-lg block p-2.5 outline-0"
     {/* =======================awards================================ */}
 
     <div className="awards">
-      <h1 className="text-xl">Awards</h1>
+      <h1 className="text-xl mt-10">Awards</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
-      {awardsList.map((award, index) => (
-        <div key={index}>
-          <input type="text" name={"award" + index} required
-            defaultValue={award} placeholder={"Award " + index}
-            className="w-full mb-2 bg-gray-50 border border-gray-300
+      <div className="mt-10 bg-gray-100 pt-5 p-3 border rounded-xl"> 
+        {awardsList.map((award, index) => (
+          <div key={index}>
+            <input type="text" name={"award" + index} required
+              defaultValue={award} placeholder={"Award " + index}
+              className="w-full mb-2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
-          />
-        </div>
-      ))}
+            />
+          </div>
+        ))}
+      </div>
 
       <div className="flex flex-row justify-between mt-5">
         <RemoveButton func={removeAward} text="Remove One Award" />

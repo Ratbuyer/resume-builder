@@ -76,6 +76,6 @@ export const projectList: types.projectsListType = [
 ];
 
 export const awardsList: types.awardsListType = [
+  "Award 0",
   "Award 1",
-  "Award 2",
 ];
