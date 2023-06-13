@@ -4,8 +4,8 @@ import { PDFViewer } from '@react-pdf/renderer';
 import Head from "./header";
 import Education from "./education";
 import Skills from "./skills";
-import Experience from "../../samples/eddy/experience";
-import Projects from "../../samples/eddy/projects";
+// import Experience from "./experience";
+// import Projects from ".projects";
 import Awards from "./awards";
 
 import * as type from "../types";
