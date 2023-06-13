@@ -224,7 +224,9 @@ const Form = (
 
       {educationList.map((education, index) => (
 
-        <div key={index} className="mb-5 mt-10 p-3 bg-gray-100 pt-5 border rounded-xl">
+        <div
+          key={index}
+          className="mb-5 mt-10 p-3 bg-gray-100 pt-5 border rounded-xl">
 
           <div className="flex flex-row justify justify-between mb-2">
 
@@ -266,7 +268,7 @@ const Form = (
               name={"degree" + index}
               required
               value={education.degree}
-              placeholder={"Degree " + index}
+              placeholder={"Degree"}
               className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
@@ -281,7 +283,7 @@ const Form = (
               name={"educationLocation" + index}
               required
               value={education.location}
-              placeholder={"Location " + index}
+              placeholder={"Location"}
               className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
@@ -297,8 +299,12 @@ const Form = (
       ))}
 
       <div className="flex flex-row justify-between">
-        <RemoveButton func={addEducation} text="Remove One Education" />
-        <AddButton func={removeEducation} text="Add One Education" />
+        <RemoveButton
+          func={addEducation}
+          text="Remove One Education" />
+        <AddButton
+          func={removeEducation}
+          text="Add One Education" />
       </div>
     </div>
 
@@ -311,13 +317,13 @@ const Form = (
       {skillsList.map((skill, index) => (
         <div key={index} className="bg-gray-100 mt-10 pt-8 p-3 border rounded-xl">
           <input type="text" name={"skillName" + index} required
-            defaultValue={skill.name} placeholder={"Skill Name " + index}
+            defaultValue={skill.name} placeholder={"Skill Name"}
             className="w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           />
 
           <textarea name={"skillList" + index} required
-            defaultValue={skill.skills} placeholder={"Skill List " + index}
+            defaultValue={skill.skills} placeholder={"Skill List"}
             className="mt-2 mb-5 w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
           />
@@ -326,8 +332,12 @@ const Form = (
       ))}
 
       <div className="flex flex-row justify-between">
-        <RemoveButton func={removeSkill} text="Remove One Skill" />
-        <AddButton func={addSkill} text="Add One Skill" />
+        <RemoveButton
+          func={removeSkill}
+          text="Remove One Skill" />
+        <AddButton
+          func={addSkill}
+          text="Add One Skill" />
       </div>
     </div>
 
@@ -338,7 +348,10 @@ const Form = (
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
       {experienceList.map((experience, index0) => (
-        <div key={index0} className="bg-gray-100 p-3 mt-10 border rounded-xl">
+
+        <div
+          key={index0}
+          className="bg-gray-100 p-3 mt-10 border rounded-xl">
 
           <h2 className="text-l mb-2">Experience {index0}</h2>
 
@@ -349,7 +362,7 @@ const Form = (
               name={"company" + index0}
               required
               value={experience.company}
-              placeholder={"Company " + index0}
+              placeholder={"Company"}
               className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
@@ -364,7 +377,7 @@ const Form = (
               name={"experienceDuration" + index0}
               required
               value={experience.duration}
-              placeholder={"Duration " + index0}
+              placeholder={"Duration"}
               className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
@@ -382,7 +395,7 @@ const Form = (
               name={"title" + index0}
               required
               value={experience.title}
-              placeholder={"Title " + index0}
+              placeholder={"Title"}
               className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
@@ -397,7 +410,7 @@ const Form = (
               name={"experienceLocation" + index0}
               required
               defaultValue={experience.location}
-              placeholder={"Location " + index0}
+              placeholder={"Location"}
               className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
@@ -410,10 +423,16 @@ const Form = (
 
           {experience.contributions.map((contribution, index1) => (
 
-            <div key={index1} className="flex flex-row">
-              <RemoveButton func={
-                () => removeExperienceContribution(index0, index1)
-              } text="" />
+            <div
+              key={index1}
+              className="flex flex-row">
+
+              <RemoveButton
+                func={
+                  () => removeExperienceContribution(index0, index1)
+                }
+                text="" />
+
               <input
                 type="text"
                 name={"experience" + index0 + "contribution" + index1}
@@ -426,19 +445,26 @@ const Form = (
                 }}
                 value={contribution}
               />
+
             </div>
           ))}
 
-          <AddButtonStyle func={() => { addExperienceContribution(index0) }}
-            text="Add One Contribution" style="w-10 h-10 mt-1 border bg-gray-100 
-      flex items-center justify-center rounded-full"/>
+          <AddButtonStyle
+            func={() => { addExperienceContribution(index0) }}
+            text="Add One Contribution"
+            style="w-10 h-10 mt-1 border bg-gray-100 flex 
+            items-center justify-center rounded-full"/>
 
         </div>
       ))}
 
       <div className="flex flex-row justify-between mt-5">
-        <RemoveButton func={removeExperience} text="Remove One Experience" />
-        <AddButton func={addExperience} text="Add One Experience" />
+        <RemoveButton
+          func={removeExperience}
+          text="Remove One Experience" />
+        <AddButton
+          func={addExperience}
+          text="Add One Experience" />
       </div>
 
     </div>
@@ -449,7 +475,9 @@ const Form = (
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
       {projectList.map((project, index0) => (
-        <div key={index0} className="bg-gray-100 p-3 mt-10 border rounded-xl">
+        <div
+          key={index0}
+          className="bg-gray-100 p-3 mt-10 border rounded-xl">
 
           <h2 className="text-l mb-2">Project {index0}</h2>
 
@@ -458,9 +486,9 @@ const Form = (
             name={"project" + index0}
             required
             value={project.name}
-            placeholder={"Project Name " + index0}
+            placeholder={"Project Name"}
             className="w-full mb-2 bg-gray-50 border border-gray-300
- text-gray-900 rounded-lg block p-2.5 outline-0"
+          text-gray-900 rounded-lg block p-2.5 outline-0"
             onChange={(e) => {
               const projectListcopy = [...projectList];
               projectListcopy[index0]!.name = e.target.value;
@@ -472,9 +500,9 @@ const Form = (
             type="text"
             name={"link" + index0}
             value={project.link}
-            placeholder={"Project Link " + index0}
+            placeholder={"Project Link"}
             className="w-full mb-2 bg-gray-50 border border-gray-300
- text-gray-900 rounded-lg block p-2.5 outline-0"
+          text-gray-900 rounded-lg block p-2.5 outline-0"
             onChange={(e) => {
               const projectListcopy = [...projectList];
               projectListcopy[index0]!.link = e.target.value;
@@ -486,9 +514,9 @@ const Form = (
             type="text"
             name={"projectDescription" + index0}
             value={project.description}
-            placeholder={"Project Description " + index0}
-            className="w-full mb-2 bg-gray-50 border border-gray-300
- text-gray-900 rounded-lg block p-2.5 outline-0"
+            placeholder={"Project Description"}
+            className="w-full mb-2 bg-gray-50 border border-gray-300text-gray-900 
+            rounded-lg block p-2.5 outline-0"
             onChange={(e) => {
               const projectListcopy = [...projectList];
               projectListcopy[index0]!.description = e.target.value;
@@ -498,10 +526,15 @@ const Form = (
 
           {project.contributions.map((contribution, index1) => (
 
-            <div key={index1} className="flex flex-row">
-              <RemoveButton func={
-                () => removeProjectContribution(index0, index1)
-              } text="" />
+            <div
+              key={index1}
+              className="flex flex-row">
+
+              <RemoveButton
+                func={
+                  () => removeProjectContribution(index0, index1)
+                } text="" />
+
               <input type="text"
                 name={"project" + index0 + "contribution" + index1}
                 value={contribution}
@@ -515,8 +548,10 @@ text-gray-900 rounded-lg block p-2.5 outline-0"
             </div>
           ))}
 
-          <AddButtonStyle func={() => { addProjectContribution(index0) }}
-            text="Add One Contribution" style="w-10 h-10 mt-1 border bg-gray-100 
+          <AddButtonStyle
+            func={() => { addProjectContribution(index0) }}
+            text="Add One Contribution"
+            style="w-10 h-10 mt-1 border bg-gray-100 
       flex items-center justify-center rounded-full"/>
 
         </div>
@@ -524,8 +559,12 @@ text-gray-900 rounded-lg block p-2.5 outline-0"
       ))}
 
       <div className="flex flex-row justify-between mt-5">
-        <RemoveButton func={removeProject} text="Remove One Project" />
-        <AddButton func={addProject} text="Add One Project" />
+        <RemoveButton
+          func={removeProject}
+          text="Remove One Project" />
+        <AddButton
+          func={addProject}
+          text="Add One Project" />
       </div>
 
     </div>
@@ -560,8 +599,12 @@ text-gray-900 rounded-lg block p-2.5 outline-0"
       </div>
 
       <div className="flex flex-row justify-between mt-5">
-        <RemoveButton func={removeAward} text="Remove One Award" />
-        <AddButton func={addAward} text="Add One Award" />
+        <RemoveButton
+          func={removeAward}
+          text="Remove One Award" />
+        <AddButton
+          func={addAward}
+          text="Add One Award" />
       </div>
     </div>
 
