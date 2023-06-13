@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import * as types from "../types";
 import { RefreshButton, AddButton, RemoveButton, AddButtonStyle } from "./buttons";
 
@@ -91,6 +90,12 @@ const Form = (
     setExperienceList(experienceListcopy);
   };
 
+  const setExperienceContribution = (i: number, j: number, value: string) => {
+    const experienceListcopy = [...experienceList];
+    experienceListcopy[i]!.contributions[j] = value;
+    setExperienceList(experienceListcopy);
+  };
+
   const removeProject = () => {
     if (projectList.length === 0) return;
     const projectListcopy = [...projectList];
@@ -116,6 +121,12 @@ const Form = (
   const addProjectContribution = (i: number) => {
     const projectListcopy = [...projectList];
     projectListcopy[i]?.contributions.push("");
+    setProjectList(projectListcopy);
+  };
+
+  const setProjectContribution = (i: number, j: number, value: string) => {
+    const projectListcopy = [...projectList];
+    projectListcopy[i]!.contributions[j] = value;
     setProjectList(projectListcopy);
   };
 
@@ -305,10 +316,17 @@ const Form = (
               <RemoveButton func={
                 () => removeExperienceContribution(index0, index1)
               } text="" />
-              <input type="text" name={"experience" + index0 + "contribution" + index1}
-                defaultValue={contribution} placeholder={"Contribution " + index1}
+              <input
+                type="text"
+                name={"experience" + index0 + "contribution" + index1}
+                placeholder={"Contribution " + index1}
                 className="w-full mb-2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
+                onChange={(e) => {
+                  console.log("here")
+                  setExperienceContribution(index0, index1, e.target.value)
+                }}
+                value={contribution}
               />
             </div>
           ))}
@@ -361,10 +379,15 @@ const Form = (
               <RemoveButton func={
                 () => removeProjectContribution(index0, index1)
               } text="" />
-              <input type="text" name={"project" + index0 + "contribution" + index1}
-                defaultValue={contribution} placeholder={"Contribution " + index1}
+              <input type="text"
+                name={"project" + index0 + "contribution" + index1}
+                value={contribution}
+                placeholder={"Contribution " + index1}
                 className="w-full mb-2 bg-gray-50 border border-gray-300
 text-gray-900 rounded-lg block p-2.5 outline-0"
+                onChange={(e) => {
+                  setProjectContribution(index0, index1, e.target.value)
+                }}
               />
             </div>
           ))}
@@ -392,7 +415,7 @@ text-gray-900 rounded-lg block p-2.5 outline-0"
       <h1 className="text-xl mt-10">Awards</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
-      <div className="mt-10 bg-gray-100 pt-5 p-3 border rounded-xl"> 
+      <div className="mt-10 bg-gray-100 pt-5 p-3 border rounded-xl">
         {awardsList.map((award, index) => (
           <div key={index}>
             <input type="text" name={"award" + index} required
