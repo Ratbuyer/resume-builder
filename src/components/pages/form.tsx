@@ -22,6 +22,7 @@ const Form = (
       projectListprop: types.projectsListType,
     }) => {
 
+  const [header, setHeader] = useState<types.headerType>(headerprop);
   const [educationList, setEducationList] = useState<types.educationListType>(educationListprop);
   const [skillsList, setSkillsList] = useState<types.skillsListType>(skillsListprop);
   const [awardsList, setAwardsList] = useState<types.awardsListType>(awardsListprop);
@@ -132,6 +133,7 @@ const Form = (
 
   return <form
     onSubmit={func}
+    className="ml-5 mr-5"
     data-education-count={educationList.length}
     data-skills-count={skillsList.length}
     data-awards-count={awardsList.length}
@@ -139,7 +141,14 @@ const Form = (
     data-experience-contributions-list={experienceList.map((e) => (e.contributions.length))}
     data-projects-count={projectList.length}
     data-project-contributions-list={projectList.map((e) => (e.contributions.length))}
-    className="ml-5 mr-5"
+
+    data-header={JSON.stringify(header)}
+    data-education-list={JSON.stringify(educationList)}
+    data-skills-list={JSON.stringify(skillsList)}
+    data-awards-list={JSON.stringify(awardsList)}
+    data-experience-list={JSON.stringify(experienceList)}
+    data-projects-list={JSON.stringify(projectList)}
+
   >
 
     <RefreshButton />
@@ -158,10 +167,11 @@ const Form = (
             autoComplete="name"
             name="name"
             required
-            defaultValue={headerprop.name}
+            value={header.name}
             placeholder="Name"
             className="w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
+            onChange={(e) => setHeader({ ...header, name: e.target.value })}
           />
         </div>
 
@@ -172,10 +182,11 @@ const Form = (
             autoComplete="phone"
             name="phone"
             required
-            defaultValue={headerprop.phone}
+            value={header.phone}
             placeholder="Phone"
             className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
+            onChange={(e) => setHeader({ ...header, phone: e.target.value })}
           />
 
           <input
@@ -184,10 +195,11 @@ const Form = (
             autoComplete="email"
             name="email"
             required
-            defaultValue={headerprop.email}
+            value={header.email}
             placeholder="Email"
             className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
+            onChange={(e) => setHeader({ ...header, email: e.target.value })}
           />
         </div>
 
@@ -196,20 +208,22 @@ const Form = (
             type="text"
             id="github"
             name="github"
-            defaultValue={headerprop.github}
+            value={header.github}
             placeholder="Github Link"
             className="mr-1 w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
+            onChange={(e) => setHeader({ ...header, github: e.target.value })}
           />
 
           <input
             type="text"
             id="linkedin"
             name="linkedin"
-            defaultValue={headerprop.linkedin}
+            value={header.linkedin}
             placeholder="Linkedin Link"
             className="w-1/2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
+            onChange={(e) => setHeader({ ...header, linkedin: e.target.value })}
           />
         </div>
 
@@ -315,17 +329,36 @@ const Form = (
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
       {skillsList.map((skill, index) => (
-        <div key={index} className="bg-gray-100 mt-10 pt-8 p-3 border rounded-xl">
-          <input type="text" name={"skillName" + index} required
-            defaultValue={skill.name} placeholder={"Skill Name"}
+        <div
+          key={index}
+          className="bg-gray-100 mt-10 pt-8 p-3 border rounded-xl">
+          <input
+            type="text"
+            name={"skillName" + index}
+            required
+            value={skill.name}
+            placeholder={"Skill Name"}
             className="w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
+            onChange={(e) => {
+              const skillsListcopy = [...skillsList];
+              skillsListcopy[index]!.name = e.target.value;
+              setSkillsList(skillsListcopy);
+            }}
           />
 
-          <textarea name={"skillList" + index} required
-            defaultValue={skill.skills} placeholder={"Skill List"}
+          <textarea
+            name={"skillList" + index}
+            required
+            value={skill.skills}
+            placeholder={"Skill List"}
             className="mt-2 mb-5 w-full bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
+            onChange={(e) => {
+              const skillsListcopy = [...skillsList];
+              skillsListcopy[index]!.skills = e.target.value;
+              setSkillsList(skillsListcopy);
+            }}
           />
 
         </div>
