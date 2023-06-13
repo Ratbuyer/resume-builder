@@ -99,7 +99,16 @@ const Index = () => {
 
     <div className="flex h-screen">
 
-      <div className="flex-1 p-3 text-center overflow-auto">
+      <div className="flex-1 pt-0 p-2 text-center overflow-auto">
+
+        <header className="bg-gray-100 sticky top-0 flex flex-row justify-between items-center p-3">
+          <h1
+            className="font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-gray-800 to-gray-200"
+          >
+            Resume Builder
+          </h1>
+        </header>
+
         <Form
           func={handleSubmit}
           headerprop={header}
@@ -110,7 +119,7 @@ const Index = () => {
         />
       </div>
 
-      <div className="flex-1 p-3 ml-2">
+      <div className="flex-1 pt-0 ml-2">
         <PDF
           header={header}
           educationList={educationList}

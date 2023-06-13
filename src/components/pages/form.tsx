@@ -102,7 +102,7 @@ const Form = (
 
     {/* =======================header=========================== */}
     <div className="header">
-      <h1 className="text-xl">Basic Information</h1>
+      <h1 className="text-xl mt-3">Basic Information</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2" />
 
       <div className="mb-2 mt-2">
