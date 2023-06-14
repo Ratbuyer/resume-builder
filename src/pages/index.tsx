@@ -42,16 +42,7 @@ const Index = () => {
   };
 
   const Left = () => (
-    
-      <>
-      <nav className="bg-gray-100 sticky top-0 flex flex-row items-center p-3">
-        <h1
-          className="font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-gray-800 to-gray-200"
-        >
-          Resume Builder
-        </h1>
-      </nav>
-
+    <>
       <Form
         func={handleSubmit}
         headerprop={header}
@@ -62,14 +53,13 @@ const Index = () => {
         projectListprop={projectList}
         refObject={formRef}
       />
-
       <Copyright />
     </>
   );
 
   const Middle = () => (
     <div className="flex flex-col justify-center items-center place-content-center">
-      <RefreshButton handleSubmit={handleSubmit}/>
+      <RefreshButton handleSubmit={handleSubmit} />
     </div>
   );
 
@@ -100,7 +90,7 @@ const Index = () => {
       </div>
 
       <div className="w-1/2 pt-0">
-      <Right />
+        <Right />
       </div>
 
     </div>

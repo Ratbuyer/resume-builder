@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as types from "../types";
-import { RefreshButton, AddButton, RemoveButton, AddButtonStyle } from "./buttons";
+import { AddButton, RemoveButton, RemoveIcon } from "./buttons";
+import { set } from "zod";
 
 
 const Form = (
@@ -31,55 +32,6 @@ const Form = (
   const [experienceList, setExperienceList] = useState<types.experienceListType>(experienceListprop);
   const [projectList, setProjectList] = useState<types.projectsListType>(projectListprop);
 
-  const addEducation: React.MouseEventHandler<HTMLButtonElement> = () => {
-    if (educationList.length === 0) return;
-    const updatedEducationList = [...educationList];
-    updatedEducationList.splice(educationList.length - 1, 1);
-    setEducationList(updatedEducationList);
-  };
-
-  const removeEducation: React.MouseEventHandler<HTMLButtonElement> = () => {
-    setEducationList([...educationList, { school: "", degree: "", duration: "", location: "" }])
-  };
-
-  const addSkill: React.MouseEventHandler<HTMLButtonElement> = () => {
-    setSkillsList([...skillsList, { name: "", skills: "" }])
-  };
-
-  const removeSkill: React.MouseEventHandler<HTMLButtonElement> = () => {
-    if (skillsList.length === 0) return;
-    const skillsListcopy = [...skillsList];
-    skillsListcopy.splice(skillsList.length - 1, 1);
-    setSkillsList(skillsListcopy);
-  };
-
-  const addAward = () => {
-    setAwardsList([...awardsList, ""])
-  };
-
-  const removeAward = () => {
-    if (awardsList.length === 0) return;
-    const awardsListcopy = [...awardsList];
-    awardsListcopy.splice(awardsList.length - 1, 1);
-    setAwardsList(awardsListcopy);
-  }
-
-  const addExperience = () => {
-    setExperienceList([...experienceList, {
-      company: "",
-      title: "",
-      duration: "",
-      location: "",
-      contributions: [""],
-    }])
-  };
-
-  const removeExperience = () => {
-    if (experienceList.length === 0) return;
-    const experienceListcopy = [...experienceList];
-    experienceListcopy.splice(experienceList.length - 1, 1);
-    setExperienceList(experienceListcopy);
-  };
 
   const removeExperienceContribution = (i: number, j: number) => {
     const experienceListcopy = [...experienceList];
@@ -97,22 +49,6 @@ const Form = (
     const experienceListcopy = [...experienceList];
     experienceListcopy[i]!.contributions[j] = value;
     setExperienceList(experienceListcopy);
-  };
-
-  const removeProject = () => {
-    if (projectList.length === 0) return;
-    const projectListcopy = [...projectList];
-    projectListcopy.splice(projectList.length - 1, 1);
-    setProjectList(projectListcopy);
-  };
-
-  const addProject = () => {
-    setProjectList([...projectList, {
-      name: "",
-      link: "",
-      description: "",
-      contributions: [""],
-    }])
   };
 
   const removeProjectContribution = (i: number, j: number) => {
@@ -231,7 +167,15 @@ const Form = (
 
         <div
           key={index}
-          className="mb-5 mt-10 p-3 bg-gray-100 pt-5 border rounded-xl">
+          className="mb-5 mt-10 p-3 bg-gray-100 pb-5 border rounded-xl">
+
+          <RemoveIcon
+            func={() => {
+              let educationListCopy = [...educationList];
+              educationListCopy.splice(index, 1);
+              setEducationList(educationListCopy);
+            }}
+          />
 
           <div className="flex flex-row justify justify-between mb-2">
 
@@ -303,12 +247,9 @@ const Form = (
         </div>
       ))}
 
-      <div className="flex flex-row justify-between">
-        <RemoveButton
-          func={addEducation}
-          text="Remove One Education" />
+      <div className="flex flex-row justify-center">
         <AddButton
-          func={removeEducation}
+          func={() => { setEducationList([...educationList, { school: "", degree: "", duration: "", location: "" }]) }}
           text="Add One Education" />
       </div>
     </div>
@@ -322,7 +263,17 @@ const Form = (
       {skillsList.map((skill, index) => (
         <div
           key={index}
-          className="bg-gray-100 mt-10 pt-8 p-3 border rounded-xl">
+          className="bg-gray-100 mt-10 pt-1 pb-2 p-3 border rounded-xl"
+        >
+
+          <RemoveIcon
+            func={() => {
+              let skillsListCopy = [...skillsList];
+              skillsListCopy.splice(index, 1);
+              setSkillsList(skillsListCopy);
+            }}
+          />
+
           <input
             type="text"
             name={"skillName" + index}
@@ -355,12 +306,9 @@ const Form = (
         </div>
       ))}
 
-      <div className="flex flex-row justify-between">
-        <RemoveButton
-          func={removeSkill}
-          text="Remove One Skill" />
+      <div className="flex flex-row justify-center mt-5">
         <AddButton
-          func={addSkill}
+          func={() => { setSkillsList([...skillsList, { name: "", skills: "" }]) }}
           text="Add One Skill" />
       </div>
     </div>
@@ -375,7 +323,16 @@ const Form = (
 
         <div
           key={index0}
-          className="bg-gray-100 p-3 mt-10 border rounded-xl">
+          className="bg-gray-100 p-3 mt-10 border rounded-xl"
+        >
+
+          <RemoveIcon
+            func={() => {
+              let experienceListCopy = [...experienceList];
+              experienceListCopy.splice(index0, 1);
+              setExperienceList(experienceListCopy);
+            }}
+          />
 
           <h2 className="text-l mb-2">Experience {index0}</h2>
 
@@ -452,9 +409,7 @@ const Form = (
               className="flex flex-row">
 
               <RemoveButton
-                func={
-                  () => removeExperienceContribution(index0, index1)
-                }
+                func={() => removeExperienceContribution(index0, index1)}
                 text="" />
 
               <input
@@ -462,7 +417,7 @@ const Form = (
                 name={"experience" + index0 + "contribution" + index1}
                 placeholder={"Contribution " + index1}
                 className="w-full mb-2 bg-gray-50 border border-gray-300
-         text-gray-900 rounded-lg block p-2.5 outline-0"
+              text-gray-900 rounded-lg block p-2.5 outline-0"
                 onChange={(e) => {
                   console.log("here")
                   setExperienceContribution(index0, index1, e.target.value)
@@ -473,21 +428,25 @@ const Form = (
             </div>
           ))}
 
-          <AddButtonStyle
+          <AddButton
             func={() => { addExperienceContribution(index0) }}
-            text="Add One Contribution"
-            style="w-10 h-10 mt-1 border bg-gray-100 flex 
-            items-center justify-center rounded-full"/>
+            text=""
+          />
 
         </div>
       ))}
 
-      <div className="flex flex-row justify-between mt-5">
-        <RemoveButton
-          func={removeExperience}
-          text="Remove One Experience" />
+      <div className="flex flex-row justify-center mt-5">
         <AddButton
-          func={addExperience}
+          func={() => {
+            setExperienceList([...experienceList, {
+              company: "",
+              duration: "",
+              title: "",
+              location: "",
+              contributions: [""]
+            }])
+          }}
           text="Add One Experience" />
       </div>
 
@@ -501,7 +460,16 @@ const Form = (
       {projectList.map((project, index0) => (
         <div
           key={index0}
-          className="bg-gray-100 p-3 mt-10 border rounded-xl">
+          className="bg-gray-100 p-3 mt-10 border rounded-xl"
+        >
+
+          <RemoveIcon
+            func={() => {
+              let projectListCopy = [...projectList];
+              projectListCopy.splice(index0, 1);
+              setProjectList(projectListCopy);
+            }}
+          />
 
           <h2 className="text-l mb-2">Project {index0}</h2>
 
@@ -555,16 +523,15 @@ const Form = (
               className="flex flex-row">
 
               <RemoveButton
-                func={
-                  () => removeProjectContribution(index0, index1)
-                } text="" />
+                func={() => removeProjectContribution(index0, index1)}
+                text="" />
 
               <input type="text"
                 name={"project" + index0 + "contribution" + index1}
                 value={contribution}
                 placeholder={"Contribution " + index1}
                 className="w-full mb-2 bg-gray-50 border border-gray-300
-text-gray-900 rounded-lg block p-2.5 outline-0"
+              text-gray-900 rounded-lg block p-2.5 outline-0"
                 onChange={(e) => {
                   setProjectContribution(index0, index1, e.target.value)
                 }}
@@ -572,27 +539,29 @@ text-gray-900 rounded-lg block p-2.5 outline-0"
             </div>
           ))}
 
-          <AddButtonStyle
+          <AddButton
             func={() => { addProjectContribution(index0) }}
-            text="Add One Contribution"
-            style="w-10 h-10 mt-1 border bg-gray-100 
-      flex items-center justify-center rounded-full"/>
+            text=""
+          />
 
         </div>
 
       ))}
 
-      <div className="flex flex-row justify-between mt-5">
-        <RemoveButton
-          func={removeProject}
-          text="Remove One Project" />
+      <div className="flex flex-row justify-center mt-5">
         <AddButton
-          func={addProject}
+          func={() => {
+            setProjectList([...projectList, {
+              name: "",
+              link: "",
+              description: "",
+              contributions: [""]
+            }])
+          }}
           text="Add One Project" />
       </div>
 
     </div>
-
 
 
     {/* =======================awards================================ */}
@@ -603,7 +572,17 @@ text-gray-900 rounded-lg block p-2.5 outline-0"
 
       <div className="mt-10 bg-gray-100 pt-5 p-3 border rounded-xl">
         {awardsList.map((award, index) => (
-          <div key={index}>
+          <div key={index} className="flex flex-row">
+
+            <RemoveButton
+              func={() => {
+                let awardsListCopy = [...awardsList];
+                awardsListCopy.splice(index, 1);
+                setAwardsList(awardsListCopy);
+              }}
+              text=""
+            />
+
             <input
               type="text"
               name={"award" + index}
@@ -622,12 +601,9 @@ text-gray-900 rounded-lg block p-2.5 outline-0"
         ))}
       </div>
 
-      <div className="flex flex-row justify-between mt-5">
-        <RemoveButton
-          func={removeAward}
-          text="Remove One Award" />
+      <div className="flex flex-row justify-center mt-5">
         <AddButton
-          func={addAward}
+          func={() => { setAwardsList([...awardsList, ""]) }}
           text="Add One Award" />
       </div>
     </div>
