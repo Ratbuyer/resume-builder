@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env: 
-      DATABASE_URL: ""
+      DATABASE_URL: "file:./db.sqlite"
 
     steps:
 
