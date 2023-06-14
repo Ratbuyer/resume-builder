@@ -1,4 +1,4 @@
-import Refresh from "../../../public/refresh.svg";
+import Refresh from "../../../public/gradient_refresh.svg";
 import { PlusIcon } from "./icons";
 import { MinusIcon } from "./icons";
 

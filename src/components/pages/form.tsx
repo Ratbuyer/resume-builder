@@ -598,13 +598,13 @@ const Form = (
             />
           </div>
         ))}
-      </div>
 
-      <div className="flex flex-row justify-center mt-5">
         <AddButton
           func={() => { setAwardsList([...awardsList, ""]) }}
         />
+
       </div>
+
     </div>
 
   </form>
