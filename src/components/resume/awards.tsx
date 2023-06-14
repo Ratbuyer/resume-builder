@@ -2,10 +2,10 @@
 import { Text, View, } from '@react-pdf/renderer';
 import Line from "./line"
 
-import * as type from '~/components/types';
+import type * as types from '~/components/types';
 
 
-const Awards = ({ awardsList }: { awardsList: type.awardsListType }) => {
+const Awards = ({ awardsList }: { awardsList: types.awardsListType }) => {
 
   if (awardsList.length === 0) return null;
 

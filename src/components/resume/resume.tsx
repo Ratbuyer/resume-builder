@@ -1,4 +1,4 @@
-import { Page, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Document } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
 
 import Head from "./header";
@@ -8,7 +8,7 @@ import Experience from "./experience";
 import Projects from "./projects";
 import Awards from "./awards";
 
-import * as type from "../types";
+import type * as types from "../types";
 
 import { colorTable } from "../constants";
 
@@ -21,12 +21,12 @@ const Resume = ({
   projectList,
 }:
   {
-    header: type.headerType,
-    educationList: type.educationListType
-    skillsList: type.skillsListType
-    awardsList: type.awardsListType
-    experienceList: type.experienceListType
-    projectList: type.projectsListType
+    header: types.headerType,
+    educationList: types.educationListType
+    skillsList: types.skillsListType
+    awardsList: types.awardsListType
+    experienceList: types.experienceListType
+    projectList: types.projectsListType
   }) => {
 
   return <>

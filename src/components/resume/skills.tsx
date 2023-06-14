@@ -1,9 +1,9 @@
 import { Text, View, } from '@react-pdf/renderer';
 import Line from "./line"
 
-import * as type from '~/components/types';
+import type * as types from '~/components/types';
 
-const Skills = ({ skillsList }: { skillsList: type.skillsListType }) => {
+const Skills = ({ skillsList }: { skillsList: types.skillsListType }) => {
 
   if (skillsList.length == 0) return null;
   

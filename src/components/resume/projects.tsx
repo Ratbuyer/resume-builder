@@ -1,8 +1,8 @@
-import { Text, View, StyleSheet, Link } from '@react-pdf/renderer';
+import { Text, View, Link } from '@react-pdf/renderer';
 import Line from "../../components/resume/line"
 import Separator from '../../components/resume/seperator';
 
-import * as types from "../types";
+import type * as types from "../types";
 
 const bullet = "•";
 

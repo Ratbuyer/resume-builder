@@ -1,4 +1,4 @@
-import * as types from "./types";
+import type * as types from "./types";
 
 export const header: types.headerType = {
   name: "John Doe",

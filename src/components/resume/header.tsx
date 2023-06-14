@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 
 import Separator from '~/components/resume/seperator';
-import * as type from '~/components/types';
+import type * as types from '~/components/types';
 
 
 const styles = StyleSheet.create({
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 
 });
 
-const Header = ({ header }: { header: type.headerType }) => {
+const Header = ({ header }: { header: types.headerType }) => {
 
   return <>
     <View style={styles.section}>

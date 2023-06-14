@@ -3,7 +3,7 @@ import Loading from "../components/loading";
 import Form from "../components/pages/form";
 import { useRef, useState } from "react";
 
-import * as types from "~/components/types";
+import type * as types from "~/components/types";
 import * as defaults from "~/components/default";
 
 import Copyright from "~/components/copyright";
@@ -32,12 +32,19 @@ const Index = () => {
 
     const form = formRef.current;
 
-    setHeader(JSON.parse(form?.dataset.header ? form.dataset.header : "{}"));
-    setEducationList(JSON.parse(form?.dataset.educationList ? form.dataset.educationList : "[]"));
-    setSkillsList(JSON.parse(form?.dataset.skillsList ? form.dataset.skillsList : "[]"));
-    setAwardsList(JSON.parse(form?.dataset.awardsList ? form.dataset.awardsList : "[]"));
-    setExperienceList(JSON.parse(form?.dataset.experienceList ? form.dataset.experienceList : "[]"));
-    setProjectList(JSON.parse(form?.dataset.projectsList ? form.dataset.projectsList : "[]"));
+    setHeader(JSON.parse(form?.dataset.header ? form.dataset.header : "{}") as types.headerType);
+    setEducationList(JSON.parse(form?.dataset.educationList ? form.dataset.educationList : "[]") as types.educationListType);
+    setSkillsList(JSON.parse(form?.dataset.skillsList ? form.dataset.skillsList : "[]") as types.skillsListType);
+    setAwardsList(JSON.parse(form?.dataset.awardsList ? form.dataset.awardsList : "[]") as types.awardsListType);
+    setExperienceList(JSON.parse(form?.dataset.experienceList ? form.dataset.experienceList : "[]") as types.experienceListType);
+    setProjectList(JSON.parse(form?.dataset.projectsList ? form.dataset.projectsList : "[]") as types.projectsListType);
+
+    // setHeader(JSON.parse(form?.dataset.header ? form.dataset.header : "{}"));
+    // setEducationList(JSON.parse(form?.dataset.educationList ? form.dataset.educationList : "[]"));
+    // setSkillsList(JSON.parse(form?.dataset.skillsList ? form.dataset.skillsList : "[]"));
+    // setAwardsList(JSON.parse(form?.dataset.awardsList ? form.dataset.awardsList : "[]"));
+    // setExperienceList(JSON.parse(form?.dataset.experienceList ? form.dataset.experienceList : "[]"));
+    // setProjectList(JSON.parse(form?.dataset.projectsList ? form.dataset.projectsList : "[]"));
 
   };
 

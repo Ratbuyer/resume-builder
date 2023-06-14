@@ -1,5 +1,5 @@
 import { useState } from "react";
-import * as types from "../types";
+import type * as types from "../types";
 import { AddButton, RemoveButton, RemoveIcon } from "./buttons";
 
 
@@ -170,7 +170,7 @@ const Form = (
 
           <RemoveIcon
             func={() => {
-              let educationListCopy = [...educationList];
+              const educationListCopy = [...educationList];
               educationListCopy.splice(index, 1);
               setEducationList(educationListCopy);
             }}
@@ -180,7 +180,7 @@ const Form = (
 
             <input
               type="text"
-              name={"school" + index}
+              name={"school" + String(index)}
               required
               value={education.school}
               placeholder={"School"}
@@ -195,7 +195,7 @@ const Form = (
 
             <input
               type="text"
-              name={"educationDuration" + index}
+              name={"educationDuration" + String(index)}
               required
               value={education.duration}
               placeholder={"Duration"}
@@ -213,7 +213,7 @@ const Form = (
           <div className="flex flex-row justify justify-between mb-2">
             <input
               type="text"
-              name={"degree" + index}
+              name={"degree" + String(index)}
               required
               value={education.degree}
               placeholder={"Degree"}
@@ -228,7 +228,7 @@ const Form = (
 
             <input
               type="text"
-              name={"educationLocation" + index}
+              name={"educationLocation" + String(index)}
               required
               value={education.location}
               placeholder={"Location"}
@@ -267,7 +267,7 @@ const Form = (
 
           <RemoveIcon
             func={() => {
-              let skillsListCopy = [...skillsList];
+              const skillsListCopy = [...skillsList];
               skillsListCopy.splice(index, 1);
               setSkillsList(skillsListCopy);
             }}
@@ -275,7 +275,7 @@ const Form = (
 
           <input
             type="text"
-            name={"skillName" + index}
+            name={"skillName" + String(index)}
             required
             value={skill.name}
             placeholder={"Skill Name"}
@@ -289,7 +289,7 @@ const Form = (
           />
 
           <textarea
-            name={"skillList" + index}
+            name={"skillList" + String(index)}
             required
             value={skill.skills}
             placeholder={"Skill List"}
@@ -327,7 +327,7 @@ const Form = (
 
           <RemoveIcon
             func={() => {
-              let experienceListCopy = [...experienceList];
+              const experienceListCopy = [...experienceList];
               experienceListCopy.splice(index0, 1);
               setExperienceList(experienceListCopy);
             }}
@@ -339,7 +339,7 @@ const Form = (
 
             <input
               type="text"
-              name={"company" + index0}
+              name={"company" + String(index0)}
               required
               value={experience.company}
               placeholder={"Company"}
@@ -354,7 +354,7 @@ const Form = (
 
             <input
               type="text"
-              name={"experienceDuration" + index0}
+              name={"experienceDuration" + String(index0)}
               required
               value={experience.duration}
               placeholder={"Duration"}
@@ -372,7 +372,7 @@ const Form = (
           <div className="flex flex-row justify justify-between mb-2">
             <input
               type="text"
-              name={"title" + index0}
+              name={"title" + String(index0)}
               required
               value={experience.title}
               placeholder={"Title"}
@@ -387,7 +387,7 @@ const Form = (
 
             <input
               type="text"
-              name={"experienceLocation" + index0}
+              name={"experienceLocation" + String(index0)}
               required
               defaultValue={experience.location}
               placeholder={"Location"}
@@ -413,8 +413,8 @@ const Form = (
 
               <input
                 type="text"
-                name={"experience" + index0 + "contribution" + index1}
-                placeholder={"Contribution " + index1}
+                name={"experience" + String(index1) + "contribution" + String(index1)}
+                placeholder={"Contribution " + String(index1)}
                 className="w-full mb-2 bg-gray-50 border border-gray-300
               text-gray-900 rounded-lg block p-2.5 outline-0"
                 onChange={(e) => {
@@ -464,7 +464,7 @@ const Form = (
 
           <RemoveIcon
             func={() => {
-              let projectListCopy = [...projectList];
+              const projectListCopy = [...projectList];
               projectListCopy.splice(index0, 1);
               setProjectList(projectListCopy);
             }}
@@ -474,7 +474,7 @@ const Form = (
 
           <input
             type="text"
-            name={"project" + index0}
+            name={"project" + String(index0)}
             required
             value={project.name}
             placeholder={"Project Name"}
@@ -489,7 +489,7 @@ const Form = (
 
           <input
             type="text"
-            name={"link" + index0}
+            name={"link" + String(index0)}
             value={project.link}
             placeholder={"Project Link"}
             className="w-full mb-2 bg-gray-50 border border-gray-300
@@ -503,7 +503,7 @@ const Form = (
 
           <input
             type="text"
-            name={"projectDescription" + index0}
+            name={"projectDescription" + String(index0)}
             value={project.description}
             placeholder={"Project Description"}
             className="w-full mb-2 bg-gray-50 border border-gray-300text-gray-900 
@@ -526,9 +526,9 @@ const Form = (
               />
 
               <input type="text"
-                name={"project" + index0 + "contribution" + index1}
+                name={"project" + String(index0) + "contribution" + String(index1)}
                 value={contribution}
-                placeholder={"Contribution " + index1}
+                placeholder={"Contribution " + String(index1)}
                 className="w-full mb-2 bg-gray-50 border border-gray-300
               text-gray-900 rounded-lg block p-2.5 outline-0"
                 onChange={(e) => {
@@ -575,7 +575,7 @@ const Form = (
 
             <RemoveButton
               func={() => {
-                let awardsListCopy = [...awardsList];
+                const awardsListCopy = [...awardsList];
                 awardsListCopy.splice(index, 1);
                 setAwardsList(awardsListCopy);
               }}
@@ -584,10 +584,10 @@ const Form = (
 
             <input
               type="text"
-              name={"award" + index}
+              name={"award" + String(index)}
               required
               value={award}
-              placeholder={"Award " + index}
+              placeholder={"Award " + String(index)}
               className="w-full mb-2 bg-gray-50 border border-gray-300
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
