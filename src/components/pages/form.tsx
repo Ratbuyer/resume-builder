@@ -11,6 +11,7 @@ const Form = (
     awardsListprop,
     experienceListprop,
     projectListprop,
+    refObject,
   }:
     {
       func: types.submitFunc,
@@ -20,6 +21,7 @@ const Form = (
       awardsListprop: types.awardsListType,
       experienceListprop: types.experienceListType,
       projectListprop: types.projectsListType,
+      refObject: React.RefObject<HTMLFormElement>,
     }) => {
 
   const [header, setHeader] = useState<types.headerType>(headerprop);
@@ -132,27 +134,16 @@ const Form = (
   };
 
   return <form
+    ref={refObject}
     onSubmit={func}
     className="ml-5 mr-5"
-    data-education-count={educationList.length}
-    data-skills-count={skillsList.length}
-    data-awards-count={awardsList.length}
-    data-experience-count={experienceList.length}
-    data-experience-contributions-list={experienceList.map((e) => (e.contributions.length))}
-    data-projects-count={projectList.length}
-    data-project-contributions-list={projectList.map((e) => (e.contributions.length))}
-
     data-header={JSON.stringify(header)}
     data-education-list={JSON.stringify(educationList)}
     data-skills-list={JSON.stringify(skillsList)}
     data-awards-list={JSON.stringify(awardsList)}
     data-experience-list={JSON.stringify(experienceList)}
     data-projects-list={JSON.stringify(projectList)}
-
   >
-
-    <RefreshButton />
-
 
     {/* =======================contacts=========================== */}
     <div className="contacts">
@@ -230,8 +221,8 @@ const Form = (
       </div>
     </div>
 
-    {/* =======================education=========================== */}
 
+    {/* =======================education=========================== */}
     <div className="education mt-10">
       <h1 className="text-xl">Education</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
@@ -322,8 +313,8 @@ const Form = (
       </div>
     </div>
 
-    {/* =======================skills=========================== */}
 
+    {/* =======================skills=========================== */}
     <div className="skills">
       <h1 className="text-xl mt-10">Skills</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
@@ -374,8 +365,8 @@ const Form = (
       </div>
     </div>
 
-    {/* =======================experience=========================== */}
 
+    {/* =======================experience=========================== */}
     <div className="experience">
       <h1 className="text-xl mt-10">Experience</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />

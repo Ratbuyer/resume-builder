@@ -56,8 +56,7 @@ export const projectList: types.projectsListType = [
     contributions: [
       "Translate UI designs on Adobe XD and Figma into Typescript React codes",
       "Developed a web application using React, Next.js, and Tailwind CSS",
-      `Extracted repeated components and Tailwind CSS styles to 
-      improve overall code quality and adhere to SOLID principles`,
+      "Extracted repeated components and Tailwind CSS styles to improve",
     ],
   },
   {
@@ -67,11 +66,8 @@ export const projectList: types.projectsListType = [
     contributions: [
       "Translate UI designs on Adobe XD and Figma into Typescript React codes",
       "Developed a web application using React, Next.js, and Tailwind CSS",
-      `Extracted repeated components and Tailwind CSS styles to 
-      improve overall code quality and adhere to SOLID principles`,
     ],
   },
-
 ];
 
 export const awardsList: types.awardsListType = [

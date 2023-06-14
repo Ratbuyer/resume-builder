@@ -5,7 +5,9 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
+
   return <>
+    <title>Resume Dev Tool</title>
     <Component {...pageProps} />
   </>;
 };
