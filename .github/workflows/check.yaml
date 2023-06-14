@@ -1,4 +1,4 @@
-name: Next.js Build and Type Check
+name: Next.js Build
 
 on:
   push:
@@ -16,8 +16,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env: 
+      DATABASE_URL: "file:./db.sqlite"
+
     steps:
-    
+
     - name: Checkout repository
       uses: actions/checkout@v2
 
