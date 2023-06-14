@@ -30,7 +30,13 @@ const Index = () => {
 
   const handleSubmit = () => {
 
+
     const form = formRef.current;
+
+    if (!form?.checkValidity()) {
+      form?.reportValidity()
+      return;
+    }
 
     setHeader(JSON.parse(form?.dataset.header ? form.dataset.header : "{}") as types.headerType);
     setEducationList(JSON.parse(form?.dataset.educationList ? form.dataset.educationList : "[]") as types.educationListType);

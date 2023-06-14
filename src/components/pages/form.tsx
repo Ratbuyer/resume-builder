@@ -92,6 +92,7 @@ const Form = (
             id="name"
             autoComplete="name"
             name="name"
+            required
             value={header.name}
             placeholder="Name"
             className="w-full bg-gray-50 border border-gray-300
