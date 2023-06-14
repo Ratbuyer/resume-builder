@@ -9,46 +9,52 @@ const bullet = "•";
 const Projects = ({ projectList }: { projectList: types.projectsListType }) => {
 
   if (projectList.length === 0) return null;
-  
+
   return <>
-    <View>
-      <Text style={{ fontSize: 12, marginBottom: 3, marginTop: 10 }}>Projects</Text>
-      <Line />
-    </View>
+    <View style={{ marginBottom: 10 }}>
 
-    {projectList.map((project, index) => (
-      <View key={index}>
+      <View>
+        <Text style={{ fontSize: 12, marginBottom: 3 }}>Projects</Text>
+        <Line />
+      </View>
 
-        <View style={{ flexDirection: 'row', marginTop: 3 }}>
+      {projectList.map((project, index) => (
+        <View key={index}>
 
-          {project.link ?
-            <Link src={project.link}>
-              <Text style={index === 0 ? { fontSize: 10, marginLeft: 10, fontFamily: 'Courier-Bold' }
-                : { marginTop: 3, fontSize: 10, marginLeft: 10, fontFamily: 'Courier-Bold' }}>
+          <View style={index === 0 ? { flexDirection: 'row', marginTop: 3 }
+          : { flexDirection: 'row', marginTop: 5 }}
+          >
+
+            {project.link ?
+              <Link src={project.link}>
+                <Text style={{ fontSize: 10, marginLeft: 10, fontFamily: 'Courier-Bold' }}>
+                  {project.name}
+                </Text>
+              </Link>
+              :
+              <Text style={{ fontSize: 10, marginLeft: 10, fontFamily: 'Courier-Bold' }}>
                 {project.name}
               </Text>
-            </Link> : <Text style={{ fontSize: 10, marginLeft: 10, fontFamily: 'Courier-Bold' }}>
-              {project.name}
-            </Text>}
+            }
 
-          <Separator />
+            <Separator />
 
-          <Text style={{ fontSize: 10, }}>
-            {project.description}
-          </Text>
+            <Text style={{ fontSize: 10, }}>
+              {project.description}
+            </Text>
+
+          </View>
+
+          {project.contributions.map((contribution, index) => (
+            <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }} key={index}>
+              {bullet} {contribution}
+            </Text>
+          ))}
 
         </View>
+      ))}
 
-        {project.contributions.map((contribution, index) => (
-          <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }} key={index}>
-            {bullet} {contribution}
-          </Text>
-        ))}
-
-      </View>
-    ))}
-
-
+    </View>
 
   </>
 };

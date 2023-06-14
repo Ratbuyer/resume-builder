@@ -1,7 +1,6 @@
 import { useState } from "react";
 import * as types from "../types";
 import { AddButton, RemoveButton, RemoveIcon } from "./buttons";
-import { set } from "zod";
 
 
 const Form = (
@@ -72,7 +71,7 @@ const Form = (
   return <form
     ref={refObject}
     onSubmit={func}
-    className="ml-5 mr-5"
+    className="ml-3 mr-3"
     data-header={JSON.stringify(header)}
     data-education-list={JSON.stringify(educationList)}
     data-skills-list={JSON.stringify(skillsList)}
@@ -83,7 +82,7 @@ const Form = (
 
     {/* =======================contacts=========================== */}
     <div className="contacts">
-      <h1 className="text-xl mt-3">Contacts</h1>
+      <h1 className="text-xl mt-10">Contacts</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2" />
 
       <div className="mt-10 bg-gray-100 pt-2 pb-2 p-3 border rounded-xl">
@@ -250,7 +249,7 @@ const Form = (
       <div className="flex flex-row justify-center">
         <AddButton
           func={() => { setEducationList([...educationList, { school: "", degree: "", duration: "", location: "" }]) }}
-          text="Add One Education" />
+        />
       </div>
     </div>
 
@@ -309,7 +308,7 @@ const Form = (
       <div className="flex flex-row justify-center mt-5">
         <AddButton
           func={() => { setSkillsList([...skillsList, { name: "", skills: "" }]) }}
-          text="Add One Skill" />
+        />
       </div>
     </div>
 
@@ -410,7 +409,7 @@ const Form = (
 
               <RemoveButton
                 func={() => removeExperienceContribution(index0, index1)}
-                text="" />
+              />
 
               <input
                 type="text"
@@ -430,7 +429,7 @@ const Form = (
 
           <AddButton
             func={() => { addExperienceContribution(index0) }}
-            text=""
+
           />
 
         </div>
@@ -447,7 +446,7 @@ const Form = (
               contributions: [""]
             }])
           }}
-          text="Add One Experience" />
+        />
       </div>
 
     </div>
@@ -524,7 +523,7 @@ const Form = (
 
               <RemoveButton
                 func={() => removeProjectContribution(index0, index1)}
-                text="" />
+              />
 
               <input type="text"
                 name={"project" + index0 + "contribution" + index1}
@@ -541,7 +540,7 @@ const Form = (
 
           <AddButton
             func={() => { addProjectContribution(index0) }}
-            text=""
+
           />
 
         </div>
@@ -558,7 +557,7 @@ const Form = (
               contributions: [""]
             }])
           }}
-          text="Add One Project" />
+        />
       </div>
 
     </div>
@@ -580,7 +579,7 @@ const Form = (
                 awardsListCopy.splice(index, 1);
                 setAwardsList(awardsListCopy);
               }}
-              text=""
+
             />
 
             <input
@@ -604,7 +603,7 @@ const Form = (
       <div className="flex flex-row justify-center mt-5">
         <AddButton
           func={() => { setAwardsList([...awardsList, ""]) }}
-          text="Add One Award" />
+        />
       </div>
     </div>
 
