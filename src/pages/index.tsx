@@ -111,7 +111,6 @@ const Index = () => {
   const Middle = () => (
     <div className="flex flex-col justify-center items-center place-content-center">
       <RefreshButton handleSubmit={handleSubmit} />
-      <RefreshButton handleSubmit={() => { }} />
     </div>
   );
 
