@@ -418,7 +418,6 @@ const Form = (
                 className="w-full mb-2 bg-gray-50 border border-gray-300
               text-gray-900 rounded-lg block p-2.5 outline-0"
                 onChange={(e) => {
-                  console.log("here")
                   setExperienceContribution(index0, index1, e.target.value)
                 }}
                 value={contribution}

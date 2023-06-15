@@ -4,20 +4,17 @@ import { MinusIcon } from "./icons";
 
 
 export const RefreshButton = ({ handleSubmit }: { handleSubmit: () => void }) => (
-  <div className="group z-0">
-    <button
-      onClick={handleSubmit}
-      className="w-10 h-10 mt-2 hover:scale-110 
+  <button
+    onClick={handleSubmit}
+    className="w-10 h-10 mt-2 hover:scale-110 
         flex items-center justify-center rounded-full"
-    >
-      <Refresh />
-    </button>
-  </div>
+  >
+    <Refresh />
+  </button>
 );
 
 
 export const AddButton = ({ func }: { func: React.MouseEventHandler<HTMLButtonElement> }) => (
-  <div className="group">
     <button
       type="button"
       onClick={func}
@@ -26,7 +23,6 @@ export const AddButton = ({ func }: { func: React.MouseEventHandler<HTMLButtonEl
     >
       <PlusIcon />
     </button>
-  </div>
 );
 
 
