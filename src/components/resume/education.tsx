@@ -17,7 +17,7 @@ const Education = ({ educationList }: { educationList: types.educationListType }
         <div key={index}>
 
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-            <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier-Bold' }}>
+            <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, fontWeight: "bold", fontFamily: 'Courier-Bold' }}>
               {education.school}
             </Text>
             <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, }}>

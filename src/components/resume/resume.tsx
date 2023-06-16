@@ -10,7 +10,9 @@ import Awards from "./awards";
 
 import type * as types from "../../constants/types";
 
-import { colorTable } from "../../constants/constants";
+import { COLORTABLE } from "../../constants/constants";
+
+import "~/constants/fonts";
 
 const Resume = ({
   header,
@@ -33,7 +35,7 @@ const Resume = ({
     <div style={{ height: '100vh' }}>
       <PDFViewer width="100%" height="100%">
         <Document>
-          <Page size="A4" style={{ backgroundColor: colorTable.white, padding: 20, fontFamily: "Courier", }}>
+          <Page size="A4" style={{ backgroundColor: COLORTABLE.white, padding: 20, fontFamily: "Ubuntu", }}>
             <Head header={header} />
             <Education educationList={educationList} />
             <Skills skillsList={skillsList} />

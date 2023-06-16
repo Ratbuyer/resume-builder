@@ -1,7 +1,7 @@
 import { Text, View, } from '@react-pdf/renderer';
 import Line from "./line"
 
-import type * as types from '~/constants/types';
+import type * as types from '@constants/types';
 
 const Skills = ({ skillsList }: { skillsList: types.skillsListType }) => {
 
@@ -18,7 +18,7 @@ const Skills = ({ skillsList }: { skillsList: types.skillsListType }) => {
             {skill.name}:
           </Text>
 
-          <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier' }}>
+          <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3 }}>
             {skill.skills}
           </Text>
 
