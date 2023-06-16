@@ -1,7 +1,7 @@
 import Refresh from "../../../public/refresh.svg";
 import { PlusIcon } from "./icons";
 import { MinusIcon } from "./icons";
-
+import Setting from "../../../public/setting.svg";
 
 export const RefreshButton = ({ handleSubmit }: { handleSubmit: () => void }) => (
   <button
@@ -10,6 +10,16 @@ export const RefreshButton = ({ handleSubmit }: { handleSubmit: () => void }) =>
         flex items-center justify-center rounded-full"
   >
     <Refresh />
+  </button>
+);
+
+export const SettingButton = ({ func }: { func: () => void }) => (
+  <button
+    onClick={func}
+    className="w-10 h-10 mt-2 hover:scale-110 text-gray-100 
+        flex items-center justify-center rounded-full"
+  >
+    <Setting />
   </button>
 );
 
@@ -39,6 +49,7 @@ export const RemoveButton = ({ func }: { func: React.MouseEventHandler<HTMLButto
     </button>
   </div>
 );
+
 
 export const RemoveIcon = ({ func }: { func: React.MouseEventHandler<HTMLButtonElement> }) => (
 

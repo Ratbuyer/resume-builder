@@ -5,7 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import type * as types from "~/components/types";
 import * as defaults from "~/components/default";
 import Copyright from "~/components/copyright";
-import { RefreshButton } from "~/components/pages/buttons";
+import { RefreshButton, SettingButton } from "~/components/pages/buttons";
+import Settings from "~/components/pages/settings";
 
 
 const PDF = dynamic(() => import("../components/resume/resume"), {
@@ -59,6 +60,10 @@ const Index = () => {
 
   };
 
+  const clearLocalStorage = () => {
+    localStorage.clear();
+  }
+
   useEffect(() => {
     const header = localStorage.getItem("header");
     const educationList = localStorage.getItem("educationList");
@@ -90,9 +95,7 @@ const Index = () => {
   }, []);
 
   const Left = () => {
-
     if (loading) return <Loading />;
-
     return <>
       <Form
         func={handleSubmit}
@@ -108,23 +111,33 @@ const Index = () => {
     </>
   };
 
-  const Middle = () => (
-    <div className="flex flex-col justify-center items-center place-content-center">
-      <RefreshButton handleSubmit={handleSubmit} />
-    </div>
-  );
+  const Middle = () => {
 
-  const Right = () => (
-    <>
-      <PDF
-        header={header}
-        educationList={educationList}
-        skillsList={skillsList}
-        awardsList={awardsList}
-        experienceList={experienceList}
-        projectList={projectList}
+    const [usingSetting, setUsingSetting] = useState(false);
+    return <>
+      <div className="flex flex-col justify-center items-center 
+          place-content-center gap-y-10">
+        <RefreshButton handleSubmit={handleSubmit} />
+        <SettingButton func={() => { setUsingSetting(true) }} />
+      </div>
+
+      <Settings
+        isOpen={usingSetting}
+        onClose={() => { setUsingSetting(false) }}
+        cleanFunction={clearLocalStorage}
       />
     </>
+  };
+
+  const Right = () => (
+    <PDF
+      header={header}
+      educationList={educationList}
+      skillsList={skillsList}
+      awardsList={awardsList}
+      experienceList={experienceList}
+      projectList={projectList}
+    />
   );
 
   return <>
