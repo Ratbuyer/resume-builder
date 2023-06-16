@@ -13,7 +13,6 @@ Font.register({
   ],
 });
 
-
 Font.register({
   family: 'Roboto',
   fonts: [
@@ -26,3 +25,17 @@ Font.register({
     },
   ],
 });
+
+Font.register({
+  family: "Montserrat",
+  fonts: [
+    {
+      src: "https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aX8.ttf",
+    },
+    {
+      src: "https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aX8.ttf",
+      fontWeight: 'bold',
+    },
+  ],
+});
+

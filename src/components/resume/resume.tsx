@@ -8,11 +8,9 @@ import Experience from "./experience";
 import Projects from "./projects";
 import Awards from "./awards";
 
-import type * as types from "../../constants/types";
+import type * as types from "@constants/types";
 
-import { COLORTABLE } from "../../constants/constants";
-
-import "~/constants/fonts";
+import "@constants/fonts";
 
 const Resume = ({
   color,

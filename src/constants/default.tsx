@@ -81,5 +81,5 @@ export const awardsList: types.awardsListType = [
 
 export const settings: types.settingsType = {
   color: "white",
-  font: 0,
+  font: "Roboto",
 };

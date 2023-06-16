@@ -7,7 +7,7 @@ import * as defaults from "@constants/default";
 import Copyright from "@components/pages/copyright";
 import { RefreshButton, SettingButton } from "@components/pages/buttons";
 import Settings from "@components/pages/settings";
-import { COLORTABLE, FONTS } from "@constants/constants";
+import { COLORTABLE } from "@constants/constants";
 
 const PDF = dynamic(() => import("../components/resume/resume"), {
   loading: () => <Loading />,
@@ -59,14 +59,20 @@ const ResumeBuilder = () => {
     localStorage.setItem("awardsList", JSON.stringify(awardsListCopy));
     localStorage.setItem("experienceList", JSON.stringify(experienceListCopy));
     localStorage.setItem("projectList", JSON.stringify(projectListCopy));
-
   };
+
+  const storeSettings = (settings: types.settingsType) => {
+    localStorage.setItem("settings", JSON.stringify(settings));
+  }
 
   const clearLocalStorage = () => {
     localStorage.clear();
   }
 
   useEffect(() => {
+
+    const settings = localStorage.getItem("settings");
+
     const header = localStorage.getItem("header");
     const educationList = localStorage.getItem("educationList");
     const skillsList = localStorage.getItem("skillsList");
@@ -91,6 +97,9 @@ const ResumeBuilder = () => {
     }
     if (projectList) {
       setProjectList(JSON.parse(projectList) as types.projectsListType);
+    }
+    if (settings) {
+      setSettings(JSON.parse(settings) as types.settingsType);
     }
 
     setLoading(false);
@@ -127,6 +136,11 @@ const ResumeBuilder = () => {
         isOpen={usingSetting}
         onClose={() => { setUsingSetting(false) }}
         cleanFunction={clearLocalStorage}
+        settings={settings}
+        setSettings={(settings: types.settingsType) => {
+          setSettings(settings);
+        }}
+        storeSettings={storeSettings}
       />
     </>
   };
@@ -140,7 +154,7 @@ const ResumeBuilder = () => {
       experienceList={experienceList}
       projectList={projectList}
       color={COLORTABLE[settings.color] ? COLORTABLE[settings.color]! : "#ffffff"}
-      font={FONTS[settings.font] ? FONTS[settings.font]! : "Roboto"}
+      font={settings.font}
     />
   );
 

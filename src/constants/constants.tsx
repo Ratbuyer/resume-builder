@@ -4,7 +4,8 @@ export const COLORTABLE: { [key: string]: string } = {
   "lemon": "#FFFACD",
 };
 
-export const FONTS = [
+export const FONTS : string[] = [
   "Roboto",
   "Ubuntu",
+  "Montserrat",
 ];
