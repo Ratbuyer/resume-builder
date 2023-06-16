@@ -1,4 +1,5 @@
 import type * as types from "./types";
+import { COLORTABLE, FONTS } from "./constants";
 
 export const header: types.headerType = {
   name: "John Doe",
@@ -80,6 +81,6 @@ export const awardsList: types.awardsListType = [
 ];
 
 export const settings: types.settingsType = {
-  color: "white",
-  font: "Roboto",
+  color: COLORTABLE ? COLORTABLE[0] ? COLORTABLE[0][1] : "White" : "White",
+  font: FONTS[0] ? FONTS[0] : "Roboto",
 };

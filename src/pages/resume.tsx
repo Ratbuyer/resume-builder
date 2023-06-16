@@ -153,7 +153,7 @@ const ResumeBuilder = () => {
       awardsList={awardsList}
       experienceList={experienceList}
       projectList={projectList}
-      color={COLORTABLE[settings.color] ? COLORTABLE[settings.color]! : "#ffffff"}
+      color={COLORTABLE.find(([key]) => key === settings.color)?.[1] ?? "#ffffff"}
       font={settings.font}
     />
   );

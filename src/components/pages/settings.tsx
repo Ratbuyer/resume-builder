@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Cross from "@public/cross.svg";
 import Notification from "@components/pages/notification";
 import type * as types from "@constants/types";
-import { FONTS } from "@constants/constants";
+import { FONTS, COLORTABLE } from "@constants/constants";
 
 const Setting = ({
   isOpen,
@@ -58,7 +58,7 @@ const Setting = ({
           </button>
         </div>
 
-        <div className="flex justify-between items-center mb-4 text-sm">
+        <div className="flex justify-between items-center mb-5 text-sm">
           <button
             className="rounded-lg bg-red-500 px-2 hover:scale-105"
             onClick={() => { cleanFunction(); setMessage("cache cleared"); }}
@@ -70,25 +70,48 @@ const Setting = ({
           </p>
         </div>
 
-        <div>
+        <div className="mb-5">
           <label
-            htmlFor="countries"
+            htmlFor="fonts"
             className="block mb-2 text-sm font-medium">
             Choose Font
           </label>
           <select
-            id="countries"
+            id="fonts"
             className="bg-gray-50 border border-gray-300 text-sm 
             rounded-lg outline-0 block w-full p-2.5"
             value={settingsCopy.font}
             onChange={(e) => {
-              const copy = { ...settings };
+              const copy = { ...settingsCopy };
               copy.font = e.target.value
               setSettingsCopy(copy)
             }}
           >
             {FONTS.map((font) => (
               <option key={font} value={font}>{font}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="mb-5">
+          <label
+            htmlFor="colors"
+            className="block mb-2 text-sm font-medium">
+            Choose Color
+          </label>
+          <select
+            id="colors"
+            className="bg-gray-50 border border-gray-300 text-sm 
+            rounded-lg outline-0 block w-full p-2.5"
+            value={settingsCopy.color}
+            onChange={(e) => {
+              const copy = { ...settingsCopy };
+              copy.color = e.target.value
+              setSettingsCopy(copy)
+            }}
+          >
+            {COLORTABLE.map((color) => (
+              <option key={color[0]} value={color[0]}>{color[0]}</option>
             ))}
           </select>
         </div>
