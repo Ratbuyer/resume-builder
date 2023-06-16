@@ -44,7 +44,7 @@ const Setting = ({
         <div className="flex justify-between items-center mb-4">
           <button
             className="rounded-lg bg-red-500 px-2 hover:scale-105"
-            onClick={() => { cleanFunction; setMessage("cache cleared"); }}
+            onClick={() => { cleanFunction(); setMessage("cache cleared"); }}
           >clear browser cache
           </button>
 
