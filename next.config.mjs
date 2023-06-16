@@ -24,6 +24,10 @@ const config = {
       issuer: /\.[jt]sx?$/,
       use: ["@svgr/webpack"],
     });
+    config.module.rules.push({
+      test: /\.ttf$/i,
+      type: "asset/resource",
+    });
     return config;
   },
 };

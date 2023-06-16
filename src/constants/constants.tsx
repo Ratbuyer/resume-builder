@@ -11,4 +11,7 @@ export const FONTS: string[] = [
   "Roboto",
   "Ubuntu",
   "Montserrat",
+  "Comme",
+  "Advent Pro",
+  "Noto Sans",
 ];
