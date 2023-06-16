@@ -1,7 +1,6 @@
-import Refresh from "../../../public/refresh.svg";
-import { PlusIcon } from "./icons";
-import { MinusIcon } from "./icons";
-import Setting from "../../../public/setting.svg";
+import Refresh from "@public/assets/refresh.svg";
+import { PlusIcon, MinusIcon } from "./icons";
+import Setting from "@public/assets/setting.svg";
 
 export const RefreshButton = ({ handleSubmit }: { handleSubmit: () => void }) => (
   <button
@@ -25,14 +24,14 @@ export const SettingButton = ({ func }: { func: () => void }) => (
 
 
 export const AddButton = ({ func }: { func: React.MouseEventHandler<HTMLButtonElement> }) => (
-    <button
-      type="button"
-      onClick={func}
-      className="w-10 h-10 mt-1 border bg-gray-100 
+  <button
+    type="button"
+    onClick={func}
+    className="w-10 h-10 mt-1 border bg-gray-100 
       flex items-center justify-center rounded-full"
-    >
-      <PlusIcon />
-    </button>
+  >
+    <PlusIcon />
+  </button>
 );
 
 

@@ -56,10 +56,10 @@ Font.register({
   family: "Advent Pro",
   fonts: [
     {
-      src: "http://fonts.gstatic.com/s/adventpro/v20/V8mqoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUAQrGp_zgX5sWCpLQyNPTJoonw1aBA.ttf",
+      src: "https://fonts.gstatic.com/s/adventpro/v20/V8mqoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUAQrGp_zgX5sWCpLQyNPTJoonw1aBA.ttf",
     },
     {
-      src: "http://fonts.gstatic.com/s/adventpro/v20/V8mqoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUAQrGp_zgX5sWCpLpCRPTJoonw1aBA.ttf",
+      src: "https://fonts.gstatic.com/s/adventpro/v20/V8mqoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUAQrGp_zgX5sWCpLpCRPTJoonw1aBA.ttf",
       fontWeight: 'bold',
     },
   ],

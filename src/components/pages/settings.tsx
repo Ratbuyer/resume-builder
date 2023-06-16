@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Cross from "@public/cross.svg";
+import Cross from "@public/assets/cross.svg";
 import Notification from "@components/pages/notification";
 import type * as types from "@constants/types";
 import { FONTS, COLORTABLE } from "@constants/constants";
