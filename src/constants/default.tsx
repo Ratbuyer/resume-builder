@@ -81,6 +81,6 @@ export const awardsList: types.awardsListType = [
 ];
 
 export const settings: types.settingsType = {
-  color: COLORTABLE ? COLORTABLE[0] ? COLORTABLE[0][1] : "White" : "White",
+  color: COLORTABLE ? COLORTABLE[4] ? COLORTABLE[4][1] : "White" : "White",
   font: FONTS[0] ? FONTS[0] : "Roboto",
 };
