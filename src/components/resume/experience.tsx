@@ -20,11 +20,11 @@ const Experience = ({ experienceList }: { experienceList: types.experienceListTy
 
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 3 }}>
             <Text style={index > 0 ? {
-              fontSize: 10, marginLeft: 10, marginTop: 3, fontFamily: 'Courier-Bold'
-            } : { fontSize: 10, marginLeft: 10, fontFamily: 'Courier-Bold' }}>
+              fontSize: 10, marginLeft: 10, marginTop: 3, fontWeight: "bold"
+            } : { fontSize: 10, marginLeft: 10, fontWeight: "bold" }}>
               {e.company}
             </Text>
-            <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>
+            <Text style={{ fontSize: 10, marginRight: 10, }}>
               {e.duration}
             </Text>
           </View>
@@ -33,7 +33,7 @@ const Experience = ({ experienceList }: { experienceList: types.experienceListTy
             <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, }}>
               {e.title}
             </Text>
-            <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3, fontWeight: 200 }}>
+            <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3 }}>
               {e.location}
             </Text>
           </View>
@@ -47,7 +47,7 @@ const Experience = ({ experienceList }: { experienceList: types.experienceListTy
         </View>
 
       ))}
-      
+
     </View>
 
   </>

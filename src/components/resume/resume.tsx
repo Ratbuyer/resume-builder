@@ -15,6 +15,8 @@ import { COLORTABLE } from "../../constants/constants";
 import "~/constants/fonts";
 
 const Resume = ({
+  color,
+  font,
   header,
   educationList,
   skillsList,
@@ -23,6 +25,8 @@ const Resume = ({
   projectList,
 }:
   {
+    color: string,
+    font: string,
     header: types.headerType,
     educationList: types.educationListType
     skillsList: types.skillsListType
@@ -35,7 +39,7 @@ const Resume = ({
     <div style={{ height: '100vh' }}>
       <PDFViewer width="100%" height="100%">
         <Document>
-          <Page size="A4" style={{ backgroundColor: COLORTABLE.white, padding: 20, fontFamily: "Ubuntu", }}>
+          <Page size="A4" style={{ backgroundColor: color, padding: 20, fontFamily: font, }}>
             <Head header={header} />
             <Education educationList={educationList} />
             <Skills skillsList={skillsList} />

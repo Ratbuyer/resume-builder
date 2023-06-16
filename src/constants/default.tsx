@@ -78,3 +78,8 @@ export const awardsList: types.awardsListType = [
   "Dr. James A. and Connie P. Dickson Scholarship In Science and Mathematics - 2020, 2021",
   "University Of Waterloo In-Course Scholarships - 2021",
 ];
+
+export const settings: types.settingsType = {
+  color: "white",
+  font: 0,
+};

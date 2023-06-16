@@ -27,12 +27,12 @@ const Projects = ({ projectList }: { projectList: types.projectsListType }) => {
 
             {project.link ?
               <Link src={project.link}>
-                <Text style={{ fontSize: 10, marginLeft: 10, fontFamily: 'Courier-Bold' }}>
+                <Text style={{ fontSize: 10, marginLeft: 10, fontWeight: "bold" }}>
                   {project.name}
                 </Text>
               </Link>
               :
-              <Text style={{ fontSize: 10, marginLeft: 10, fontFamily: 'Courier-Bold' }}>
+              <Text style={{ fontSize: 10, marginLeft: 10, fontWeight:"bold" }}>
                 {project.name}
               </Text>
             }
@@ -46,7 +46,7 @@ const Projects = ({ projectList }: { projectList: types.projectsListType }) => {
           </View>
 
           {project.contributions.map((contribution, index) => (
-            <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }} key={index}>
+            <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3 }} key={index}>
               {bullet} {contribution}
             </Text>
           ))}

@@ -7,7 +7,7 @@ import * as defaults from "@constants/default";
 import Copyright from "@components/pages/copyright";
 import { RefreshButton, SettingButton } from "@components/pages/buttons";
 import Settings from "@components/pages/settings";
-
+import { COLORTABLE, FONTS } from "@constants/constants";
 
 const PDF = dynamic(() => import("../components/resume/resume"), {
   loading: () => <Loading />,
@@ -18,6 +18,8 @@ const PDF = dynamic(() => import("../components/resume/resume"), {
 const ResumeBuilder = () => {
 
   const [loading, setLoading] = useState<boolean>(true);
+
+  const [settings, setSettings] = useState<types.settingsType>(defaults.settings);
 
   const [header, setHeader] = useState<types.headerType>(defaults.header);
   const [educationList, setEducationList] = useState<types.educationListType>(defaults.educationList);
@@ -137,6 +139,8 @@ const ResumeBuilder = () => {
       awardsList={awardsList}
       experienceList={experienceList}
       projectList={projectList}
+      color={COLORTABLE[settings.color] ? COLORTABLE[settings.color]! : "#ffffff"}
+      font={FONTS[settings.font] ? FONTS[settings.font]! : "Roboto"}
     />
   );
 
