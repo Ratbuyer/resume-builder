@@ -22,6 +22,7 @@
       "@public/*": ["./public/*"],
       "@components/*": ["./src/components/*"],
       "@pages/*": ["./src/pages/*"],
+      "@constants/*": ["./src/constants/*"],
     }
   },
   "include": [

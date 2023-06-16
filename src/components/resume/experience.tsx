@@ -1,7 +1,7 @@
 import { Text, View } from '@react-pdf/renderer';
 import Line from "../../components/resume/line"
 
-import type * as types from "../types";
+import type * as types from "../../constants/types";
 
 const bullet = "•";
 

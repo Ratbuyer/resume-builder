@@ -2,7 +2,7 @@
 import { Text, View, } from '@react-pdf/renderer';
 import Line from "./line"
 
-import type * as types from '~/components/types';
+import type * as types from '~/constants/types';
 
 
 const Awards = ({ awardsList }: { awardsList: types.awardsListType }) => {

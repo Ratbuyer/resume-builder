@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
-import Loading from "../components/loading";
+import Loading from "../components/pages/loading";
 import Form from "../components/pages/form";
 import { useEffect, useRef, useState } from "react";
-import type * as types from "~/components/types";
-import * as defaults from "~/components/default";
-import Copyright from "~/components/copyright";
+import type * as types from "~/constants/types";
+import * as defaults from "~/constants/default";
+import Copyright from "~/components/pages/copyright";
 import { RefreshButton, SettingButton } from "~/components/pages/buttons";
 import Settings from "~/components/pages/settings";
 

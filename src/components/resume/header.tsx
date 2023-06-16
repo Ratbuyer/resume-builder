@@ -1,8 +1,9 @@
 import { Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 
 import Separator from '~/components/resume/seperator';
-import type * as types from '~/components/types';
+import type * as types from '~/constants/types';
 
+import "~/constants/fonts";
 
 const styles = StyleSheet.create({
 
@@ -13,7 +14,8 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 20,
     textAlign: 'center',
-    fontFamily: 'Courier-Bold',
+    fontFamily: 'Ubuntu',
+    fontWeight: 'bold',
   },
 
   row: {

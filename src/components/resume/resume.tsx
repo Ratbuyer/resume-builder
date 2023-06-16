@@ -8,9 +8,9 @@ import Experience from "./experience";
 import Projects from "./projects";
 import Awards from "./awards";
 
-import type * as types from "../types";
+import type * as types from "../../constants/types";
 
-import { colorTable } from "../constants";
+import { colorTable } from "../../constants/constants";
 
 const Resume = ({
   header,

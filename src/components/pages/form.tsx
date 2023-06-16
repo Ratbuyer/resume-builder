@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type * as types from "../types";
+import type * as types from "../../constants/types";
 import { AddButton, RemoveButton, RemoveIcon } from "./buttons";
 
 

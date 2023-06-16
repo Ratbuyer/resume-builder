@@ -2,7 +2,7 @@ import { type AppType } from "next/app";
 import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import { Analytics } from '@vercel/analytics/react';
-import Loading from "~/components/loading";
+import Loading from "~/components/pages/loading";
 import { useState, useEffect } from "react";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
