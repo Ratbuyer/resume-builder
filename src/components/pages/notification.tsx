@@ -13,7 +13,7 @@ export default function Example({ func, message }: { func: () => void, message: 
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [func]);
 
   return (
     <>
