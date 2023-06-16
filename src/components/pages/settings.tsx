@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Cross from "@public/cross.svg";
-
+import Notification from "@components/pages/notification";
 
 const Setting = ({
   isOpen,
@@ -15,6 +15,7 @@ const Setting = ({
   }) => {
 
   const [isMounted, setIsMounted] = useState(false);
+  const [messsage, setMessage] = useState<string>("");
 
   useEffect(() => {
     setIsMounted(true);
@@ -25,6 +26,9 @@ const Setting = ({
   }
 
   return <>
+
+    {messsage && <Notification func={() => { setMessage("") }} message={messsage} />}
+
     <div className={`fixed inset-0 flex items-center justify-center z-50 ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
 
       <div className="bg-white rounded-lg p-4 pb-5 max-w-[50%] 
@@ -40,7 +44,7 @@ const Setting = ({
         <div className="flex justify-between items-center mb-4">
           <button
             className="rounded-lg bg-red-500 px-2 hover:scale-105"
-            onClick={cleanFunction}
+            onClick={() => { cleanFunction; setMessage("cache cleared"); }}
           >clear browser cache
           </button>
 
