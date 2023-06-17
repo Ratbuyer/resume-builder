@@ -41,7 +41,7 @@ const Setting = ({
     <div className={`fixed inset-0 flex items-center justify-center 
                   z-50 ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
 
-      <div className="bg-white rounded-lg p-4 pb-5 max-w-[50%] 
+      <div className="bg-white rounded-2xl p-4 pb-5 max-w-[50%] 
                       w-full mx-4 shadow-2xl text-gray-700">
 
         <div className="flex justify-between items-center mb-10">
@@ -50,8 +50,6 @@ const Setting = ({
             className="text-gray-500 hover:text-gray-700 mr-1"
             onClick={() => {
               onClose();
-              setSettings(settingsCopy);
-              storeSettings(settingsCopy);
             }}
           >
             <Cross />
@@ -114,6 +112,19 @@ const Setting = ({
               <option key={color[0]} value={color[0]}>{color[0]}</option>
             ))}
           </select>
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <button
+            className="bg-green-500 p-2 rounded-xl hover:scale-105"
+            onClick={() => {
+              onClose();
+              setSettings(settingsCopy);
+              storeSettings(settingsCopy);
+            }}
+          >
+            Apply
+          </button>
         </div>
 
       </div>
