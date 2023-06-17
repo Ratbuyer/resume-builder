@@ -5,6 +5,7 @@ Font.register({
   fonts: [
     {
       src: 'https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgoKfw7z.ttf',
+      fontWeight: "regular",
     },
     {
       src: 'https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjsGyI.ttf',
@@ -18,6 +19,7 @@ Font.register({
   fonts: [
     {
       src: 'https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxP.ttf',
+      fontWeight: "regular",
     },
     {
       src: 'https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc9.ttf',
@@ -31,6 +33,7 @@ Font.register({
   fonts: [
     {
       src: "https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aX8.ttf",
+      fontWeight: "regular",
     },
     {
       src: "https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aX8.ttf",
@@ -44,6 +47,7 @@ Font.register({
   fonts: [
     {
       src: "https://fonts.gstatic.com/s/comme/v2/8QIUdirKhMbn-uG1kHz0MgviDe1z5cFr644fWsRO9w.ttf",
+      fontWeight: "regular",
     },
     {
       src: "https://fonts.gstatic.com/s/comme/v2/8QIUdirKhMbn-uG1kHz0MgviDe1zAsZr644fWsRO9w.ttf",
@@ -57,6 +61,7 @@ Font.register({
   fonts: [
     {
       src: "https://fonts.gstatic.com/s/adventpro/v20/V8mqoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUAQrGp_zgX5sWCpLQyNPTJoonw1aBA.ttf",
+      fontWeight: "regular",
     },
     {
       src: "https://fonts.gstatic.com/s/adventpro/v20/V8mqoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUAQrGp_zgX5sWCpLpCRPTJoonw1aBA.ttf",
@@ -65,14 +70,15 @@ Font.register({
   ],
 });
 
-import NotoSansRegular from "public/fonts/NotoSans-Regular.ttf";
-import NotoSansBold from "public/fonts/NotoSans-Bold.ttf";
+import NotoSansRegular from "public/fonts/NotoSans/NotoSans-Regular.ttf";
+import NotoSansBold from "public/fonts/NotoSans/NotoSans-Bold.ttf";
 
 Font.register({
   family: "Noto Sans",
   fonts: [
     {
       src: NotoSansRegular as string,
+      fontWeight: "regular",
     },
     {
       src: NotoSansBold as string,
@@ -80,3 +86,65 @@ Font.register({
     },
   ],
 });
+
+
+Font.register({
+  family: "Comic Neue",
+  fonts: [
+    {
+      src: "https://fonts.gstatic.com/s/comicneue/v8/4UaHrEJDsxBrF37olUeDx63j5pN1MwI.ttf",
+      fontWeight: "regular",
+    },
+    {
+      src: "https://fonts.gstatic.com/s/comicneue/v8/4UaErEJDsxBrF37olUeD_xHMwpteLwtHJlc.ttf",
+      fontWeight: 'bold',
+    },
+  ],
+});
+
+Font.register({
+  family: "Corinthia",
+  fonts: [
+    {
+      src: "https://fonts.gstatic.com/s/corinthia/v9/wEO_EBrAnchaJyPMHE0FUfAL3EsHiA.ttf",
+      fontWeight: "regular",
+    },
+    {
+      src: "https://fonts.gstatic.com/s/corinthia/v9/wEO6EBrAnchaJyPMHE097d8v1GAbgbLXQA.ttf",
+      fontWeight: 'bold',
+    },
+  ],
+});
+
+Font.register({
+  family: "Cormorant",
+  fonts: [
+    {
+      src: "https://fonts.gstatic.com/s/cormorant/v21/H4c2BXOCl9bbnla_nHIA47NMUjsNbCVrFhFTQ7Rg7A2uwYs.ttf",
+      fontWeight: "regular",
+    },
+    {
+      src: "https://fonts.gstatic.com/s/cormorant/v21/H4c2BXOCl9bbnla_nHIA47NMUjsNbCVrFvZUQ7Rg7A2uwYs.ttf",
+      fontWeight: 'bold',
+    },
+  ],
+});
+
+import MuktaRegular from "public/fonts/Mukta/Mukta-Regular.ttf";
+import MuktaBold from "public/fonts/Mukta/Mukta-Bold.ttf";
+
+Font.register({
+  family: "Mukta",
+  fonts: [
+    {
+      src: MuktaRegular as string,
+      fontWeight: "regular",
+    },
+    {
+      src: MuktaBold as string,
+      fontWeight: 'bold',
+    },
+  ],
+});
+
+
