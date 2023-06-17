@@ -38,42 +38,6 @@ const Form = (
   const [projectList, setProjectList] = useState<types.projectsListType>(projectListprop);
 
 
-  const removeExperienceContribution = (i: number, j: number) => {
-    const experienceListcopy = [...experienceList];
-    experienceListcopy[i]?.contributions.splice(j, 1);
-    setExperienceList(experienceListcopy);
-  };
-
-  const addExperienceContribution = (i: number) => {
-    const experienceListcopy = [...experienceList];
-    experienceListcopy[i]?.contributions.push("");
-    setExperienceList(experienceListcopy);
-  };
-
-  const setExperienceContribution = (i: number, j: number, value: string) => {
-    const experienceListcopy = [...experienceList];
-    experienceListcopy[i]!.contributions[j] = value;
-    setExperienceList(experienceListcopy);
-  };
-
-  const removeProjectContribution = (i: number, j: number) => {
-    const projectListcopy = [...projectList];
-    projectListcopy[i]?.contributions.splice(j, 1);
-    setProjectList(projectListcopy);
-  };
-
-  const addProjectContribution = (i: number) => {
-    const projectListcopy = [...projectList];
-    projectListcopy[i]?.contributions.push("");
-    setProjectList(projectListcopy);
-  };
-
-  const setProjectContribution = (i: number, j: number, value: string) => {
-    const projectListcopy = [...projectList];
-    projectListcopy[i]!.contributions[j] = value;
-    setProjectList(projectListcopy);
-  };
-
   return <form
     ref={refObject}
     onSubmit={func}
@@ -104,17 +68,11 @@ const Form = (
     <Experience
       experienceList={experienceList}
       setExperienceList={setExperienceList}
-      removeExperienceContribution={removeExperienceContribution}
-      addExperienceContribution={addExperienceContribution}
-      setExperienceContribution={setExperienceContribution}
     />
 
     <Projects
       projectList={projectList}
       setProjectList={setProjectList}
-      removeProjectContribution={removeProjectContribution}
-      addProjectContribution={addProjectContribution}
-      setProjectContribution={setProjectContribution}
     />
 
     <Awards

@@ -16,8 +16,8 @@ const Skills = ({ skillsList }: { skillsList: types.skillsListType }) => {
           <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, fontWeight: "bold" }}>
             {skill.name}:
           </Text>
-
-          <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3 }}>
+          
+          <Text style={{ fontSize: 10, marginLeft: 3, marginTop: 3 }}>
             {skill.skills}
           </Text>
 

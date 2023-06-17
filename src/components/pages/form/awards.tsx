@@ -31,7 +31,7 @@ const Awards = (
               required
               value={award}
               placeholder={"Award " + String(index)}
-              className="w-full mb-2 bg-gray-50 border border-gray-300
+              className="w-full mb-2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
                 const awardsListcopy = [...awardsList];

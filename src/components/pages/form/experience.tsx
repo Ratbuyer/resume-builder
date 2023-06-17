@@ -6,18 +6,30 @@ export const Experience = (
   {
     experienceList,
     setExperienceList,
-    setExperienceContribution,
-    addExperienceContribution,
-    removeExperienceContribution,
   }:
     {
       experienceList: types.experienceListType,
       setExperienceList: (experience: types.experienceListType) => void,
-      setExperienceContribution: (i: number, j: number, value: string) => void,
-      addExperienceContribution: (i: number) => void,
-      removeExperienceContribution: (i: number, j: number) => void,
     }
 ) => {
+
+  const addExperienceContribution = (i: number) => {
+    const experienceListcopy = [...experienceList];
+    experienceListcopy[i]?.contributions.push("");
+    setExperienceList(experienceListcopy);
+  };
+
+  const removeExperienceContribution = (i: number, j: number) => {
+    const experienceListcopy = [...experienceList];
+    experienceListcopy[i]?.contributions.splice(j, 1);
+    setExperienceList(experienceListcopy);
+  };
+
+  const setExperienceContribution = (i: number, j: number, value: string) => {
+    const experienceListcopy = [...experienceList];
+    experienceListcopy[i]!.contributions[j] = value;
+    setExperienceList(experienceListcopy);
+  };
 
   return <>
     <div className="experience">
@@ -50,7 +62,7 @@ export const Experience = (
               required
               value={experience.company}
               placeholder={"Company"}
-              className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+              className="mr-1 w-1/2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
                 const experienceListcopy = [...experienceList];
@@ -65,7 +77,7 @@ export const Experience = (
               required
               value={experience.duration}
               placeholder={"Duration"}
-              className="w-1/2 bg-gray-50 border border-gray-300
+              className="w-1/2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
                 const experienceListcopy = [...experienceList];
@@ -83,7 +95,7 @@ export const Experience = (
               required
               value={experience.title}
               placeholder={"Title"}
-              className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+              className="mr-1 w-1/2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
                 const experienceListcopy = [...experienceList];
@@ -98,7 +110,7 @@ export const Experience = (
               required
               defaultValue={experience.location}
               placeholder={"Location"}
-              className="w-1/2 bg-gray-50 border border-gray-300
+              className="w-1/2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
                 const experienceListcopy = [...experienceList];
@@ -122,7 +134,7 @@ export const Experience = (
                 type="text"
                 name={"experience" + String(index1) + "contribution" + String(index1)}
                 placeholder={"Contribution " + String(index1)}
-                className="w-full mb-2 bg-gray-50 border border-gray-300
+                className="w-full mb-2 bg-gray-50
               text-gray-900 rounded-lg block p-2.5 outline-0"
                 onChange={(e) => {
                   setExperienceContribution(index0, index1, e.target.value)

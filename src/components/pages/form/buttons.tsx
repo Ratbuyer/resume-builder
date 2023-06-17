@@ -27,7 +27,7 @@ export const AddButton = ({ func }: { func: React.MouseEventHandler<HTMLButtonEl
   <button
     type="button"
     onClick={func}
-    className="w-10 h-10 mt-1 border bg-gray-100 
+    className="w-10 h-10 mt-1 bg-gray-100 
       flex items-center justify-center rounded-full"
   >
     <PlusIcon />
@@ -41,7 +41,7 @@ export const RemoveButton = ({ func }: { func: React.MouseEventHandler<HTMLButto
     <button
       type="button"
       onClick={func}
-      className="w-10 h-10 mr-3 mt-1 border bg-gray-100 
+      className="w-10 h-10 mr-3 mt-1 bg-gray-100 
       flex items-center justify-center rounded-full"
     >
       <MinusIcon />
@@ -56,7 +56,6 @@ export const RemoveIcon = ({ func }: { func: React.MouseEventHandler<HTMLButtonE
     <button
       type="button"
       onClick={func}
-      className=""
     >
       <MinusIcon />
     </button>

@@ -5,18 +5,31 @@ import { formColorTable } from "~/constants/constants";
 const Projects = (
   { projectList,
     setProjectList,
-    removeProjectContribution,
-    addProjectContribution,
-    setProjectContribution,
   }:
     {
       projectList: types.projectsListType,
       setProjectList: (projectList: types.projectsListType) => void,
-      removeProjectContribution: (i: number, j: number) => void,
-      addProjectContribution: (i: number) => void,
-      setProjectContribution: (i: number, j: number, value: string) => void,
     }
 ) => {
+
+  const removeProjectContribution = (i: number, j: number) => {
+    const projectListcopy = [...projectList];
+    projectListcopy[i]?.contributions.splice(j, 1);
+    setProjectList(projectListcopy);
+  };
+
+  const addProjectContribution = (i: number) => {
+    const projectListcopy = [...projectList];
+    projectListcopy[i]?.contributions.push("");
+    setProjectList(projectListcopy);
+  };
+
+  const setProjectContribution = (i: number, j: number, value: string) => {
+    const projectListcopy = [...projectList];
+    projectListcopy[i]!.contributions[j] = value;
+    setProjectList(projectListcopy);
+  };
+
   return <>
     <div className="projects">
       <h1 className="text-xl mt-10">Projects</h1>
@@ -45,7 +58,7 @@ const Projects = (
             required
             value={project.name}
             placeholder={"Project Name"}
-            className="w-full mb-2 bg-gray-50 border border-gray-300
+            className="w-full mb-2 bg-gray-50
           text-gray-900 rounded-lg block p-2.5 outline-0"
             onChange={(e) => {
               const projectListcopy = [...projectList];
@@ -59,7 +72,7 @@ const Projects = (
             name={"link" + String(index0)}
             value={project.link}
             placeholder={"Project Link"}
-            className="w-full mb-2 bg-gray-50 border border-gray-300
+            className="w-full mb-2 bg-gray-50 
           text-gray-900 rounded-lg block p-2.5 outline-0"
             onChange={(e) => {
               const projectListcopy = [...projectList];
@@ -73,7 +86,7 @@ const Projects = (
             name={"projectDescription" + String(index0)}
             value={project.description}
             placeholder={"Project Description"}
-            className="w-full mb-2 bg-gray-50 border border-gray-300text-gray-900 
+            className="w-full mb-2 bg-gray-50 text-gray-900 
             rounded-lg block p-2.5 outline-0"
             onChange={(e) => {
               const projectListcopy = [...projectList];
@@ -96,7 +109,7 @@ const Projects = (
                 name={"project" + String(index0) + "contribution" + String(index1)}
                 value={contribution}
                 placeholder={"Contribution " + String(index1)}
-                className="w-full mb-2 bg-gray-50 border border-gray-300
+                className="w-full mb-2 bg-gray-50
               text-gray-900 rounded-lg block p-2.5 outline-0"
                 onChange={(e) => {
                   setProjectContribution(index0, index1, e.target.value)

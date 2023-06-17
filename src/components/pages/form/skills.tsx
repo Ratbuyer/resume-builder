@@ -35,7 +35,7 @@ const Skills = (
             required
             value={skill.name}
             placeholder={"Skill Name"}
-            className="w-full bg-gray-50 border border-gray-300
+            className="w-full bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
             onChange={(e) => {
               const skillsListcopy = [...skillsList];
@@ -49,7 +49,7 @@ const Skills = (
             required
             value={skill.skills}
             placeholder={"Skill List"}
-            className="mt-2 mb-5 w-full bg-gray-50 border border-gray-300
+            className="mt-2 mb-5 w-full bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
             onChange={(e) => {
               const skillsListcopy = [...skillsList];

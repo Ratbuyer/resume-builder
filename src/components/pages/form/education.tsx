@@ -42,7 +42,7 @@ export const Education = (
               required
               value={education.school}
               placeholder={"School"}
-              className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+              className="mr-1 w-1/2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
                 const educationListcopy = [...educationList];
@@ -57,7 +57,7 @@ export const Education = (
               required
               value={education.duration}
               placeholder={"Duration"}
-              className="w-1/2 bg-gray-50 border border-gray-300
+              className="w-1/2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
                 const educationListcopy = [...educationList];
@@ -75,7 +75,7 @@ export const Education = (
               required
               value={education.degree}
               placeholder={"Degree"}
-              className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+              className="mr-1 w-1/2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
                 const educationListcopy = [...educationList];
@@ -90,7 +90,7 @@ export const Education = (
               required
               value={education.location}
               placeholder={"Location"}
-              className="w-1/2 bg-gray-50 border border-gray-300
+              className="w-1/2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
               onChange={(e) => {
                 const educationListcopy = [...educationList];
