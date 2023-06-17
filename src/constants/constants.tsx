@@ -25,7 +25,8 @@ export const fonts: string[] = [
   "Advent Pro",
   "Noto Sans",
   "Comic Neue",
-  "Corinthia",
   "Cormorant",
   "Mukta",
 ];
+
+export const bullet = "•";

@@ -1,16 +1,14 @@
 import { Page, Document } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
-
 import Head from "./header";
 import Education from "./education";
 import Skills from "./skills";
 import Experience from "./experience";
 import Projects from "./projects";
 import Awards from "./awards";
-
 import type * as types from "@constants/types";
-
-import "@constants/fonts";
+import "~/constants/fonts/remote";
+import "~/constants/fonts/local";
 
 const Resume = ({
   color,

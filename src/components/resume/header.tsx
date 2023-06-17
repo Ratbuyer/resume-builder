@@ -1,5 +1,4 @@
 import { Text, View, StyleSheet, Link } from '@react-pdf/renderer';
-
 import Separator from '@components/resume/seperator';
 import type * as types from '@constants/types';
 

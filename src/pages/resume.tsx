@@ -18,7 +18,6 @@ const PDF = dynamic(() => import("../components/resume/resume"), {
 const ResumeBuilder = () => {
 
   const [loading, setLoading] = useState<boolean>(true);
-
   const [settings, setSettings] = useState<types.settingsType>(defaults.settings);
 
   const [header, setHeader] = useState<types.headerType>(defaults.header);
@@ -137,9 +136,7 @@ const ResumeBuilder = () => {
         onClose={() => { setUsingSetting(false) }}
         cleanFunction={clearLocalStorage}
         settings={settings}
-        setSettings={(settings: types.settingsType) => {
-          setSettings(settings);
-        }}
+        setSettings={setSettings}
         storeSettings={storeSettings}
       />
     </>
@@ -159,9 +156,7 @@ const ResumeBuilder = () => {
   );
 
   return <>
-
     <div className="flex justify-between h-screen">
-
       <div className="w-1/2 pt-0 p-2 text-center overflow-auto">
         <Left />
       </div>
@@ -173,7 +168,6 @@ const ResumeBuilder = () => {
       <div className="w-1/2 pt-0">
         <Right />
       </div>
-
     </div>
   </>
 };

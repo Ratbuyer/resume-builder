@@ -70,24 +70,6 @@ Font.register({
   ],
 });
 
-import NotoSansRegular from "public/fonts/NotoSans/NotoSans-Regular.ttf";
-import NotoSansBold from "public/fonts/NotoSans/NotoSans-Bold.ttf";
-
-Font.register({
-  family: "Noto Sans",
-  fonts: [
-    {
-      src: NotoSansRegular as string,
-      fontWeight: "regular",
-    },
-    {
-      src: NotoSansBold as string,
-      fontWeight: 'bold',
-    },
-  ],
-});
-
-
 Font.register({
   family: "Comic Neue",
   fonts: [
@@ -103,20 +85,6 @@ Font.register({
 });
 
 Font.register({
-  family: "Corinthia",
-  fonts: [
-    {
-      src: "https://fonts.gstatic.com/s/corinthia/v9/wEO_EBrAnchaJyPMHE0FUfAL3EsHiA.ttf",
-      fontWeight: "regular",
-    },
-    {
-      src: "https://fonts.gstatic.com/s/corinthia/v9/wEO6EBrAnchaJyPMHE097d8v1GAbgbLXQA.ttf",
-      fontWeight: 'bold',
-    },
-  ],
-});
-
-Font.register({
   family: "Cormorant",
   fonts: [
     {
@@ -125,23 +93,6 @@ Font.register({
     },
     {
       src: "https://fonts.gstatic.com/s/cormorant/v21/H4c2BXOCl9bbnla_nHIA47NMUjsNbCVrFvZUQ7Rg7A2uwYs.ttf",
-      fontWeight: 'bold',
-    },
-  ],
-});
-
-import MuktaRegular from "public/fonts/Mukta/Mukta-Regular.ttf";
-import MuktaBold from "public/fonts/Mukta/Mukta-Bold.ttf";
-
-Font.register({
-  family: "Mukta",
-  fonts: [
-    {
-      src: MuktaRegular as string,
-      fontWeight: "regular",
-    },
-    {
-      src: MuktaBold as string,
       fontWeight: 'bold',
     },
   ],

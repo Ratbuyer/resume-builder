@@ -1,9 +1,7 @@
 import { Text, View } from '@react-pdf/renderer';
 import Line from "../../components/resume/line"
-
 import type * as types from "../../constants/types";
-
-const bullet = "•";
+import { bullet } from "@constants/constants";
 
 const Experience = ({ experienceList }: { experienceList: types.experienceListType }) => {
 
