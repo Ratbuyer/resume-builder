@@ -1,5 +1,6 @@
 import type * as types from "@constants/types";
 import { AddButton, RemoveIcon } from "@components/pages/form/buttons";
+import { formColorTable } from "~/constants/constants";
 
 export const Education = (
   {
@@ -22,7 +23,8 @@ export const Education = (
 
         <div
           key={index}
-          className="mb-5 mt-10 p-3 bg-gray-100 pb-5 border rounded-xl">
+          className={"mb-5 mt-10 p-3 pb-5 rounded-xl " + 
+          String(formColorTable[index % formColorTable.length])}>
 
           <RemoveIcon
             func={() => {

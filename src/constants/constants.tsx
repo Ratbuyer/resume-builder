@@ -29,4 +29,11 @@ export const fonts: string[] = [
   "Mukta",
 ];
 
+export const formColorTable : string[] = [
+  "bg-red-300",
+  "bg-blue-300",
+  "bg-yellow-300",
+  "bg-green-300",
+];
+
 export const bullet = "•";

@@ -1,5 +1,6 @@
 import type * as types from "@constants/types";
 import { AddButton, RemoveIcon, RemoveButton } from "@components/pages/form/buttons";
+import { formColorTable } from "~/constants/constants";
 
 export const Experience = (
   {
@@ -27,7 +28,8 @@ export const Experience = (
 
         <div
           key={index0}
-          className="bg-gray-100 p-3 mt-10 border rounded-xl"
+          className={"bg-gray-100 p-3 mt-10 rounded-xl " + 
+          String(formColorTable[index0 % formColorTable.length])}
         >
 
           <RemoveIcon

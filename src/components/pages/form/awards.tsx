@@ -1,6 +1,7 @@
 import type * as types from "@constants/types";
 import { AddButton, RemoveButton } from "@components/pages/form/buttons";
 
+
 const Awards = (
   { awardsList, setAwardsList }:
     { awardsList: types.awardsListType, setAwardsList: (awardsList: types.awardsListType) => void }
@@ -11,7 +12,7 @@ const Awards = (
       <h1 className="text-xl mt-10">Awards</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
 
-      <div className="mt-10 bg-gray-100 pt-5 p-3 border rounded-xl">
+      <div className="mt-10 bg-gray-300 pt-5 p-3 rounded-xl">
         {awardsList.map((award, index) => (
           <div key={index} className="flex flex-row">
 

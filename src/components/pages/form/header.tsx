@@ -17,7 +17,7 @@ export const Header = (
       <h1 className="text-xl mt-10">Contacts</h1>
       <hr className="border-none bg-gray-300 h-0.5 mt-2" />
 
-      <div className="mt-10 bg-gray-100 pt-2 pb-2 p-3 border rounded-xl">
+      <div className="mt-10 bg-gray-300 pt-2 pb-2 p-3 rounded-xl">
         <div className="mb-2 mt-2">
           <input
             type="text"
