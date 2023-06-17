@@ -1,0 +1,114 @@
+import type * as types from "@constants/types";
+import { AddButton, RemoveIcon } from "@components/pages/form/buttons";
+
+export const Education = (
+  {
+    educationList, setEducationList
+  }
+    :
+    {
+      educationList: types.educationListType,
+      setEducationList: (education: types.educationListType) => void
+    }
+) => {
+
+  return <>
+
+    <div className="education mt-10">
+      <h1 className="text-xl">Education</h1>
+      <hr className="border-none bg-gray-300 h-0.5 mt-2 mb-2" />
+
+      {educationList.map((education, index) => (
+
+        <div
+          key={index}
+          className="mb-5 mt-10 p-3 bg-gray-100 pb-5 border rounded-xl">
+
+          <RemoveIcon
+            func={() => {
+              const educationListCopy = [...educationList];
+              educationListCopy.splice(index, 1);
+              setEducationList(educationListCopy);
+            }}
+          />
+
+          <div className="flex flex-row justify justify-between mb-2">
+
+            <input
+              type="text"
+              name={"school" + String(index)}
+              required
+              value={education.school}
+              placeholder={"School"}
+              className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+              onChange={(e) => {
+                const educationListcopy = [...educationList];
+                educationListcopy[index]!.school = e.target.value;
+                setEducationList(educationListcopy);
+              }}
+            />
+
+            <input
+              type="text"
+              name={"educationDuration" + String(index)}
+              required
+              value={education.duration}
+              placeholder={"Duration"}
+              className="w-1/2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+              onChange={(e) => {
+                const educationListcopy = [...educationList];
+                educationListcopy[index]!.duration = e.target.value;
+                setEducationList(educationListcopy);
+              }}
+            />
+
+          </div>
+
+          <div className="flex flex-row justify justify-between mb-2">
+            <input
+              type="text"
+              name={"degree" + String(index)}
+              required
+              value={education.degree}
+              placeholder={"Degree"}
+              className="mr-1 w-1/2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+              onChange={(e) => {
+                const educationListcopy = [...educationList];
+                educationListcopy[index]!.degree = e.target.value;
+                setEducationList(educationListcopy);
+              }}
+            />
+
+            <input
+              type="text"
+              name={"educationLocation" + String(index)}
+              required
+              value={education.location}
+              placeholder={"Location"}
+              className="w-1/2 bg-gray-50 border border-gray-300
+         text-gray-900 rounded-lg block p-2.5 outline-0"
+              onChange={(e) => {
+                const educationListcopy = [...educationList];
+                educationListcopy[index]!.location = e.target.value;
+                setEducationList(educationListcopy);
+              }}
+            />
+
+          </div>
+
+        </div>
+      ))}
+
+      <div className="flex flex-row justify-center">
+        <AddButton
+          func={() => { setEducationList([...educationList, { school: "", degree: "", duration: "", location: "" }]) }}
+        />
+      </div>
+    </div>
+  </>
+}
+
+export default Education;

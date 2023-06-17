@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import type * as types from "@constants/types";
 import * as defaults from "@constants/default";
 import Copyright from "@components/pages/copyright";
-import { RefreshButton, SettingButton } from "@components/pages/buttons";
+import { RefreshButton, SettingButton } from "~/components/pages/form/buttons";
 import Settings from "@components/pages/settings";
 import { colorTable } from "@constants/constants";
 
