@@ -4,19 +4,19 @@ import { formColorTable } from "~/constants/constants";
 
 export const Experience = (
   {
-    experienceList, 
+    experienceList,
     setExperienceList,
     setExperienceContribution,
     addExperienceContribution,
     removeExperienceContribution,
-  }: 
-  {
-    experienceList: types.experienceListType,
-    setExperienceList: (experience: types.experienceListType) => void,
-    setExperienceContribution: (i: number, j: number, value: string) => void,
-    addExperienceContribution: (i : number) => void,
-    removeExperienceContribution: (i: number, j: number) => void,
-  }
+  }:
+    {
+      experienceList: types.experienceListType,
+      setExperienceList: (experience: types.experienceListType) => void,
+      setExperienceContribution: (i: number, j: number, value: string) => void,
+      addExperienceContribution: (i: number) => void,
+      removeExperienceContribution: (i: number, j: number) => void,
+    }
 ) => {
 
   return <>
@@ -28,8 +28,8 @@ export const Experience = (
 
         <div
           key={index0}
-          className={"bg-gray-100 p-3 mt-10 rounded-xl " + 
-          String(formColorTable[index0 % formColorTable.length])}
+          className={"p-3 mt-10 rounded-xl " +
+            String(formColorTable[(index0 + 2) % formColorTable.length])}
         >
 
           <RemoveIcon

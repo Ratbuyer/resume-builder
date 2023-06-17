@@ -25,8 +25,8 @@ const Projects = (
       {projectList.map((project, index0) => (
         <div
           key={index0}
-          className={"bg-gray-100 p-3 mt-10 rounded-xl " +
-            String(formColorTable[index0 % formColorTable.length])}
+          className={"p-3 mt-10 rounded-xl " +
+            String(formColorTable[(index0 + 3) % formColorTable.length])}
         >
 
           <RemoveIcon

@@ -18,7 +18,7 @@ const Skills = (
         <div
           key={index}
           className={"mt-10 pt-1 pb-2 p-3 rounded-xl " + 
-          String(formColorTable[index % formColorTable.length])}
+          String(formColorTable[(index + 1) % formColorTable.length])}
         >
 
           <RemoveIcon
