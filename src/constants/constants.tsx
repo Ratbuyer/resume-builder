@@ -1,4 +1,4 @@
-export const COLORTABLE: [string, string][] = [
+export const colorTable: [string, string][] = [
   ["White", "#ffffff"],
   ["Ivory", "#FFFFF0"],
   ["Lemon", "#FFFACD"],
@@ -7,7 +7,7 @@ export const COLORTABLE: [string, string][] = [
   ["Light Rose", "#FED7D7"],
 ];
 
-export const FONTS: string[] = [
+export const fonts: string[] = [
   "Roboto",
   "Ubuntu",
   "Montserrat",

@@ -7,7 +7,7 @@ import * as defaults from "@constants/default";
 import Copyright from "@components/pages/copyright";
 import { RefreshButton, SettingButton } from "@components/pages/buttons";
 import Settings from "@components/pages/settings";
-import { COLORTABLE } from "@constants/constants";
+import { colorTable } from "@constants/constants";
 
 const PDF = dynamic(() => import("../components/resume/resume"), {
   loading: () => <Loading />,
@@ -153,7 +153,7 @@ const ResumeBuilder = () => {
       awardsList={awardsList}
       experienceList={experienceList}
       projectList={projectList}
-      color={COLORTABLE.find(([key]) => key === settings.color)?.[1] ?? "#ffffff"}
+      color={colorTable.find(([key]) => key === settings.color)?.[1] ?? "#ffffff"}
       font={settings.font}
     />
   );

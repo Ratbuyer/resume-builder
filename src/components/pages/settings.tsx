@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Cross from "@public/assets/cross.svg";
 import Notification from "@components/pages/notification";
 import type * as types from "@constants/types";
-import { FONTS, COLORTABLE } from "@constants/constants";
+import { fonts, colorTable } from "@constants/constants";
 
 const Setting = ({
   isOpen,
@@ -85,7 +85,7 @@ const Setting = ({
               setSettingsCopy(copy)
             }}
           >
-            {FONTS.map((font) => (
+            {fonts.map((font) => (
               <option key={font} value={font}>{font}</option>
             ))}
           </select>
@@ -108,7 +108,7 @@ const Setting = ({
               setSettingsCopy(copy)
             }}
           >
-            {COLORTABLE.map((color) => (
+            {colorTable.map((color) => (
               <option key={color[0]} value={color[0]}>{color[0]}</option>
             ))}
           </select>
