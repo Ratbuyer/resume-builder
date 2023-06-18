@@ -107,6 +107,7 @@ const Setting = ({
           <label className="relative inline-flex items-center mr-5 cursor-pointer">
             <input
               type="checkbox"
+              id="boldNumbers"
               className="sr-only peer"
               checked={settingsCopy.boldNumbers}
               onChange={() => setSettingsCopy({ ...settingsCopy, boldNumbers: !settingsCopy.boldNumbers })}
