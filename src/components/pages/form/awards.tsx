@@ -1,5 +1,5 @@
 import type * as types from "@constants/types";
-import { AddButton, RemoveButton } from "@components/pages/form/buttons";
+import { AddButton, RemoveButton } from "~/components/pages/buttons";
 
 
 const Awards = (

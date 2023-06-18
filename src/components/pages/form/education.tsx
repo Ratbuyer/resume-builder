@@ -1,5 +1,5 @@
 import type * as types from "@constants/types";
-import { AddButton, RemoveIcon } from "@components/pages/form/buttons";
+import { AddButton, RemoveIcon } from "~/components/pages/buttons";
 import { formColorTable } from "~/constants/constants";
 
 export const Education = (
