@@ -9,39 +9,46 @@ import Awards from "./awards";
 import type * as types from "@constants/types";
 import "~/constants/fonts/remote";
 import "~/constants/fonts/local";
+import { colorTable } from "@constants/constants";
 
 const Resume = ({
-  color,
-  font,
   header,
   educationList,
   skillsList,
   awardsList,
   experienceList,
   projectList,
+  settings,
 }:
   {
-    color: string,
-    font: string,
+
     header: types.headerType,
     educationList: types.educationListType
     skillsList: types.skillsListType
     awardsList: types.awardsListType
     experienceList: types.experienceListType
     projectList: types.projectsListType
+    settings: types.settingsType
   }) => {
 
   return <>
     <div style={{ height: '100vh' }}>
       <PDFViewer width="100%" height="100%">
         <Document>
-          <Page size="A4" style={{ backgroundColor: color, padding: 20, fontFamily: font, }}>
+
+          <Page size="A4" style={{
+            backgroundColor: colorTable.find(([key]) => key === settings.color)?.[1] ?? "#ffffff",
+            padding: 20,
+            fontFamily: settings.font,
+          }}>
+
             <Head header={header} />
             <Education educationList={educationList} />
             <Skills skillsList={skillsList} />
-            <Experience experienceList={experienceList}/>
-            <Projects projectList={projectList} />
+            <Experience experienceList={experienceList} settings={settings} />
+            <Projects projectList={projectList} settings={settings} />
             <Awards awardsList={awardsList} />
+
           </Page>
         </Document>
       </PDFViewer>

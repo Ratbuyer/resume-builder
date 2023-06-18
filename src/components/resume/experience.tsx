@@ -2,8 +2,21 @@ import { Text, View } from '@react-pdf/renderer';
 import Line from "../../components/resume/line"
 import type * as types from "../../constants/types";
 import { bullet } from "@constants/constants";
+import { splitStringIntoChunks } from '~/utils/functions';
 
-const Experience = ({ experienceList }: { experienceList: types.experienceListType }) => {
+const Experience = ({ experienceList, settings } :
+  { experienceList: types.experienceListType, settings: types.settingsType }) => {
+
+  const boldContribution = (c: string) => (
+    splitStringIntoChunks(c).map((chunk, index) => {
+
+      if (isNaN(Number(chunk))) {
+        return <Text key={index}>{chunk}</Text>
+      } else {
+        return <Text key={index} style={{ fontWeight: "bold" }}>{chunk}</Text>
+      }
+    })
+  );
 
   if (experienceList.length === 0) return null;
 
@@ -38,7 +51,11 @@ const Experience = ({ experienceList }: { experienceList: types.experienceListTy
           {
             e.contributions.map((c, index) => (
               <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }} key={index}>
-                {bullet} {c}
+
+                {bullet} &nbsp;
+
+                {settings.boldNumbers ? boldContribution(c): c}
+
               </Text>
             ))
           }

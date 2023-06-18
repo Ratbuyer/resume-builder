@@ -32,7 +32,7 @@ export const experienceList: types.experienceListType = [
     duration: "Jan 2020 - Jun 2024",
     location: "Seattle, USA",
     contributions: [
-      "Translate UI designs on Adobe XD and Figma into Typescript React codes",
+      "Created 12 pages for the companies website",
       "Developed a web application using React, Next.js, and Tailwind CSS",
       "Extracted repeated components and Tailwind CSS styles to improve code quality",
     ],
@@ -81,5 +81,6 @@ export const awardsList: types.awardsListType = [
 
 export const settings: types.settingsType = {
   color: "White",
-  font: "Roboto",
+  font: "Montserrat",
+  boldNumbers: true,
 };

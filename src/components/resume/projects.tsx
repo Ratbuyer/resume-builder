@@ -3,10 +3,23 @@ import Line from "../../components/resume/line"
 import Separator from '../../components/resume/seperator';
 import type * as types from "../../constants/types";
 import { bullet } from "@constants/constants";
+import { splitStringIntoChunks } from '~/utils/functions';
 
-const Projects = ({ projectList }: { projectList: types.projectsListType }) => {
+const Projects = ({ projectList, settings }: 
+  { projectList: types.projectsListType, settings: types.settingsType }) => {
 
   if (projectList.length === 0) return null;
+
+  const boldContribution = (c: string) => (
+    splitStringIntoChunks(c).map((chunk, index) => {
+
+      if (isNaN(Number(chunk))) {
+        return <Text key={index}>{chunk}</Text>
+      } else {
+        return <Text key={index} style={{ fontWeight: "bold" }}>{chunk}</Text>
+      }
+    })
+  );
 
   return <>
     <View style={{ marginBottom: 10 }}>
@@ -46,9 +59,13 @@ const Projects = ({ projectList }: { projectList: types.projectsListType }) => {
 
           </View>
 
-          {project.contributions.map((contribution, index) => (
+          {project.contributions.map((c, index) => (
             <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3 }} key={index}>
-              {bullet} {contribution}
+
+              {bullet} &nbsp;
+
+              {settings.boldNumbers ? boldContribution(c) : c}
+
             </Text>
           ))}
 

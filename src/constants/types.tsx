@@ -40,4 +40,5 @@ export type awardsListType = string[];
 export type settingsType = {
   color: string,
   font: string,
+  boldNumbers: boolean,
 };

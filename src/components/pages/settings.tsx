@@ -44,7 +44,7 @@ const Setting = ({
       <div className="bg-white rounded-2xl p-4 pb-5 max-w-[50%] 
                       w-full mx-4 shadow-2xl text-gray-700">
 
-        <div className="flex justify-between items-center mb-10">
+        <div className="flex justify-between items-center mb-5">
           <h3 className="text-lg font-semibold">Settings</h3>
           <button
             className="text-gray-500 hover:text-gray-700 mr-1"
@@ -54,18 +54,6 @@ const Setting = ({
           >
             <Cross />
           </button>
-        </div>
-
-        <div className="flex justify-between items-center mb-5 text-sm">
-          <button
-            className="rounded-lg bg-red-500 px-2 hover:scale-105"
-            onClick={() => { cleanFunction(); setMessage("cache cleared"); }}
-          >clear browser cache
-          </button>
-          <p>
-            <span className="text-red-500">! </span>
-            This will clear the inputs we stored in your browser.
-          </p>
         </div>
 
         <div className="mb-5">
@@ -114,9 +102,45 @@ const Setting = ({
           </select>
         </div>
 
+
+        <div className="mb-5 flex justify-between text-sm">
+          <label className="relative inline-flex items-center mr-5 cursor-pointer">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={settingsCopy.boldNumbers}
+              onChange={() => setSettingsCopy({ ...settingsCopy, boldNumbers: !settingsCopy.boldNumbers })}
+            />
+            <div
+              className="w-11 h-6 bg-gray-200 rounded-full 
+           peer-checked:after:translate-x-full
+           peer-checked:after:border-white after:content-[''] after:absolute 
+           after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 
+           after:border after:rounded-full after:h-5 after:w-5 after:transition-all 
+            peer-checked:bg-green-600"></div>
+          </label>
+
+          <p>
+            Bold numbers in contributions
+          </p>
+        </div>
+
+
+        <div className="flex justify-between items-center mb-5 text-sm">
+          <button
+            className="rounded-lg bg-red-500 px-2 hover:scale-105"
+            onClick={() => { cleanFunction(); setMessage("cache cleared"); }}
+          >clear browser cache
+          </button>
+          <p>
+            Clear the changes we stored in your browser.
+          </p>
+        </div>
+
+
         <div className="flex justify-center mt-10">
           <button
-            className="bg-green-500 p-2 rounded-xl hover:scale-105"
+            className="bg-green-600 p-2 rounded-xl hover:scale-105"
             onClick={() => {
               onClose();
               setSettings(settingsCopy);
