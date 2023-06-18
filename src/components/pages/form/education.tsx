@@ -23,7 +23,7 @@ export const Education = (
 
         <div
           key={index}
-          className={"mb-5 mt-10 p-3 pb-5 rounded-xl " + 
+          className={"mb-5 mt-10 p-3 pb-5 rounded-xl "+ 
           String(formColorTable[index % formColorTable.length])}>
 
           <RemoveIcon

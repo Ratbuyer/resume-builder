@@ -20,7 +20,7 @@ const Projects = ({ projectList }: { projectList: types.projectsListType }) => {
         <View key={index}>
 
           <View style={index === 0 ? { flexDirection: 'row', marginTop: 3 }
-          : { flexDirection: 'row', marginTop: 5 }}
+            : { flexDirection: 'row', marginTop: 5 }}
           >
 
             {project.link ?
@@ -30,14 +30,14 @@ const Projects = ({ projectList }: { projectList: types.projectsListType }) => {
                 </Text>
               </Link>
               :
-              <Text style={{ fontSize: 10, marginLeft: 10, fontWeight:"bold" }}>
+              <Text style={{ fontSize: 10, marginLeft: 10, fontWeight: "bold" }}>
                 {project.name}
               </Text>
             }
 
             <Separator />
 
-            <Text style={{ fontSize: 10, }}>
+            <Text style={{ fontSize: 10 }}>
               {project.description}
             </Text>
 

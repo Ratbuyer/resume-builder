@@ -16,10 +16,9 @@ const Experience = ({ experienceList }: { experienceList: types.experienceListTy
       {experienceList.map((e, index) => (
         <View key={index}>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 3 }}>
-            <Text style={index > 0 ? {
-              fontSize: 10, marginLeft: 10, marginTop: 3, fontWeight: "bold"
-            } : { fontSize: 10, marginLeft: 10, fontWeight: "bold" }}>
+          <View style={index === 0 ? { flexDirection: 'row', justifyContent: 'space-between', marginTop: 3 } :
+            { flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
+            <Text style={{ fontSize: 10, marginLeft: 10, fontWeight: "bold" }}>
               {e.company}
             </Text>
             <Text style={{ fontSize: 10, marginRight: 10, }}>
@@ -27,26 +26,28 @@ const Experience = ({ experienceList }: { experienceList: types.experienceListTy
             </Text>
           </View>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-            <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 3, }}>
+            <Text style={{ fontSize: 10, marginLeft: 10 }}>
               {e.title}
             </Text>
-            <Text style={{ fontSize: 10, marginRight: 10, marginTop: 3 }}>
+            <Text style={{ fontSize: 10, marginRight: 10 }}>
               {e.location}
             </Text>
           </View>
 
-          {e.contributions.map((c, index) => (
-            <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }} key={index}>
-              {bullet} {c}
-            </Text>
-          ))}
+          {
+            e.contributions.map((c, index) => (
+              <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3, }} key={index}>
+                {bullet} {c}
+              </Text>
+            ))
+          }
 
         </View>
 
       ))}
 
-    </View>
+    </View >
 
   </>
 
