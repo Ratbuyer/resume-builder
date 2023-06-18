@@ -23,8 +23,8 @@ export const Education = (
 
         <div
           key={index}
-          className={"mb-5 mt-10 p-3 pb-5 rounded-xl "+ 
-          String(formColorTable[index % formColorTable.length])}>
+          className={"mb-5 mt-10 p-3 pb-5 rounded-xl " +
+            String(formColorTable[index % formColorTable.length])}>
 
           <RemoveIcon
             func={() => {
@@ -38,7 +38,7 @@ export const Education = (
 
             <input
               type="text"
-              name={"school" + String(index)}
+              id={"school" + String(index)}
               required
               value={education.school}
               placeholder={"School"}
@@ -53,7 +53,7 @@ export const Education = (
 
             <input
               type="text"
-              name={"educationDuration" + String(index)}
+              id={"educationDuration" + String(index)}
               required
               value={education.duration}
               placeholder={"Duration"}
@@ -71,7 +71,7 @@ export const Education = (
           <div className="flex flex-row justify justify-between mb-2">
             <input
               type="text"
-              name={"degree" + String(index)}
+              id={"degree" + String(index)}
               required
               value={education.degree}
               placeholder={"Degree"}
@@ -86,7 +86,7 @@ export const Education = (
 
             <input
               type="text"
-              name={"educationLocation" + String(index)}
+              id={"educationLocation" + String(index)}
               required
               value={education.location}
               placeholder={"Location"}

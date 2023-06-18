@@ -58,7 +58,7 @@ export const Experience = (
 
             <input
               type="text"
-              name={"company" + String(index0)}
+              id={"company" + String(index0)}
               required
               value={experience.company}
               placeholder={"Company"}
@@ -73,7 +73,7 @@ export const Experience = (
 
             <input
               type="text"
-              name={"experienceDuration" + String(index0)}
+              id={"experienceDuration" + String(index0)}
               required
               value={experience.duration}
               placeholder={"Duration"}
@@ -91,7 +91,7 @@ export const Experience = (
           <div className="flex flex-row justify justify-between mb-2">
             <input
               type="text"
-              name={"title" + String(index0)}
+              id={"title" + String(index0)}
               required
               value={experience.title}
               placeholder={"Title"}
@@ -106,7 +106,7 @@ export const Experience = (
 
             <input
               type="text"
-              name={"experienceLocation" + String(index0)}
+              id={"experienceLocation" + String(index0)}
               required
               defaultValue={experience.location}
               placeholder={"Location"}
@@ -132,7 +132,7 @@ export const Experience = (
 
               <input
                 type="text"
-                name={"experience" + String(index1) + "contribution" + String(index1)}
+                id={"experience" + String(index0) + "contribution" + String(index1)}
                 placeholder={"Contribution " + String(index1)}
                 className="w-full mb-2 bg-gray-50
               text-gray-900 rounded-lg block p-2.5 outline-0"

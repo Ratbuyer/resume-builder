@@ -54,7 +54,7 @@ const Projects = (
 
           <input
             type="text"
-            name={"project" + String(index0)}
+            id={"project" + String(index0)}
             required
             value={project.name}
             placeholder={"Project Name"}
@@ -69,7 +69,7 @@ const Projects = (
 
           <input
             type="url"
-            name={"link" + String(index0)}
+            id={"link" + String(index0)}
             value={project.link}
             placeholder={"Project Link"}
             className="w-full mb-2 bg-gray-50 
@@ -83,7 +83,7 @@ const Projects = (
 
           <input
             type="text"
-            name={"projectDescription" + String(index0)}
+            id={"projectDescription" + String(index0)}
             value={project.description}
             placeholder={"Project Description"}
             className="w-full mb-2 bg-gray-50 text-gray-900 
@@ -106,7 +106,7 @@ const Projects = (
               />
 
               <input type="text"
-                name={"project" + String(index0) + "contribution" + String(index1)}
+                id={"project" + String(index0) + "contribution" + String(index1)}
                 value={contribution}
                 placeholder={"Contribution " + String(index1)}
                 className="w-full mb-2 bg-gray-50

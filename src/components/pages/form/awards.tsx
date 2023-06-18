@@ -27,7 +27,7 @@ const Awards = (
 
             <input
               type="text"
-              name={"award" + String(index)}
+              id={"award" + String(index)}
               required
               value={award}
               placeholder={"Award " + String(index)}

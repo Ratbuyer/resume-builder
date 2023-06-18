@@ -31,7 +31,7 @@ const Skills = (
 
           <input
             type="text"
-            name={"skillName" + String(index)}
+            id={"skillName" + String(index)}
             required
             value={skill.name}
             placeholder={"Skill Name"}
@@ -45,7 +45,7 @@ const Skills = (
           />
 
           <textarea
-            name={"skillList" + String(index)}
+            id={"skillList" + String(index)}
             required
             value={skill.skills}
             placeholder={"Skill List"}
