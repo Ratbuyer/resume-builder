@@ -68,7 +68,7 @@ const Projects = (
           />
 
           <input
-            type="text"
+            type="url"
             name={"link" + String(index0)}
             value={project.link}
             placeholder={"Project Link"}

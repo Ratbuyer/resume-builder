@@ -12,13 +12,19 @@ const Skills = ({ skillsList }: { skillsList: types.skillsListType }) => {
       <Line />
 
       {skillsList.map((skill, index) => (
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap' }} key={index}>
-          <Text style={{ fontSize: 10, marginLeft: 10, marginTop: 3, fontWeight: "bold" }}>
-            {skill.name}:
-          </Text>
-          
-          <Text style={{ fontSize: 10, marginLeft: 3, marginTop: 3 }}>
-            {skill.skills}
+
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginLeft: 10, marginTop: 3 }} key={index}>
+
+          <Text >
+
+            <Text style={{ fontSize: 10, fontWeight: "bold" }}>
+              {skill.name} : &nbsp;
+            </Text>
+
+            <Text style={{ fontSize: 10 }}>
+              {skill.skills}
+            </Text>
+
           </Text>
 
         </View>

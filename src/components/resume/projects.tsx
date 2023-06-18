@@ -35,11 +35,14 @@ const Projects = ({ projectList }: { projectList: types.projectsListType }) => {
               </Text>
             }
 
-            <Separator />
-
-            <Text style={{ fontSize: 10 }}>
-              {project.description}
-            </Text>
+            {project.description ?
+              <>
+                <Separator />
+                <Text style={{ fontSize: 10 }}>
+                  {project.description}
+                </Text>
+              </>
+              : null}
 
           </View>
 

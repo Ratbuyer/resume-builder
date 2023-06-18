@@ -50,7 +50,7 @@ const Skills = (
             value={skill.skills}
             placeholder={"Skill List"}
             className="mt-2 mb-5 w-full bg-gray-50
-         text-gray-900 rounded-lg block p-2.5 outline-0"
+         text-gray-900 rounded-lg block p-2.5 outline-0 whitespace-pre-line"
             onChange={(e) => {
               const skillsListcopy = [...skillsList];
               skillsListcopy[index]!.skills = e.target.value;

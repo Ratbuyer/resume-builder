@@ -35,7 +35,7 @@ export const Header = (
 
         <div className="flex flex-row justify justify-between mb-2">
           <input
-            type="text"
+            type="tel"
             id="phone"
             autoComplete="phone"
             name="phone"
@@ -48,7 +48,7 @@ export const Header = (
           />
 
           <input
-            type="text"
+            type="email"
             id="email"
             autoComplete="email"
             name="email"
@@ -63,7 +63,7 @@ export const Header = (
 
         <div className="flex flex-row justify justify-between mb-2">
           <input
-            type="text"
+            type="url"
             id="github"
             name="github"
             value={header.github}
@@ -74,7 +74,7 @@ export const Header = (
           />
 
           <input
-            type="text"
+            type="url"
             id="linkedin"
             name="linkedin"
             value={header.linkedin}
