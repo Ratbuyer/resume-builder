@@ -38,11 +38,11 @@ const Setting = ({
 
     {messsage && <Notification func={() => { setMessage("") }} message={messsage} />}
 
-    <div className={`fixed inset-0 flex items-center justify-center 
+    <div className={`fixed inset-0 flex items-center justify-center
                   z-50 ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
 
-      <div className="bg-white rounded-2xl p-4 pb-5 max-w-[50%] 
-                      w-full mx-4 shadow-2xl text-gray-700">
+      <div className="bg-white rounded-2xl p-4 pb-5 max-w-[90%] min-w-[40%]
+                      w-auto mx-4 shadow-2xl text-gray-700 h-[80%]">
 
         <div className="flex justify-between items-center mb-5">
           <h3 className="text-lg font-semibold">Settings</h3>
@@ -56,92 +56,95 @@ const Setting = ({
           </button>
         </div>
 
-        <div className="mb-5">
-          <label
-            htmlFor="fonts"
-            className="block mb-2 text-sm font-medium">
-            Choose Font
-          </label>
-          <select
-            id="fonts"
-            className="bg-gray-50 border border-gray-300 text-sm 
+        <div className='overflow-y-auto h-[70%] px-5'>
+
+          <div className="mb-5">
+            <label
+              htmlFor="fonts"
+              className="block mb-2 text-sm font-medium">
+              Choose Font
+            </label>
+            <select
+              id="fonts"
+              className="bg-gray-50 border border-gray-300 text-sm 
             rounded-lg outline-0 block w-full p-2.5"
-            value={settingsCopy.font}
-            onChange={(e) => {
-              const copy = { ...settingsCopy };
-              copy.font = e.target.value
-              setSettingsCopy(copy)
-            }}
-          >
-            {fonts.map((font) => (
-              <option key={font} value={font}>{font}</option>
-            ))}
-          </select>
-        </div>
+              value={settingsCopy.font}
+              onChange={(e) => {
+                const copy = { ...settingsCopy };
+                copy.font = e.target.value
+                setSettingsCopy(copy)
+              }}
+            >
+              {fonts.map((font) => (
+                <option key={font} value={font}>{font}</option>
+              ))}
+            </select>
+          </div>
 
-        <div className="mb-5">
-          <label
-            htmlFor="colors"
-            className="block mb-2 text-sm font-medium">
-            Choose Color
-          </label>
-          <select
-            id="colors"
-            className="bg-gray-50 border border-gray-300 text-sm 
+          <div className="mb-5">
+            <label
+              htmlFor="colors"
+              className="block mb-2 text-sm font-medium">
+              Choose Color
+            </label>
+            <select
+              id="colors"
+              className="bg-gray-50 border border-gray-300 text-sm 
             rounded-lg outline-0 block w-full p-2.5"
-            value={settingsCopy.color}
-            onChange={(e) => {
-              const copy = { ...settingsCopy };
-              copy.color = e.target.value
-              setSettingsCopy(copy)
-            }}
-          >
-            {colorTable.map((color) => (
-              <option key={color[0]} value={color[0]}>{color[0]}</option>
-            ))}
-          </select>
-        </div>
+              value={settingsCopy.color}
+              onChange={(e) => {
+                const copy = { ...settingsCopy };
+                copy.color = e.target.value
+                setSettingsCopy(copy)
+              }}
+            >
+              {colorTable.map((color) => (
+                <option key={color[0]} value={color[0]}>{color[0]}</option>
+              ))}
+            </select>
+          </div>
 
 
-        <div className="mb-5 flex justify-between text-sm">
-          <label className="relative inline-flex items-center mr-5 cursor-pointer">
-            <input
-              type="checkbox"
-              id="boldNumbers"
-              className="sr-only peer"
-              checked={settingsCopy.boldNumbers}
-              onChange={() => setSettingsCopy({ ...settingsCopy, boldNumbers: !settingsCopy.boldNumbers })}
-            />
-            <div
-              className="w-11 h-6 bg-gray-200 rounded-full 
+          <div className="mb-5 flex justify-between text-sm">
+            <label className="relative inline-flex items-center mr-5 cursor-pointer">
+              <input
+                type="checkbox"
+                id="boldNumbers"
+                className="sr-only peer"
+                checked={settingsCopy.boldNumbers}
+                onChange={() => setSettingsCopy({ ...settingsCopy, boldNumbers: !settingsCopy.boldNumbers })}
+              />
+              <div
+                className="w-11 h-6 bg-gray-200 rounded-full 
            peer-checked:after:translate-x-full
            peer-checked:after:border-white after:content-[''] after:absolute 
            after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 
            after:border after:rounded-full after:h-5 after:w-5 after:transition-all 
             peer-checked:bg-green-600"></div>
-          </label>
+            </label>
 
-          <p>
-            Bold numbers in contributions
-          </p>
+            <p className='ml-5'>
+              Bold numbers in contributions
+            </p>
+          </div>
+
+
+          <div className="flex justify-between items-center mb-5 text-sm">
+            <button
+              className="rounded-lg bg-red-500 px-2 hover:scale-105"
+              onClick={() => { cleanFunction(); setMessage("cache cleared"); }}
+            >clear browser cache
+            </button>
+            <p className='ml-5'>
+              Clear the changes we stored in your browser.
+            </p>
+          </div>
+
         </div>
 
-
-        <div className="flex justify-between items-center mb-5 text-sm">
+        <div className="flex justify-center pt-10">
           <button
-            className="rounded-lg bg-red-500 px-2 hover:scale-105"
-            onClick={() => { cleanFunction(); setMessage("cache cleared"); }}
-          >clear browser cache
-          </button>
-          <p>
-            Clear the changes we stored in your browser.
-          </p>
-        </div>
-
-
-        <div className="flex justify-center mt-10">
-          <button
-            className="bg-green-600 p-2 rounded-xl hover:scale-105"
+            className="bg-green-600 px-2 py-1 rounded-xl hover:scale-105"
             onClick={() => {
               onClose();
               setSettings(settingsCopy);

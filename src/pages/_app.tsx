@@ -11,7 +11,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   const [deviceType, setDeviceType] = useState(0);
 
   useEffect(() => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 768 || window.innerHeight < 566) {
       setDeviceType(0);
     } else {
       setDeviceType(1);

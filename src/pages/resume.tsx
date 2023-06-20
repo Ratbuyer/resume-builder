@@ -123,12 +123,16 @@ const ResumeBuilder = () => {
   const Middle = () => {
 
     const [usingSetting, setUsingSetting] = useState(false);
+    
     return <>
+
       <div className="flex flex-col justify-center items-center 
           place-content-center gap-y-10">
         <RefreshButton handleSubmit={handleSubmit} />
         <SettingButton func={() => { setUsingSetting(true) }} />
       </div>
+
+      {usingSetting && <div className="fixed top-0 left-0 w-screen h-screen bg-black opacity-50 z-10"></div>}
 
       <Settings
         isOpen={usingSetting}
