@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { set } from 'zod';
+import Feedback from './feedback';
 
 const Copyright = () => {
 
-  const authorName = 'resumedev.site';
-  const email = "m1662576219@gmail.com";
+  const author = 'resumedev.site';
 
   const [showFeedback, setShowFeedback] = useState(false);
 
@@ -16,7 +15,7 @@ const Copyright = () => {
       flex flex-row justify-between items-center"
     >
 
-      <p>&copy; {authorName}</p>
+      <p>&copy; {author}</p>
 
       <button
         className=""
@@ -28,6 +27,11 @@ const Copyright = () => {
 
     {showFeedback && <div className="fixed top-0 left-0 w-screen h-screen bg-black opacity-50 z-10"></div>}
 
+    <Feedback
+      isOpen={showFeedback}
+      onClose={() => { setShowFeedback(false) }}
+    />
+    
   </>
 };
 
