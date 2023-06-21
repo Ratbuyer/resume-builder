@@ -58,13 +58,6 @@ const Index = () => {
     setLocalStorage("awardsList", JSON.stringify(awardsListCopy));
     setLocalStorage("experienceList", JSON.stringify(experienceListCopy));
     setLocalStorage("projectList", JSON.stringify(projectListCopy));
-
-    // localStorage.setItem("header", JSON.stringify(headerCopy));
-    // localStorage.setItem("educationList", JSON.stringify(educationListCopy));
-    // localStorage.setItem("skillsList", JSON.stringify(skillsListCopy));
-    // localStorage.setItem("awardsList", JSON.stringify(awardsListCopy));
-    // localStorage.setItem("experienceList", JSON.stringify(experienceListCopy));
-    // localStorage.setItem("projectList", JSON.stringify(projectListCopy));
   };
 
   useEffect(() => {

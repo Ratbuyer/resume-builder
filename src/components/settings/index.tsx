@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Cross from "@public/assets/cross.svg";
 import type * as types from "@constants/types";
 import FontSelector from './fontSelector';
