@@ -40,14 +40,15 @@ const Resume = ({
             backgroundColor: colorTable.find(([key]) => key === settings.color)?.[1] ?? "#ffffff",
             padding: 20,
             fontFamily: settings.font,
+            fontSize: settings.fontsize,
           }}>
 
-            <Head header={header} />
-            <Education educationList={educationList} />
-            <Skills skillsList={skillsList} />
+            <Head header={header} settings={settings}/>
+            <Education educationList={educationList} settings={settings}/>
+            <Skills skillsList={skillsList} settings={settings}/>
             <Experience experienceList={experienceList} settings={settings} />
             <Projects projectList={projectList} settings={settings} />
-            <Awards awardsList={awardsList} />
+            <Awards awardsList={awardsList} settings={settings}/>
 
           </Page>
         </Document>

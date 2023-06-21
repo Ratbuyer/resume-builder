@@ -79,6 +79,28 @@ const Setting = ({
           </select>
         </div>
 
+
+        <div className="mb-5">
+          <label htmlFor="fontsize" className="block mb-2 text-sm font-medium">
+            Choose Font Size
+          </label>
+          <input
+            id="fontsize"
+            type="number"
+            min={1}
+            max={72}
+            step={1}
+            className="bg-gray-50 border border-gray-300 
+            text-sm rounded-lg outline-0 block w-full p-2.5"
+            value={settingsCopy.fontsize}
+            onChange={(e) => {
+              const copy = { ...settingsCopy };
+              copy.fontsize = parseInt(e.target.value);
+              setSettingsCopy(copy);
+            }}
+          />
+        </div>
+
         <div className="mb-5">
           <label
             htmlFor="colors"

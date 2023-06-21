@@ -25,7 +25,7 @@ const Projects = ({ projectList, settings }:
     <View style={{ marginBottom: 10 }}>
 
       <View>
-        <Text style={{ fontSize: 12, marginBottom: 3 }}>Projects</Text>
+        <Text style={{ fontSize: settings.fontsize + 2, marginBottom: 3 }}>Projects</Text>
         <Line />
       </View>
 
@@ -38,12 +38,12 @@ const Projects = ({ projectList, settings }:
 
             {project.link ?
               <Link src={project.link}>
-                <Text style={{ fontSize: 10, marginLeft: 10, fontWeight: "bold" }}>
+                <Text style={{ fontSize: settings.fontsize, marginLeft: 10, fontWeight: "bold" }}>
                   {project.name}
                 </Text>
               </Link>
               :
-              <Text style={{ fontSize: 10, marginLeft: 10, fontWeight: "bold" }}>
+              <Text style={{ fontSize: settings.fontsize, marginLeft: 10, fontWeight: "bold" }}>
                 {project.name}
               </Text>
             }
@@ -51,7 +51,7 @@ const Projects = ({ projectList, settings }:
             {project.description ?
               <>
                 <Separator />
-                <Text style={{ fontSize: 10 }}>
+                <Text style={{ fontSize: settings.fontsize }}>
                   {project.description}
                 </Text>
               </>
@@ -60,7 +60,7 @@ const Projects = ({ projectList, settings }:
           </View>
 
           {project.contributions.map((c, index) => (
-            <Text style={{ fontSize: 10, marginLeft: 20, marginTop: 3 }} key={index}>
+            <Text style={{ fontSize: settings.fontsize, marginLeft: 20, marginTop: 3 }} key={index}>
 
               {bullet} &nbsp;
 
