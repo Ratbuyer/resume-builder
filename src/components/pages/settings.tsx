@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import Cross from "@public/assets/cross.svg";
-import Notification from "@components/pages/notification";
 import type * as types from "@constants/types";
-import { fonts, colorTable } from "@constants/constants";
+import { fonts, colorTable } from "~/constants";
 
 const Setting = ({
   isOpen,
@@ -24,7 +23,6 @@ const Setting = ({
 
   const [settingsCopy, setSettingsCopy] = useState<types.settingsType>(settings);
   const [isMounted, setIsMounted] = useState(false);
-  const [messsage, setMessage] = useState<string>("");
 
   useEffect(() => {
     setIsMounted(true);
@@ -35,8 +33,6 @@ const Setting = ({
   }
 
   return <>
-
-    {messsage && <Notification func={() => { setMessage("") }} message={messsage} />}
 
     <div className={`fixed inset-0 flex items-center justify-center
                   z-50 ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
@@ -82,36 +78,36 @@ const Setting = ({
           </div>
 
 
-        <div className="mb-5">
-          <label htmlFor="fontsize" className="block mb-2 text-sm font-medium">
-            Choose Font Size
-          </label>
-          <input
-            id="fontsize"
-            type="number"
-            min={1}
-            max={72}
-            step={1}
-            className="bg-gray-50 border border-gray-300 
+          <div className="mb-5">
+            <label htmlFor="fontsize" className="block mb-2 text-sm font-medium">
+              Choose Font Size
+            </label>
+            <input
+              id="fontsize"
+              type="number"
+              min={1}
+              max={72}
+              step={1}
+              className="bg-gray-50 border border-gray-300 
             text-sm rounded-lg outline-0 block w-full p-2.5"
-            value={settingsCopy.fontsize}
-            onChange={(e) => {
-              const copy = { ...settingsCopy };
-              copy.fontsize = parseInt(e.target.value);
-              setSettingsCopy(copy);
-            }}
-          />
-        </div>
+              value={settingsCopy.fontsize}
+              onChange={(e) => {
+                const copy = { ...settingsCopy };
+                copy.fontsize = parseInt(e.target.value);
+                setSettingsCopy(copy);
+              }}
+            />
+          </div>
 
-        <div className="mb-5">
-          <label
-            htmlFor="colors"
-            className="block mb-2 text-sm font-medium">
-            Choose Color
-          </label>
-          <select
-            id="colors"
-            className="bg-gray-50 border border-gray-300 text-sm 
+          <div className="mb-5">
+            <label
+              htmlFor="colors"
+              className="block mb-2 text-sm font-medium">
+              Choose Color
+            </label>
+            <select
+              id="colors"
+              className="bg-gray-50 border border-gray-300 text-sm 
             rounded-lg outline-0 block w-full p-2.5"
               value={settingsCopy.color}
               onChange={(e) => {
@@ -154,7 +150,7 @@ const Setting = ({
           <div className="flex justify-between items-center mb-5 text-sm">
             <button
               className="rounded-lg bg-red-500 px-2 hover:scale-105"
-              onClick={() => { cleanFunction(); setMessage("cache cleared"); }}
+              onClick={() => { cleanFunction(); }}
             >clear browser cache
             </button>
             <p className='ml-5'>

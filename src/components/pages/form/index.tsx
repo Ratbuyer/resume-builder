@@ -1,12 +1,12 @@
 import { useState } from "react";
-import type * as types from "../../constants/types";
+import type * as types from "../../../constants/types";
 
-import Header from "./form/header";
-import Education from "./form/education";
-import Skills from "./form/skills";
-import Awards from "./form/awards";
-import Experience from "./form/experience";
-import Projects from "./form/projects";
+import Header from "./header";
+import Education from "./education";
+import Skills from "./skills";
+import Awards from "./awards";
+import Experience from "./experience";
+import Projects from "./projects";
 
 
 const Form = (

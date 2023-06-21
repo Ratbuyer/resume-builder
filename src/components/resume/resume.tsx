@@ -7,9 +7,9 @@ import Experience from "./experience";
 import Projects from "./projects";
 import Awards from "./awards";
 import type * as types from "@constants/types";
-import "~/constants/fonts/remote";
-import "~/constants/fonts/local";
-import { colorTable } from "@constants/constants";
+import "~/fonts/remote";
+import "~/fonts/local";
+import { colorTable } from "~/constants";
 
 const Resume = ({
   header,
