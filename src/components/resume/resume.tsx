@@ -9,7 +9,7 @@ import Awards from "./awards";
 import type * as types from "@constants/types";
 import "~/fonts/remote";
 import "~/fonts/local";
-import { colorTable } from "~/constants";
+import { colorTable } from "~/constants/values";
 
 const Resume = ({
   header,

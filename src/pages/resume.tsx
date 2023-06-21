@@ -1,12 +1,12 @@
 import dynamic from "next/dynamic";
 import Loading from "../components/pages/loading";
-import Form from "../components/pages/form";
+import Form from "../components/form";
 import { useEffect, useRef, useState } from "react";
 import type * as types from "@constants/types";
 import * as defaults from "@constants/default";
 import Copyright from "@components/pages/copyright";
 import { RefreshButton, SettingButton } from "~/components/pages/buttons";
-import Settings from "@components/pages/settings";
+import Settings from "~/components/settings";
 
 const PDF = dynamic(() => import("../components/resume/resume"), {
   loading: () => <Loading />,
@@ -137,7 +137,6 @@ const ResumeBuilder = () => {
       <Settings
         isOpen={usingSetting}
         onClose={() => { setUsingSetting(false) }}
-        cleanFunction={clearLocalStorage}
         settings={settings}
         setSettings={setSettings}
         storeSettings={storeSettings}

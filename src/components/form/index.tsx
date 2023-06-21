@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type * as types from "../../../constants/types";
+import type * as types from "../../constants/types";
 
 import Header from "./header";
 import Education from "./education";

@@ -5,3 +5,7 @@ export const splitStringIntoChunks = (str: string): string[] => {
   return chunks.filter(Boolean);
 };
 
+export const clearLocalStorage = () => {
+  localStorage.clear();
+}
+

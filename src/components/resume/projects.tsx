@@ -2,7 +2,7 @@ import { Text, View, Link } from '@react-pdf/renderer';
 import Line from "../../components/resume/line"
 import Separator from '../../components/resume/seperator';
 import type * as types from "../../constants/types";
-import { bullet } from "~/constants";
+import { bullet } from "~/constants/values";
 import { splitStringIntoChunks } from '~/utils/functions';
 
 const Projects = ({ projectList, settings }: 
