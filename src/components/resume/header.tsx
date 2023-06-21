@@ -2,34 +2,32 @@ import { Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 import Separator from '@components/resume/seperator';
 import type * as types from '@constants/types';
 
-const styles = StyleSheet.create({
-
-  section: {
-    marginBottom: 5,
-  },
-
-  heading: {
-    fontSize: 20,
-    textAlign: 'center',
-    fontWeight: 'bold',
-  },
-
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginBottom: 10,
-  },
-
-  text: {
-    fontSize: 10,
-    marginLeft: 3,
-    marginRight: 3,
-  },
-
-});
-
-const Header = ({ header }: { header: types.headerType }) => {
-
+const Header = ({ header, settings }: { header: types.headerType, settings: types.settingsType}) => {
+  const styles = StyleSheet.create({
+    section: {
+      marginBottom: 5,
+    },
+  
+    heading: {
+      fontSize: settings.fontsize + 10,
+      textAlign: 'center',
+      fontWeight: 'bold',
+    },
+  
+    row: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      marginBottom: 10,
+    },
+  
+    text: {
+      fontSize: settings.fontsize,
+      marginLeft: 3,
+      marginRight: 3,
+    },
+  
+  });
+  
   return <>
     <View style={styles.section}>
       <Text style={styles.heading}>{header.name}</Text>
