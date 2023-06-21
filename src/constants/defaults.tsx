@@ -83,5 +83,5 @@ export const settings: types.settingsType = {
   color: "White",
   font: "Montserrat",
   boldNumbers: true,
-  fontSize: 10,
+  fontSize: 11,
 };

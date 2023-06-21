@@ -3,7 +3,7 @@ import Loading from "../components/pages/loading";
 import Form from "../components/form";
 import { useEffect, useRef, useState } from "react";
 import type * as types from "@constants/types";
-import * as defaults from "@constants/default";
+import * as defaults from "~/constants/defaults";
 import Copyright from "@components/pages/copyright";
 import { RefreshButton, SettingButton } from "~/components/pages/buttons";
 import Settings from "~/components/settings";

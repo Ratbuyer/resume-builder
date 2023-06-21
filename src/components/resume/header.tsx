@@ -1,56 +1,44 @@
-import { Text, View, StyleSheet, Link } from '@react-pdf/renderer';
+import { Text, View, Link } from '@react-pdf/renderer';
 import Separator from '@components/resume/seperator';
 import type * as types from '@constants/types';
 
-const Header = ({ header, settings }: { header: types.headerType, settings: types.settingsType}) => {
-  const styles = StyleSheet.create({
-    section: {
-      marginBottom: 5,
-    },
-  
-    heading: {
-      fontSize: settings.fontSize + 10,
-      textAlign: 'center',
-      fontWeight: 'bold',
-    },
-  
-    row: {
+const Header = ({ header, settings }:
+  { header: types.headerType, settings: types.settingsType }) => {
+
+  return <>
+    <View style={{ marginBottom: 5 }}>
+      <Text style={{
+        fontSize: settings.fontSize + 10,
+        textAlign: 'center',
+        fontWeight: 'bold',
+      }}>
+        {header.name}
+      </Text>
+    </View>
+
+    <View style={{
       flexDirection: 'row',
       justifyContent: 'center',
       marginBottom: 10,
-    },
-  
-    text: {
-      marginLeft: 3,
-      marginRight: 3,
-    },
-  
-  });
-  
-  return <>
-    <View style={styles.section}>
-      <Text style={styles.heading}>{header.name}</Text>
-    </View>
+    }}>
 
-    <View style={styles.row}>
-
-      <Text style={styles.text}>{header.phone}</Text>
+      <Text style={{ marginLeft: 3, marginRight: 3 }}>{header.phone}</Text>
 
       <Separator />
 
-      <Text style={styles.text}>{header.email}</Text>
+      <Text style={{ marginLeft: 3, marginRight: 3 }}>{header.email}</Text>
 
       {header.github ? <>
         <Separator />
         <Link src={header.github}>
-          <Text style={styles.text}>Github</Text>
+          <Text style={{ marginLeft: 3, marginRight: 3 }}>Github</Text>
         </Link>
       </> : null}
 
       {header.linkedin ? <>
         <Separator />
         <Link src={header.linkedin}>
-          <Text style={styles.text}>Linkedin</Text>
+          <Text style={{ marginLeft: 3, marginRight: 3 }}>Linkedin</Text>
         </Link>
       </> : null}
 

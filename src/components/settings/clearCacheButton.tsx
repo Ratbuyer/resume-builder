@@ -1,5 +1,5 @@
 
-import { clearLocalStorage } from "~/utils/functions";
+import { clearLocalStorage } from "~/utils";
 
 const clearCacheButton = () => (
 

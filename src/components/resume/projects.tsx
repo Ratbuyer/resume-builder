@@ -3,7 +3,7 @@ import Line from "../../components/resume/line"
 import Separator from '../../components/resume/seperator';
 import type * as types from "../../constants/types";
 import { bullet } from "~/constants/values";
-import { splitStringIntoChunks } from '~/utils/functions';
+import { splitStringIntoChunks } from '~/utils';
 
 const Projects = ({ projectList, settings }: 
   { projectList: types.projectsListType, settings: types.settingsType }) => {
