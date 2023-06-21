@@ -7,6 +7,7 @@ import * as defaults from "~/constants/defaults";
 import Copyright from "@components/pages/copyright";
 import { RefreshButton, SettingButton } from "~/components/pages/buttons";
 import Settings from "~/components/settings";
+import { setLocalStorage } from "~/utils";
 
 const PDF = dynamic(() => import("../components/resume/resume"), {
   loading: () => <Loading />,
@@ -51,22 +52,24 @@ const Index = () => {
     setExperienceList(experienceListCopy);
     setProjectList(projectListCopy);
 
-    localStorage.setItem("header", JSON.stringify(headerCopy));
-    localStorage.setItem("educationList", JSON.stringify(educationListCopy));
-    localStorage.setItem("skillsList", JSON.stringify(skillsListCopy));
-    localStorage.setItem("awardsList", JSON.stringify(awardsListCopy));
-    localStorage.setItem("experienceList", JSON.stringify(experienceListCopy));
-    localStorage.setItem("projectList", JSON.stringify(projectListCopy));
-  };
+    setLocalStorage("header", JSON.stringify(headerCopy));
+    setLocalStorage("educationList", JSON.stringify(educationListCopy));
+    setLocalStorage("skillsList", JSON.stringify(skillsListCopy));
+    setLocalStorage("awardsList", JSON.stringify(awardsListCopy));
+    setLocalStorage("experienceList", JSON.stringify(experienceListCopy));
+    setLocalStorage("projectList", JSON.stringify(projectListCopy));
 
-  const storeSettings = (settings: types.settingsType) => {
-    localStorage.setItem("settings", JSON.stringify(settings));
-  }
+    // localStorage.setItem("header", JSON.stringify(headerCopy));
+    // localStorage.setItem("educationList", JSON.stringify(educationListCopy));
+    // localStorage.setItem("skillsList", JSON.stringify(skillsListCopy));
+    // localStorage.setItem("awardsList", JSON.stringify(awardsListCopy));
+    // localStorage.setItem("experienceList", JSON.stringify(experienceListCopy));
+    // localStorage.setItem("projectList", JSON.stringify(projectListCopy));
+  };
 
   useEffect(() => {
 
     const settings = localStorage.getItem("settings");
-
     const header = localStorage.getItem("header");
     const educationList = localStorage.getItem("educationList");
     const skillsList = localStorage.getItem("skillsList");
@@ -74,27 +77,13 @@ const Index = () => {
     const experienceList = localStorage.getItem("experienceList");
     const projectList = localStorage.getItem("projectList");
 
-    if (header) {
-      setHeader(JSON.parse(header) as types.headerType);
-    }
-    if (educationList) {
-      setEducationList(JSON.parse(educationList) as types.educationListType);
-    }
-    if (skillsList) {
-      setSkillsList(JSON.parse(skillsList) as types.skillsListType);
-    }
-    if (awardsList) {
-      setAwardsList(JSON.parse(awardsList) as types.awardsListType);
-    }
-    if (experienceList) {
-      setExperienceList(JSON.parse(experienceList) as types.experienceListType);
-    }
-    if (projectList) {
-      setProjectList(JSON.parse(projectList) as types.projectsListType);
-    }
-    if (settings) {
-      setSettings(JSON.parse(settings) as types.settingsType);
-    }
+    header && setHeader(JSON.parse(header) as types.headerType);
+    educationList && setEducationList(JSON.parse(educationList) as types.educationListType);
+    skillsList && setSkillsList(JSON.parse(skillsList) as types.skillsListType);
+    awardsList && setAwardsList(JSON.parse(awardsList) as types.awardsListType);
+    experienceList && setExperienceList(JSON.parse(experienceList) as types.experienceListType);
+    projectList && setProjectList(JSON.parse(projectList) as types.projectsListType);
+    settings && setSettings(JSON.parse(settings) as types.settingsType);
 
     setLoading(false);
   }, []);
@@ -118,24 +107,23 @@ const Index = () => {
 
   const Middle = () => {
 
-    const [usingSetting, setUsingSetting] = useState(false);
-    
+    const [showSetting, setShowSetting] = useState(false);
+
     return <>
 
       <div className="flex flex-col justify-center items-center 
           place-content-center gap-y-10">
         <RefreshButton handleSubmit={handleSubmit} />
-        <SettingButton func={() => { setUsingSetting(true) }} />
+        <SettingButton func={() => { setShowSetting(true) }} />
       </div>
 
-      {usingSetting && <div className="fixed top-0 left-0 w-screen h-screen bg-black opacity-50 z-10"></div>}
+      {showSetting && <div className="fixed top-0 left-0 w-screen h-screen bg-black opacity-50 z-10"></div>}
 
       <Settings
-        isOpen={usingSetting}
-        onClose={() => { setUsingSetting(false) }}
+        isOpen={showSetting}
+        onClose={() => { setShowSetting(false) }}
         settings={settings}
         setSettings={setSettings}
-        storeSettings={storeSettings}
       />
     </>
   };

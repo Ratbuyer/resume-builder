@@ -9,5 +9,9 @@ export const clearLocalStorage = () => {
   localStorage.clear();
 }
 
+export const setLocalStorage = (key: string, value: string) => {
+  localStorage.setItem(key, value);
+}
+
 
 

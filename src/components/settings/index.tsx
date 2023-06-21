@@ -6,21 +6,21 @@ import ColorSelector from './colorSelector';
 import FontSizeSelector from './fontSizeSelector';
 import BoldNumberToggle from './boldNumberToggle';
 import ClearCacheButton from './clearCacheButton';
+import { setLocalStorage } from '~/utils';
+
 
 const Setting = ({
   isOpen,
+  settings,
   onClose,
   setSettings,
-  settings,
-  storeSettings,
 }
   :
   {
     isOpen: boolean,
+    settings: types.settingsType,
     onClose: () => void,
     setSettings: (settings: types.settingsType) => void,
-    settings: types.settingsType,
-    storeSettings: (settings: types.settingsType) => void,
   }) => {
 
   const [settingsCopy, setSettingsCopy] = useState<types.settingsType>(settings);
@@ -78,8 +78,6 @@ const Setting = ({
           />
 
           <ClearCacheButton />
-          
-
 
         </div>
 
@@ -89,7 +87,7 @@ const Setting = ({
             onClick={() => {
               onClose();
               setSettings(settingsCopy);
-              storeSettings(settingsCopy);
+              setLocalStorage("settings", JSON.stringify(settingsCopy));
             }}
           >
             Apply
@@ -98,7 +96,7 @@ const Setting = ({
 
       </div>
     </div>
-  </>;
+  </>
 };
 
 export default Setting;

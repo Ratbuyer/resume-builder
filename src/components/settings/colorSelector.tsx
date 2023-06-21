@@ -9,7 +9,7 @@ const ColorSelector = (
     <label
       htmlFor="colors"
       className="block mb-2 text-sm font-medium">
-      Choose Color
+      Choose Background Color
     </label>
     <select
       id="colors"

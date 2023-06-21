@@ -10,7 +10,7 @@ const FontSelector = (
     <label
       htmlFor="fonts"
       className="block mb-2 text-sm font-medium">
-      Choose Font
+      Choose Font Family
     </label>
     <select
       id="fonts"
