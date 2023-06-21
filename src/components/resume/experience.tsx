@@ -4,7 +4,7 @@ import type * as types from "../../constants/types";
 import { bullet } from "~/constants/values";
 import { splitStringIntoChunks } from '~/utils/functions';
 
-const Experience = ({ experienceList, settings } :
+const Experience = ({ experienceList, settings }:
   { experienceList: types.experienceListType, settings: types.settingsType }) => {
 
   const boldContribution = (c: string) => (
@@ -23,7 +23,7 @@ const Experience = ({ experienceList, settings } :
   return <>
     <View style={{ marginBottom: 10 }}>
 
-      <Text style={{ fontSize: settings.fontsize + 2, marginBottom: 3, }}>Experience</Text>
+      <Text style={{ fontSize: settings.fontSize + 2, marginBottom: 3, }}>Experience</Text>
       <Line />
 
       {experienceList.map((e, index) => (
@@ -31,30 +31,30 @@ const Experience = ({ experienceList, settings } :
 
           <View style={index === 0 ? { flexDirection: 'row', justifyContent: 'space-between', marginTop: 3 } :
             { flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
-            <Text style={{ fontSize: settings.fontsize, marginLeft: 10, fontWeight: "bold" }}>
+            <Text style={{ marginLeft: 10, fontWeight: "bold" }}>
               {e.company}
             </Text>
-            <Text style={{ fontSize: settings.fontsize, marginRight: 10, }}>
+            <Text style={{ marginRight: 10, }}>
               {e.duration}
             </Text>
           </View>
 
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 3, }}>
-            <Text style={{ fontSize: settings.fontsize, marginLeft: 10 }}>
+            <Text style={{ marginLeft: 10 }}>
               {e.title}
             </Text>
-            <Text style={{ fontSize: settings.fontsize, marginRight: 10 }}>
+            <Text style={{ marginRight: 10 }}>
               {e.location}
             </Text>
           </View>
 
           {
             e.contributions.map((c, index) => (
-              <Text style={{ fontSize: settings.fontsize, marginLeft: 20, marginTop: 3, }} key={index}>
+              <Text style={{ marginLeft: 20, marginTop: 3, }} key={index}>
 
                 {bullet} &nbsp;
 
-                {settings.boldNumbers ? boldContribution(c): c}
+                {settings.boldNumbers ? boldContribution(c) : c}
 
               </Text>
             ))

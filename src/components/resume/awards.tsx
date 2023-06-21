@@ -10,12 +10,12 @@ const Awards = ({ awardsList, settings }: { awardsList: types.awardsListType, se
 
   return <>
     <View style={{ marginBottom: 10 }}>
-      <Text style={{ fontSize: settings.fontsize + 2, marginBottom: 3, }}>Awards</Text>
+      <Text style={{ fontSize: settings.fontSize + 2, marginBottom: 3, }}>Awards</Text>
       <Line />
 
       {awardsList.map((award, index) => (
         <View style={{ flexDirection: 'row', flexWrap: 'wrap' }} key={index}>
-          <Text style={{ fontSize: settings.fontsize, marginLeft: 10, marginTop: 3, fontWeight: "bold" }}>
+          <Text style={{ marginLeft: 10, marginTop: 3, fontWeight: "bold" }}>
             {award}
           </Text>
         </View>

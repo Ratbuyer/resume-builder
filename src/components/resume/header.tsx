@@ -9,7 +9,7 @@ const Header = ({ header, settings }: { header: types.headerType, settings: type
     },
   
     heading: {
-      fontSize: settings.fontsize + 10,
+      fontSize: settings.fontSize + 10,
       textAlign: 'center',
       fontWeight: 'bold',
     },
@@ -21,7 +21,6 @@ const Header = ({ header, settings }: { header: types.headerType, settings: type
     },
   
     text: {
-      fontSize: settings.fontsize,
       marginLeft: 3,
       marginRight: 3,
     },

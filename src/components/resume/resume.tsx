@@ -40,7 +40,7 @@ const Resume = ({
             backgroundColor: colorTable.find(([key]) => key === settings.color)?.[1] ?? "#ffffff",
             padding: 20,
             fontFamily: settings.font,
-            fontSize: settings.fontsize,
+            fontSize: settings.fontSize,
           }}>
 
             <Head header={header} settings={settings}/>

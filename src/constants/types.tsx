@@ -41,5 +41,5 @@ export type settingsType = {
   color: string,
   font: string,
   boldNumbers: boolean,
-  fontsize: number,
+  fontSize: number,
 };

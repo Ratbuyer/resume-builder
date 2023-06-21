@@ -1,7 +1,8 @@
 import type * as types from "@constants/types";
 
 const FontSizeSelector = (
-  { settingsCopy, setSettingsCopy }: { settingsCopy: types.settingsType, setSettingsCopy: (settings: types.settingsType) => void }
+  { settingsCopy, setSettingsCopy }:
+    { settingsCopy: types.settingsType, setSettingsCopy: (settings: types.settingsType) => void }
 ) => (
 
   <div className="mb-5">
@@ -11,15 +12,15 @@ const FontSizeSelector = (
     <input
       id="fontsize"
       type="number"
-      min={1}
-      max={72}
+      min={5}
+      max={20}
       step={1}
       className="bg-gray-50 border border-gray-300 
             text-sm rounded-lg outline-0 block w-full p-2.5"
-      value={settingsCopy.fontsize}
+      value={settingsCopy.fontSize}
       onChange={(e) => {
         const copy = { ...settingsCopy };
-        copy.fontsize = parseInt(e.target.value);
+        copy.fontSize = parseInt(e.target.value);
         setSettingsCopy(copy);
       }}
     />
