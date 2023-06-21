@@ -4,8 +4,13 @@ import type * as types from "../../constants/types";
 import { bullet } from "~/constants/values";
 import { splitStringIntoChunks } from '~/utils';
 
-const Experience = ({ experienceList, settings }:
-  { experienceList: types.experienceListType, settings: types.settingsType }) => {
+const Experience = ({
+  experienceList,
+  settings
+}: {
+  experienceList: types.experienceListType,
+  settings: types.settingsType
+}) => {
 
   const boldContribution = (c: string) => (
     splitStringIntoChunks(c).map((chunk, index) => {

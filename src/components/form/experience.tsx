@@ -2,16 +2,13 @@ import type * as types from "@constants/types";
 import { AddButton, RemoveIcon, RemoveButton } from "~/components/pages/buttons";
 import { formColorTable } from "~/constants/values";
 
-export const Experience = (
-  {
-    experienceList,
-    setExperienceList,
-  }:
-    {
-      experienceList: types.experienceListType,
-      setExperienceList: (experience: types.experienceListType) => void,
-    }
-) => {
+export const Experience = ({
+  experienceList,
+  setExperienceList,
+}: {
+  experienceList: types.experienceListType,
+  setExperienceList: (experience: types.experienceListType) => void,
+}) => {
 
   const addExperienceContribution = (i: number) => {
     const experienceListcopy = [...experienceList];

@@ -1,9 +1,12 @@
 import type * as types from "@constants/types";
 
-const FontSizeSelector = (
-  { settingsCopy, setSettingsCopy }:
-    { settingsCopy: types.settingsType, setSettingsCopy: (settings: types.settingsType) => void }
-) => (
+const FontSizeSelector = ({
+  settingsCopy,
+  setSettingsCopy
+}: {
+  settingsCopy: types.settingsType,
+  setSettingsCopy: (settings: types.settingsType) => void
+}) => (
 
   <div className="mb-5">
     <label htmlFor="fontsize" className="block mb-2 text-sm font-medium">

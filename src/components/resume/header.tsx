@@ -2,8 +2,13 @@ import { Text, View, Link } from '@react-pdf/renderer';
 import Separator from '@components/resume/seperator';
 import type * as types from '@constants/types';
 
-const Header = ({ header, settings }:
-  { header: types.headerType, settings: types.settingsType }) => {
+const Header = ({
+  header,
+  settings
+}: {
+  header: types.headerType,
+  settings: types.settingsType
+}) => {
 
   return <>
     <View style={{ marginBottom: 5 }}>

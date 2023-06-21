@@ -1,16 +1,12 @@
 import type * as types from '@constants/types';
 
-export const Header = (
-  {
-    header,
-    setHeader
-  }
-    :
-    {
-      header: types.headerType,
-      setHeader: (header: types.headerType) => void
-    }
-) => {
+export const Header = ({
+  header,
+  setHeader
+}: {
+  header: types.headerType,
+  setHeader: (header: types.headerType) => void
+}) => {
 
   return <>
     <div className="contacts">

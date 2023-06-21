@@ -14,21 +14,15 @@ const Setting = ({
   settings,
   onClose,
   setSettings,
-}
-  :
-  {
-    isOpen: boolean,
-    settings: types.settingsType,
-    onClose: () => void,
-    setSettings: (settings: types.settingsType) => void,
-  }) => {
+}: {
+  isOpen: boolean,
+  settings: types.settingsType,
+  onClose: () => void,
+  setSettings: (settings: types.settingsType) => void,
+}) => {
 
   const [settingsCopy, setSettingsCopy] = useState<types.settingsType>(settings);
-  const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   if (!isOpen) {
     return null;
@@ -36,8 +30,7 @@ const Setting = ({
 
   return <>
 
-    <div className={`fixed inset-0 flex items-center justify-center
-                  z-50 ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
+    <div className="fixed inset-0 flex items-center justify-center z-50">
 
       <div className="bg-white rounded-2xl p-4 pb-5 max-w-[90%] min-w-[40%]
                       w-auto mx-4 shadow-2xl text-gray-700 h-[80%]">

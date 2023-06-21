@@ -37,7 +37,11 @@ export const AddButton = ({ func }: { func: React.MouseEventHandler<HTMLButtonEl
 );
 
 
-export const RemoveButton = ({ func }: { func: React.MouseEventHandler<HTMLButtonElement> }) => (
+export const RemoveButton = ({
+  func
+}: {
+  func: React.MouseEventHandler<HTMLButtonElement>
+}) => (
 
   <div className="group flex">
     <button

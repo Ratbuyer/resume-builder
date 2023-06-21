@@ -2,12 +2,13 @@ import type * as types from '@constants/types';
 import { AddButton, RemoveIcon } from '~/components/pages/buttons';
 import { formColorTable } from '~/constants/values';
 
-const Skills = (
-  { skillsList, setSkillsList }:
-    {
-      skillsList: types.skillsListType, setSkillsList: (skillList: types.skillsListType) => void
-    }
-) => {
+const Skills = ({
+  skillsList,
+  setSkillsList
+}: {
+  skillsList: types.skillsListType,
+  setSkillsList: (skillList: types.skillsListType) => void
+}) => {
 
   return <>
     <div className="skills">
@@ -17,8 +18,8 @@ const Skills = (
       {skillsList.map((skill, index) => (
         <div
           key={index}
-          className={"mt-10 pt-1 pb-2 p-3 rounded-xl " + 
-          String(formColorTable[(index + 1) % formColorTable.length])}
+          className={"mt-10 pt-1 pb-2 p-3 rounded-xl " +
+            String(formColorTable[(index + 1) % formColorTable.length])}
         >
 
           <RemoveIcon

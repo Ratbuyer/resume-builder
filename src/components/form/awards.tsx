@@ -2,10 +2,14 @@ import type * as types from "@constants/types";
 import { AddButton, RemoveButton } from "~/components/pages/buttons";
 
 
-const Awards = (
-  { awardsList, setAwardsList }:
-    { awardsList: types.awardsListType, setAwardsList: (awardsList: types.awardsListType) => void }
-) => {
+const Awards = ({
+  awardsList,
+  setAwardsList
+}: {
+  awardsList: types.awardsListType,
+  setAwardsList: (awardsList: types.awardsListType) => void
+}) => {
+  
   return <>
 
     <div className="awards">

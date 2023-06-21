@@ -2,7 +2,13 @@ import { Text, View } from '@react-pdf/renderer';
 import Line from "../../components/resume/line"
 import type * as types from "../../constants/types";
 
-const Education = ({ educationList, settings }: { educationList: types.educationListType, settings: types.settingsType }) => {
+const Education = ({
+  educationList,
+  settings
+}: {
+  educationList: types.educationListType,
+  settings: types.settingsType
+}) => {
 
   if (educationList.length === 0) return null;
 

@@ -19,17 +19,15 @@ const Resume = ({
   experienceList,
   projectList,
   settings,
-}:
-  {
-
-    header: types.headerType,
-    educationList: types.educationListType
-    skillsList: types.skillsListType
-    awardsList: types.awardsListType
-    experienceList: types.experienceListType
-    projectList: types.projectsListType
-    settings: types.settingsType
-  }) => {
+}: {
+  header: types.headerType,
+  educationList: types.educationListType
+  skillsList: types.skillsListType
+  awardsList: types.awardsListType
+  experienceList: types.experienceListType
+  projectList: types.projectsListType
+  settings: types.settingsType
+}) => {
 
   return <>
     <div style={{ height: '100vh' }}>
@@ -43,12 +41,12 @@ const Resume = ({
             fontSize: settings.fontSize,
           }}>
 
-            <Head header={header} settings={settings}/>
-            <Education educationList={educationList} settings={settings}/>
-            <Skills skillsList={skillsList} settings={settings}/>
+            <Head header={header} settings={settings} />
+            <Education educationList={educationList} settings={settings} />
+            <Skills skillsList={skillsList} settings={settings} />
             <Experience experienceList={experienceList} settings={settings} />
             <Projects projectList={projectList} settings={settings} />
-            <Awards awardsList={awardsList} settings={settings}/>
+            <Awards awardsList={awardsList} settings={settings} />
 
           </Page>
         </Document>

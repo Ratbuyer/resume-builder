@@ -4,7 +4,13 @@ import Line from "./line"
 import type * as types from '@constants/types';
 
 
-const Awards = ({ awardsList, settings }: { awardsList: types.awardsListType, settings:types.settingsType }) => {
+const Awards = ({
+  awardsList,
+  settings
+}: {
+  awardsList: types.awardsListType,
+  settings: types.settingsType
+}) => {
 
   if (awardsList.length === 0) return null;
 

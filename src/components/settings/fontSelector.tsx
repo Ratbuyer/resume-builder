@@ -1,10 +1,12 @@
 import { fonts } from "~/constants/values";
 import type * as types from "@constants/types";
 
-const FontSelector = (
-  { settingsCopy, setSettingsCopy }:
-    { settingsCopy: types.settingsType, setSettingsCopy: (settings: types.settingsType) => void }
-) => (
+const FontSelector = ({
+  settingsCopy, setSettingsCopy
+}: {
+  settingsCopy: types.settingsType,
+  setSettingsCopy: (settings: types.settingsType) => void
+}) => (
 
   <div className="mb-5">
     <label

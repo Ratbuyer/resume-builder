@@ -2,15 +2,12 @@ import type * as types from "@constants/types";
 import { AddButton, RemoveButton, RemoveIcon } from "~/components/pages/buttons";
 import { formColorTable } from "~/constants/values";
 
-const Projects = (
-  { projectList,
-    setProjectList,
-  }:
-    {
-      projectList: types.projectsListType,
-      setProjectList: (projectList: types.projectsListType) => void,
-    }
-) => {
+const Projects = ({ projectList,
+  setProjectList,
+}: {
+  projectList: types.projectsListType,
+  setProjectList: (projectList: types.projectsListType) => void,
+}) => {
 
   const removeProjectContribution = (i: number, j: number) => {
     const projectListcopy = [...projectList];

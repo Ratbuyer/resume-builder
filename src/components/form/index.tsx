@@ -9,26 +9,24 @@ import Experience from "./experience";
 import Projects from "./projects";
 
 
-const Form = (
-  { func,
-    headerprop,
-    educationListprop,
-    skillsListprop,
-    awardsListprop,
-    experienceListprop,
-    projectListprop,
-    refObject,
-  }:
-    {
-      func: types.submitFunc,
-      headerprop: types.headerType,
-      educationListprop: types.educationListType,
-      skillsListprop: types.skillsListType,
-      awardsListprop: types.awardsListType,
-      experienceListprop: types.experienceListType,
-      projectListprop: types.projectsListType,
-      refObject: React.RefObject<HTMLFormElement>,
-    }) => {
+const Form = ({ func,
+  headerprop,
+  educationListprop,
+  skillsListprop,
+  awardsListprop,
+  experienceListprop,
+  projectListprop,
+  refObject,
+}: {
+  func: types.submitFunc,
+  headerprop: types.headerType,
+  educationListprop: types.educationListType,
+  skillsListprop: types.skillsListType,
+  awardsListprop: types.awardsListType,
+  experienceListprop: types.experienceListType,
+  projectListprop: types.projectsListType,
+  refObject: React.RefObject<HTMLFormElement>,
+}) => {
 
   const [header, setHeader] = useState<types.headerType>(headerprop);
   const [educationList, setEducationList] = useState<types.educationListType>(educationListprop);

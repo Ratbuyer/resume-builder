@@ -2,16 +2,13 @@ import type * as types from "@constants/types";
 import { AddButton, RemoveIcon } from "~/components/pages/buttons";
 import { formColorTable } from "~/constants/values";
 
-export const Education = (
-  {
-    educationList, setEducationList
-  }
-    :
-    {
-      educationList: types.educationListType,
-      setEducationList: (education: types.educationListType) => void
-    }
-) => {
+export const Education = ({
+  educationList, 
+  setEducationList
+}: {
+  educationList: types.educationListType,
+  setEducationList: (education: types.educationListType) => void
+}) => {
 
   return <>
 
