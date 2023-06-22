@@ -13,6 +13,12 @@ export const feedbackRouter = createTRPCRouter({
       });
 
       return response;
+    }),
+
+  fetchFeedbacks: publicProcedure
+    .query(({ ctx }) => {
+      const response = ctx.prisma.feedback.findMany();
+      return response;
     })
 
 });
