@@ -10,10 +10,12 @@ const Feedback = ({
   onClose: () => void,
 }) => {
 
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState<string>("");
   const [text, setText] = useState("");
+  const [sent, setSent] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const { mutate: sendFeedback } = api.feedbackapi.createFeedback.useMutation();
+
 
   if (!isOpen) {
     return null;
@@ -38,6 +40,7 @@ const Feedback = ({
           </button>
         </div>
 
+
         <form
           ref={formRef}
           className='overflow-y-auto h-[70%] px-5'>
@@ -57,12 +60,13 @@ const Feedback = ({
             required
             value={text}
             onChange={(e) => setText(e.target.value)}
-            className="w-full bg-gray-200 p-2 rounded-xl outline-none mt-5 h-full"
+            className="w-full bg-gray-200 p-2 rounded-xl outline-none mt-5 h-1/2"
           />
 
         </form>
 
-        <div className="flex justify-center pt-10">
+        <div className="flex flex-col items-center justify-center pt-5 gap-y-3">
+
           <button
             className="bg-green-600 px-2 py-1 rounded-xl hover:scale-105"
             onClick={() => {
@@ -71,16 +75,20 @@ const Feedback = ({
                 return;
               }
 
-              sendFeedback({
+              sendFeedback(email ? {
                 text: text,
                 email: email,
+              } : {
+                text: text
               });
 
-              onClose();
+              setSent(true);
             }}
           >
             Send
           </button>
+
+          {sent && <h3 className="text-green-600">Feedback Sent !</h3>}
         </div>
 
       </div>

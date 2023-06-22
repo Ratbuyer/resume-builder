@@ -4,9 +4,7 @@ import Feedback from './feedback';
 const Copyright = () => {
 
   const author = 'resumedev.site';
-
   const [showFeedback, setShowFeedback] = useState(false);
-
 
   return <>
 
