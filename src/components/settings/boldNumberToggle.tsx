@@ -1,7 +1,8 @@
 import type * as types from "@constants/types";
 
 
-const BoldNumberToggle = ({ settingsCopy,
+const BoldNumberToggle = ({
+  settingsCopy,
   setSettingsCopy
 }: {
   settingsCopy: types.settingsType,

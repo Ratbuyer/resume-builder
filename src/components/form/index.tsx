@@ -9,7 +9,8 @@ import Experience from "./experience";
 import Projects from "./projects";
 
 
-const Form = ({ func,
+const Form = ({ 
+  func,
   headerprop,
   educationListprop,
   skillsListprop,

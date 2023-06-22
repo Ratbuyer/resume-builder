@@ -2,7 +2,8 @@ import type * as types from "@constants/types";
 import { AddButton, RemoveButton, RemoveIcon } from "~/components/pages/buttons";
 import { formColorTable } from "~/constants/values";
 
-const Projects = ({ projectList,
+const Projects = ({ 
+  projectList,
   setProjectList,
 }: {
   projectList: types.projectsListType,
