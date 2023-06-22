@@ -51,6 +51,7 @@ const Feedback = ({
             placeholder="Your email (optional)"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            maxLength={100}
             className="w-full bg-gray-200 p-2 rounded-xl outline-none"
           />
 
@@ -60,7 +61,8 @@ const Feedback = ({
             required
             value={text}
             onChange={(e) => setText(e.target.value)}
-            className="w-full bg-gray-200 p-2 rounded-xl outline-none mt-5 h-1/2"
+            maxLength={500}
+            className="w-full bg-gray-200 p-2 rounded-xl outline-none mt-5 h-full"
           />
 
         </form>
