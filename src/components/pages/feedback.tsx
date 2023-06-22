@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Cross from "@public/assets/cross.svg";
 import { api } from "~/utils/api";
 
@@ -12,10 +12,20 @@ const Feedback = ({
 
   const [email, setEmail] = useState<string>("");
   const [text, setText] = useState("");
-  const [sent, setSent] = useState(false);
+  const [message, setMessage] = useState<string>("");
   const formRef = useRef<HTMLFormElement>(null);
   const { mutate: sendFeedback } = api.feedbackapi.createFeedback.useMutation();
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMessage("");
+    }, 1500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+
+  }, [message]);
 
   if (!isOpen) {
     return null;
@@ -39,7 +49,6 @@ const Feedback = ({
             <Cross />
           </button>
         </div>
-
 
         <form
           ref={formRef}
@@ -84,13 +93,14 @@ const Feedback = ({
                 text: text
               });
 
-              setSent(true);
+              setMessage("Feedback Sent !");
             }}
           >
             Send
           </button>
 
-          {sent && <h3 className="text-green-600">Feedback Sent !</h3>}
+          {message && <h3 className="text-green-600">{message}</h3>}
+
         </div>
 
       </div>

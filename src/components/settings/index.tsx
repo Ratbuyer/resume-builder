@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Cross from "@public/assets/cross.svg";
 import type * as types from "@constants/types";
 import FontSelector from './fontSelector';
@@ -22,7 +22,18 @@ const Setting = ({
 }) => {
 
   const [settingsCopy, setSettingsCopy] = useState<types.settingsType>(settings);
+  const [message, setMessage] = useState<string>("");
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMessage("");
+    }, 1500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+
+  }, [message]);
 
   if (!isOpen) {
     return null;
@@ -70,11 +81,14 @@ const Setting = ({
             setSettingsCopy={setSettingsCopy}
           />
 
-          <ClearCacheButton />
+          <ClearCacheButton
+            setMessage={setMessage}
+          />
 
         </div>
 
-        <div className="flex justify-center pt-10">
+        <div className="flex flex-col gap-y-5 items-center justify-center pt-10">
+
           <button
             className="bg-green-600 px-2 py-1 rounded-xl hover:scale-105"
             onClick={() => {
@@ -85,6 +99,9 @@ const Setting = ({
           >
             Apply
           </button>
+
+          {message && <p className="text-green-600">{message}</p>}
+
         </div>
 
       </div>
