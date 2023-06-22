@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import Feedback from './feedback';
+import Link from 'next/link';
 
 const Copyright = () => {
 
-  const author = 'resumedev.site';
+  const author = "github/Ratbuyer";
   const [showFeedback, setShowFeedback] = useState(false);
 
   return <>
@@ -13,12 +14,14 @@ const Copyright = () => {
       flex flex-row justify-between items-center"
     >
 
-      <p>&copy; {author}</p>
+      <Link href="https://github.com/Ratbuyer">
+        &copy; <span className='underline'>{author}</span>
+      </Link>
 
       <button
-        className=""
+        className="underline"
         onClick={() => setShowFeedback(true)}
-      >give us feedback
+      >send us feedback
       </button>
 
     </div>
@@ -29,7 +32,7 @@ const Copyright = () => {
       isOpen={showFeedback}
       onClose={() => { setShowFeedback(false) }}
     />
-    
+
   </>
 };
 
