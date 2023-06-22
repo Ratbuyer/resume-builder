@@ -1,8 +1,9 @@
 import { api } from "~/utils/api";
+import Loading from "~/components/pages/loading";
 
 const FeedbackList = () => {
 
-  const { data: feedbacks, isSuccess } = api.feedbackapi.fetchFeedbacks.useQuery();
+  const { data: feedbacks, isSuccess, isLoading } = api.feedbackapi.fetchFeedbacks.useQuery();
 
   return (
     <div>
@@ -13,14 +14,16 @@ const FeedbackList = () => {
 
       <div className="flex flex-col justify-center items-center">
 
-        {isSuccess && feedbacks?.map((feedback, index) => (
-          <div
-            className="flex justify-between items-center mt-10"
-            key={index}
-          >
-            <p className="text-gray-700">{feedback.text}</p>
-          </div>
-        ))}
+        {isLoading ? Loading() :
+
+          isSuccess && feedbacks?.map((feedback, index) => (
+            <div
+              className="flex justify-between items-center mt-10"
+              key={index}
+            >
+              <p className="text-gray-700">{feedback.text}</p>
+            </div>
+          ))}
 
       </div>
 
