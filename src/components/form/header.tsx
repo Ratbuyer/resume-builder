@@ -63,7 +63,7 @@ export const Header = ({
             id="github"
             name="github"
             value={header.github}
-            placeholder="Github Link"
+            placeholder="Github URL"
             className="mr-1 w-1/2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
             onChange={(e) => setHeader({ ...header, github: e.target.value })}
@@ -74,7 +74,7 @@ export const Header = ({
             id="linkedin"
             name="linkedin"
             value={header.linkedin}
-            placeholder="Linkedin Link"
+            placeholder="Linkedin URL"
             className="w-1/2 bg-gray-50
          text-gray-900 rounded-lg block p-2.5 outline-0"
             onChange={(e) => setHeader({ ...header, linkedin: e.target.value })}

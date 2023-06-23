@@ -69,7 +69,7 @@ const Projects = ({
             type="url"
             id={"link" + String(index0)}
             value={project.link}
-            placeholder={"Project Link"}
+            placeholder={"Project URL"}
             className="w-full mb-2 bg-gray-50 
           text-gray-900 rounded-lg block p-2.5 outline-0"
             onChange={(e) => {
