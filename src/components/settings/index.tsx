@@ -6,7 +6,9 @@ import ColorSelector from './colorSelector';
 import FontSizeSelector from './fontSizeSelector';
 import BoldNumberToggle from './boldNumberToggle';
 import ClearCacheButton from './clearCacheButton';
+import RestoreSettingsButton from './restoreSettingsButton';
 import { setLocalStorage } from '~/utils';
+import { settings as defaultSettings } from "@constants/defaults";
 
 
 const Setting = ({
@@ -83,6 +85,13 @@ const Setting = ({
 
           <ClearCacheButton
             setMessage={setMessage}
+          />
+
+          <RestoreSettingsButton
+            setMessage={setMessage}
+            restoreSettings={() => {
+              setSettingsCopy(defaultSettings);
+            }}
           />
 
         </div>
