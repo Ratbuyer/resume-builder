@@ -57,7 +57,7 @@ const Experience = ({
             e.contributions.map((c, index) => (
               <Text style={{ marginLeft: 20, marginTop: 3, }} key={index}>
 
-                {bullet} &nbsp;
+                <Text style={{ fontWeight: "bold" }}>{bullet}</Text> &nbsp;
 
                 {settings.boldNumbers ? boldContribution(c) : c}
 
