@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Cross from "@public/assets/cross.svg";
 import { api } from "~/utils/api";
+import { ZodError } from 'zod';
 
 const Feedback = ({
   isOpen,
@@ -14,7 +15,7 @@ const Feedback = ({
   const [text, setText] = useState("");
   const [message, setMessage] = useState<string>("");
   const formRef = useRef<HTMLFormElement>(null);
-  const { mutate: sendFeedback } = api.feedbackapi.createFeedback.useMutation();
+  const { mutateAsync: sendFeedback } = api.feedbackapi.createFeedback.useMutation();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -80,20 +81,28 @@ const Feedback = ({
 
           <button
             className="bg-green-600 px-2 py-1 rounded-xl hover:scale-105"
-            onClick={() => {
+            onClick={async () => {
+
               if (!formRef.current?.checkValidity()) {
                 formRef.current?.reportValidity();
                 return;
               }
 
-              sendFeedback(email ? {
-                text: text,
-                email: email,
-              } : {
-                text: text
-              });
+              try {
 
-              setMessage("Feedback Sent !");
+                await sendFeedback(email ? {
+                  text: text,
+                  email: email,
+                } : {
+                  text: text
+                });
+
+                setMessage("Feedback Sent !");
+
+              } catch (e) {
+                console.log(e);
+              }
+
             }}
           >
             Send
