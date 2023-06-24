@@ -62,7 +62,8 @@ const Feedback = ({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             maxLength={100}
-            className="w-full bg-gray-200 p-2 rounded-xl outline-none"
+            className="w-full bg-gray-200 p-2 rounded-xl 
+            border border-gray-300 outline-none"
           />
 
           <textarea
@@ -72,7 +73,8 @@ const Feedback = ({
             value={text}
             onChange={(e) => setText(e.target.value)}
             maxLength={500}
-            className="w-full bg-gray-200 p-2 rounded-xl outline-none mt-5 h-full"
+            className="w-full bg-gray-200 p-2 rounded-xl 
+            border border-gray-300 outline-none mt-5 h-full"
           />
 
         </form>

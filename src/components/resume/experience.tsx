@@ -37,7 +37,7 @@ const Experience = ({
           <View style={index === 0 ? { flexDirection: 'row', justifyContent: 'space-between', marginTop: 3 } :
             { flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
             <Text style={{ marginLeft: 10, fontWeight: "bold" }}>
-              {e.company}
+              {e.title}
             </Text>
             <Text style={{ marginRight: 10, }}>
               {e.duration}
@@ -46,7 +46,7 @@ const Experience = ({
 
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 3, }}>
             <Text style={{ marginLeft: 10 }}>
-              {e.title}
+              {e.company}
             </Text>
             <Text style={{ marginRight: 10 }}>
               {e.location}
