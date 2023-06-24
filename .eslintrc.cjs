@@ -22,6 +22,7 @@ const config = {
   extends: ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   rules: {
     "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-extra-semi": "off",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
       {

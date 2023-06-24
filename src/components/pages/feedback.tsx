@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Cross from "@public/assets/cross.svg";
 import { api } from "~/utils/api";
-import { ZodError } from 'zod';
+
 
 const Feedback = ({
   isOpen,
@@ -81,29 +81,32 @@ const Feedback = ({
 
           <button
             className="bg-green-600 px-2 py-1 rounded-xl hover:scale-105"
-            onClick={async () => {
+            onClick={() =>
 
-              if (!formRef.current?.checkValidity()) {
-                formRef.current?.reportValidity();
-                return;
-              }
+              void (async () => {
 
-              try {
+                if (!formRef.current?.checkValidity()) {
+                  formRef.current?.reportValidity();
+                  return;
+                };
 
-                await sendFeedback(email ? {
-                  text: text,
-                  email: email,
-                } : {
-                  text: text
-                });
+                try {
 
-                setMessage("Feedback Sent !");
+                  await sendFeedback(email ? {
+                    text: text,
+                    email: email,
+                  } : {
+                    text: text
+                  });
 
-              } catch (e) {
-                console.log(e);
-              }
+                  setMessage("Feedback Sent !");
 
-            }}
+                } catch (e) {
+                  console.log(e);
+                };
+
+              })()
+            }
           >
             Send
           </button>
