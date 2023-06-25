@@ -14,11 +14,6 @@ export const colorTable: [string, string][] = [
   ["Ocean", "#ADD8E6"],
   ["Salmon", "#FA8072"],
   ["lavender", "#E6E6FA"],
-  ["Light Blue", "#B3C7F9"],
-  ["Light Rose", "#FED7D7"],
-  ["Light Purple", "#D7BDE2"],
-  ["Light Green", "#D1F2EB"],
-  ["Light Gray", "#E5E8E8"],
 ];
 
 export const fonts: string[] = [
@@ -26,11 +21,12 @@ export const fonts: string[] = [
   "Ubuntu",
   "Montserrat",
   "Comme",
-  "Advent Pro",
   "Noto Sans",
   "Comic Neue",
   "Cormorant",
   "Mukta",
+  "Play",
+  "Bai Jamjuree",
 ];
 
 export const formColorTable: string[] = [

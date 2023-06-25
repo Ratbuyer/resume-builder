@@ -1,8 +1,7 @@
 import { Page, Document } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
 import type * as types from "@constants/types";
-import "~/fonts/remote";
-import "~/fonts/local";
+import "~/components/resume/fonts";
 import { colorTable, templates } from "~/constants/values";
 import Default from "./jake";
 import React from "react";

@@ -57,20 +57,6 @@ Font.register({
 });
 
 Font.register({
-  family: "Advent Pro",
-  fonts: [
-    {
-      src: "https://fonts.gstatic.com/s/adventpro/v20/V8mqoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUAQrGp_zgX5sWCpLQyNPTJoonw1aBA.ttf",
-      fontWeight: "regular",
-    },
-    {
-      src: "https://fonts.gstatic.com/s/adventpro/v20/V8mqoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUAQrGp_zgX5sWCpLpCRPTJoonw1aBA.ttf",
-      fontWeight: 'bold',
-    },
-  ],
-});
-
-Font.register({
   family: "Comic Neue",
   fonts: [
     {
@@ -98,4 +84,59 @@ Font.register({
   ],
 });
 
+Font.register({
+  family: "Noto Sans",
+  fonts: [
+    {
+      src: "https://fonts.gstatic.com/s/notosans/v28/o-0IIpQlx3QUlC5A4PNb4j5Ba_2c7A.ttf",
+      fontWeight: "regular",
+    },
+    {
+      src: "http://fonts.gstatic.com/s/notosans/v28/o-0NIpQlx3QUlC5A4PNjXhFlY9aA5Wl6PQ.ttf",
+      fontWeight: 'bold',
+    },
+  ],
+});
+
+Font.register({
+  family: "Mukta",
+  fonts: [
+    {
+      src: "http://fonts.gstatic.com/s/mukta/v14/iJWKBXyXfDDVXYnGp32S0H3f.ttf",
+      fontWeight: "regular",
+    },
+    {
+      src: "http://fonts.gstatic.com/s/mukta/v14/iJWHBXyXfDDVXbF6iFma-2HW7ZB_.ttf",
+      fontWeight: 'bold',
+    },
+  ],
+});
+
+Font.register({
+  family: "Play",
+  fonts: [
+    {
+      src: "http://fonts.gstatic.com/s/play/v17/6aez4K2oVqwIjtI8Hp8Tx3A.ttf",
+      fontWeight: "regular",
+    },
+    {
+      src: "http://fonts.gstatic.com/s/play/v17/6ae84K2oVqwItm4TOpc423nTJTM.ttf",
+      fontWeight: 'bold',
+    },
+  ],
+});
+
+Font.register({
+  family: "Bai Jamjuree",
+  fonts: [
+    {
+      src: "http://fonts.gstatic.com/s/baijamjuree/v11/LDI1apSCOBt_aeQQ7ftydoaMWcjKm7sp8g.ttf",
+      fontWeight: "regular",
+    },
+    {
+      src: "http://fonts.gstatic.com/s/baijamjuree/v11/LDIqapSCOBt_aeQQ7ftydoa05efuk5A1-yiSgA.ttf",
+      fontWeight: 'bold',
+    },
+  ],
+});
 
