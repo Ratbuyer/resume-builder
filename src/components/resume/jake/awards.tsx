@@ -1,5 +1,5 @@
 import { Text, View, } from '@react-pdf/renderer';
-import Line from "../component/line"
+import Line from "../components/line"
 
 import type * as types from '@constants/types';
 

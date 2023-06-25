@@ -1,5 +1,5 @@
 import { Text, View, Link } from '@react-pdf/renderer';
-import Separator from '@components/resume/component/seperator';
+import Separator from '~/components/resume/components/seperator';
 import type * as types from '@constants/types';
 
 const Header = ({

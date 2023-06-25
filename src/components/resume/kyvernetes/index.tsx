@@ -1,13 +1,13 @@
 import type * as types from '@constants/types';
 import Head from "~/components/resume/kyvernetes/header";
-import Education from "~/components/resume/jakes/education";
-import Skills from "~/components/resume/jakes/skills";
-import Experience from "~/components/resume/jakes/experience";
-import Projects from "~/components/resume/jakes/projects";
-import Awards from "~/components/resume/jakes/awards";
+import Education from "~/components/resume/jake/education";
+import Skills from "~/components/resume/jake/skills";
+import Experience from "~/components/resume/jake/experience";
+import Projects from "~/components/resume/jake/projects";
+import Awards from "~/components/resume/jake/awards";
 
 
-const kyvernetes_template = (
+const Template = (
     {
         header,
         educationList,
@@ -39,4 +39,4 @@ const kyvernetes_template = (
     )
 }
 
-export default kyvernetes_template;
+export default Template;

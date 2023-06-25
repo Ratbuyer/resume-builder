@@ -1,6 +1,6 @@
 import { Text, View, Link } from '@react-pdf/renderer';
-import Line from "../component/line"
-import Separator from '../component/seperator';
+import Line from "../components/line"
+import Separator from '../components/seperator';
 import type * as types from "@constants/types";
 import { bullet } from "@constants/values";
 import { splitStringIntoChunks } from '~/utils';

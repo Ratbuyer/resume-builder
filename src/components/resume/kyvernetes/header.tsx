@@ -19,7 +19,7 @@ const Header = ({
 
       <View style={{ marginBottom: 5, marginTop: 9 }}>
         <Text style={{
-          fontSize: settings.fontSize + 20,
+          fontSize: settings.fontSize + 10,
           textAlign: 'center',
           fontWeight: 'bold',
         }}>
@@ -27,7 +27,7 @@ const Header = ({
         </Text>
       </View>
 
-      <View style={{ flexDirection: "row", gap: 15 }}>
+      <View style={{ flexDirection: "row", gap: 15, justifyContent:"center" }}>
 
         <View style={{ flexDirection: "column", }}>
           <Text > Phone Number </Text>
