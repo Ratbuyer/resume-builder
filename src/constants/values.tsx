@@ -1,4 +1,6 @@
-
+import Jake from "@components/resume/jake";
+import Kyvernetes from "@components/resume/kyvernetes";
+import type { TemplatesType } from "./types";
 
 export const colorTable: [string, string][] = [
   ["White", "#ffffff"],
@@ -31,7 +33,7 @@ export const fonts: string[] = [
   "Mukta",
 ];
 
-export const formColorTable : string[] = [
+export const formColorTable: string[] = [
   "bg-red-300",
   "bg-blue-300",
   "bg-yellow-300",
@@ -41,3 +43,7 @@ export const formColorTable : string[] = [
 export const bullet = "•";
 
 
+export const templates: TemplatesType = {
+  "Jake": Jake,
+  "Kyvernetes": Kyvernetes,
+};

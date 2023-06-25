@@ -83,4 +83,5 @@ export const settings: types.settingsType = {
   font: "Montserrat",
   boldNumbers: true,
   fontSize: 11,
+  template: "Jake",
 };

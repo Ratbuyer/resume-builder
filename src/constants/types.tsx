@@ -42,4 +42,20 @@ export type settingsType = {
   font: string,
   boldNumbers: boolean,
   fontSize: number,
+  template: string,
 };
+
+
+export interface TemplateProps {
+  header: headerType;
+  educationList: educationListType;
+  skillsList: skillsListType;
+  experienceList: experienceListType;
+  projectList: projectsListType;
+  awardsList: awardsListType;
+  settings: settingsType;
+}
+
+export interface TemplatesType {
+  [key: string]: React.FC<TemplateProps>;
+}

@@ -76,7 +76,7 @@ const Index = () => {
     awardsList && setAwardsList(JSON.parse(awardsList) as types.awardsListType);
     experienceList && setExperienceList(JSON.parse(experienceList) as types.experienceListType);
     projectList && setProjectList(JSON.parse(projectList) as types.projectsListType);
-    settings && setSettings(JSON.parse(settings) as types.settingsType);
+    settings && Object.values(settings).every(Boolean) && setSettings(JSON.parse(settings) as types.settingsType);
 
     setLoading(false);
   }, []);

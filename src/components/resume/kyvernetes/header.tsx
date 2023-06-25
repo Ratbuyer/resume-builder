@@ -17,7 +17,7 @@ const Header = ({
       marginBottom: 5,
     }}>
 
-      <View style={{ marginBottom: 5, marginTop: 9 }}>
+      <View style={{ marginBottom: 5, marginTop: 9, width: "50%" }}>
         <Text style={{
           fontSize: settings.fontSize + 10,
           textAlign: 'center',
@@ -27,21 +27,21 @@ const Header = ({
         </Text>
       </View>
 
-      <View style={{ flexDirection: "row", gap: 15, justifyContent:"center" }}>
+      <View style={{ flexDirection: "row", gap: 15, justifyContent: "center", width: "50%" }}>
 
-        <View style={{ flexDirection: "column", }}>
+        <View style={{ flexDirection: "column", flexWrap: "wrap" }}>
           <Text > Phone Number </Text>
           <Text > Email </Text>
           <Text > Github url </Text>
           <Text > LinkedIn url</Text>
         </View>
 
-        <View>
+        <View style={{ flexDirection: "column", flexWrap: "wrap" }}>
 
           <Text> {header.phone} </Text>
           <Text> {header.email} </Text>
           <Link src={header.github}> {header.github} </Link>
-          <Link src={header.linkedin}> {header.linkedin} </Link>
+          <Link src={header.linkedin}>{header.linkedin}</Link>
 
         </View>
 

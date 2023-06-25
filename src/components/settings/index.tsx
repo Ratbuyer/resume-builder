@@ -7,6 +7,7 @@ import FontSizeSelector from './fontSizeSelector';
 import BoldNumberToggle from './boldNumberToggle';
 import ClearCacheButton from './clearCacheButton';
 import RestoreSettingsButton from './restoreSettingsButton';
+import TemplateSelector from './templateSelector';
 import { setLocalStorage } from '~/utils';
 import { settings as defaultSettings } from "@constants/defaults";
 
@@ -69,6 +70,11 @@ const Setting = ({
           />
 
           <ColorSelector
+            settingsCopy={settingsCopy}
+            setSettingsCopy={setSettingsCopy}
+          />
+
+          <TemplateSelector
             settingsCopy={settingsCopy}
             setSettingsCopy={setSettingsCopy}
           />

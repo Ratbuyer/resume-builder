@@ -3,8 +3,9 @@ import { PDFViewer } from '@react-pdf/renderer';
 import type * as types from "@constants/types";
 import "~/fonts/remote";
 import "~/fonts/local";
-import { colorTable } from "~/constants/values";
-import Jakes_template from "./kyvernetes"
+import { colorTable, templates } from "~/constants/values";
+import Default from "./jake";
+import React from "react";
 
 const Resume = ({
   header,
@@ -25,6 +26,9 @@ const Resume = ({
 }) => {
 
 
+  const Template: React.FC<types.TemplateProps> = templates[settings.template] || Default;
+
+
   return <>
     <div style={{ height: '100vh' }}>
       <PDFViewer width="100%" height="100%">
@@ -37,7 +41,7 @@ const Resume = ({
             fontSize: settings.fontSize,
           }}>
 
-            <Jakes_template
+            <Template
               header={header}
               educationList={educationList}
               skillsList={skillsList}
