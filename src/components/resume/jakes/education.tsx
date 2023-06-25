@@ -1,5 +1,5 @@
 import { Text, View } from '@react-pdf/renderer';
-import Line from "./line"
+import Line from "../component/line"
 import type * as types from "@constants/types";
 
 const Education = ({

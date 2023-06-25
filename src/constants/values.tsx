@@ -1,3 +1,5 @@
+
+
 export const colorTable: [string, string][] = [
   ["White", "#ffffff"],
   ["Snow", "#FFFAFA"],
@@ -37,3 +39,5 @@ export const formColorTable : string[] = [
 ];
 
 export const bullet = "•";
+
+

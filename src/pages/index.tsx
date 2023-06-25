@@ -9,7 +9,7 @@ import { RefreshButton, SettingButton } from "~/components/pages/buttons";
 import Settings from "~/components/settings";
 import { setLocalStorage } from "~/utils";
 
-const PDF = dynamic(() => import("../components/resume/resume"), {
+const PDF = dynamic(() => import("../components/resume"), {
   loading: () => <Loading />,
   ssr: false,
 });

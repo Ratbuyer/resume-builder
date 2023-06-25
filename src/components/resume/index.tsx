@@ -1,10 +1,10 @@
 import { Page, Document } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
-import Jakes_template from "./jakes_template/jakes_template"
 import type * as types from "@constants/types";
 import "~/fonts/remote";
 import "~/fonts/local";
 import { colorTable } from "~/constants/values";
+import Jakes_template from "./kyvernetes"
 
 const Resume = ({
   header,
@@ -24,6 +24,7 @@ const Resume = ({
   settings: types.settingsType
 }) => {
 
+
   return <>
     <div style={{ height: '100vh' }}>
       <PDFViewer width="100%" height="100%">
@@ -35,14 +36,15 @@ const Resume = ({
             fontFamily: settings.font,
             fontSize: settings.fontSize,
           }}>
+
             <Jakes_template
-                header={header}
-                educationList={educationList}
-                skillsList={skillsList}
-                experienceList={experienceList}
-                projectList={projectList}
-                awardsList={awardsList}
-                settings={settings}/>
+              header={header}
+              educationList={educationList}
+              skillsList={skillsList}
+              experienceList={experienceList}
+              projectList={projectList}
+              awardsList={awardsList}
+              settings={settings} />
 
           </Page>
         </Document>

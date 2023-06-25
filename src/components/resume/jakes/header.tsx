@@ -1,5 +1,5 @@
 import { Text, View, Link } from '@react-pdf/renderer';
-import Separator from '@components/resume/jakes_template/seperator';
+import Separator from '@components/resume/component/seperator';
 import type * as types from '@constants/types';
 
 const Header = ({
