@@ -102,11 +102,11 @@ Font.register({
   family: "Mukta",
   fonts: [
     {
-      src: "http://fonts.gstatic.com/s/mukta/v14/iJWKBXyXfDDVXYnGp32S0H3f.ttf",
+      src: "https://fonts.gstatic.com/s/mukta/v14/iJWKBXyXfDDVXYnGp32S0H3f.ttf",
       fontWeight: "regular",
     },
     {
-      src: "http://fonts.gstatic.com/s/mukta/v14/iJWHBXyXfDDVXbF6iFma-2HW7ZB_.ttf",
+      src: "https://fonts.gstatic.com/s/mukta/v14/iJWHBXyXfDDVXbF6iFma-2HW7ZB_.ttf",
       fontWeight: 'bold',
     },
   ],
@@ -116,11 +116,11 @@ Font.register({
   family: "Play",
   fonts: [
     {
-      src: "http://fonts.gstatic.com/s/play/v17/6aez4K2oVqwIjtI8Hp8Tx3A.ttf",
+      src: "https://fonts.gstatic.com/s/play/v17/6aez4K2oVqwIjtI8Hp8Tx3A.ttf",
       fontWeight: "regular",
     },
     {
-      src: "http://fonts.gstatic.com/s/play/v17/6ae84K2oVqwItm4TOpc423nTJTM.ttf",
+      src: "https://fonts.gstatic.com/s/play/v17/6ae84K2oVqwItm4TOpc423nTJTM.ttf",
       fontWeight: 'bold',
     },
   ],
@@ -130,11 +130,11 @@ Font.register({
   family: "Bai Jamjuree",
   fonts: [
     {
-      src: "http://fonts.gstatic.com/s/baijamjuree/v11/LDI1apSCOBt_aeQQ7ftydoaMWcjKm7sp8g.ttf",
+      src: "https://fonts.gstatic.com/s/baijamjuree/v11/LDI1apSCOBt_aeQQ7ftydoaMWcjKm7sp8g.ttf",
       fontWeight: "regular",
     },
     {
-      src: "http://fonts.gstatic.com/s/baijamjuree/v11/LDIqapSCOBt_aeQQ7ftydoa05efuk5A1-yiSgA.ttf",
+      src: "https://fonts.gstatic.com/s/baijamjuree/v11/LDIqapSCOBt_aeQQ7ftydoa05efuk5A1-yiSgA.ttf",
       fontWeight: 'bold',
     },
   ],
