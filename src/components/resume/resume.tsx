@@ -1,11 +1,6 @@
 import { Page, Document } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
-import Head from "./header";
-import Education from "./education";
-import Skills from "./skills";
-import Experience from "./experience";
-import Projects from "./projects";
-import Awards from "./awards";
+import Jakes_template from "./jakes_template/jakes_template"
 import type * as types from "@constants/types";
 import "~/fonts/remote";
 import "~/fonts/local";
@@ -40,13 +35,14 @@ const Resume = ({
             fontFamily: settings.font,
             fontSize: settings.fontSize,
           }}>
-
-            <Head header={header} settings={settings} />
-            <Education educationList={educationList} settings={settings} />
-            <Skills skillsList={skillsList} settings={settings} />
-            <Experience experienceList={experienceList} settings={settings} />
-            <Projects projectList={projectList} settings={settings} />
-            <Awards awardsList={awardsList} settings={settings} />
+            <Jakes_template
+                header={header}
+                educationList={educationList}
+                skillsList={skillsList}
+                experienceList={experienceList}
+                projectList={projectList}
+                awardsList={awardsList}
+                settings={settings}/>
 
           </Page>
         </Document>

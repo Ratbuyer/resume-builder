@@ -1,8 +1,8 @@
 import { Text, View, Link } from '@react-pdf/renderer';
-import Line from "../../components/resume/line"
-import Separator from '../../components/resume/seperator';
-import type * as types from "../../constants/types";
-import { bullet } from "~/constants/values";
+import Line from "./line"
+import Separator from './seperator';
+import type * as types from "@constants/types";
+import { bullet } from "@constants/values";
 import { splitStringIntoChunks } from '~/utils';
 
 const Projects = ({

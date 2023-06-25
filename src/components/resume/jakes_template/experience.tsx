@@ -1,7 +1,7 @@
 import { Text, View } from '@react-pdf/renderer';
-import Line from "../../components/resume/line"
-import type * as types from "../../constants/types";
-import { bullet } from "~/constants/values";
+import Line from "./line"
+import type * as types from "@constants/types";
+import { bullet } from "@constants/values";
 import { splitStringIntoChunks } from '~/utils';
 
 const Experience = ({
