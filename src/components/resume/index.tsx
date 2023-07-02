@@ -35,7 +35,7 @@ const Resume = ({
 
           <Page size="A4" style={{
             backgroundColor: colorTable.find(([key]) => key === settings.color)?.[1] ?? "#ffffff",
-            padding: 20,
+            // padding: 20,
             fontFamily: settings.font,
             fontSize: settings.fontSize,
           }}>

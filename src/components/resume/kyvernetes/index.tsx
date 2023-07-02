@@ -5,6 +5,7 @@ import Skills from "~/components/resume/jake/skills";
 import Experience from "~/components/resume/jake/experience";
 import Projects from "~/components/resume/jake/projects";
 import Awards from "~/components/resume/jake/awards";
+import {View} from "@react-pdf/renderer";
 
 
 const kyvernetes = (
@@ -28,14 +29,14 @@ const kyvernetes = (
 ) => {
 
   return (
-    <div>
+    <View style={{padding:20}}>
       <Head header={header} settings={settings} />
       <Education educationList={educationList} settings={settings} />
       <Skills skillsList={skillsList} settings={settings} />
       <Experience experienceList={experienceList} settings={settings} />
       <Projects projectList={projectList} settings={settings} />
       <Awards awardsList={awardsList} settings={settings} />
-    </div>
+    </View>
   )
 }
 

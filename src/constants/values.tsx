@@ -1,6 +1,7 @@
 import Jake from "@components/resume/jake";
 import Kyvernetes from "@components/resume/kyvernetes";
 import type { TemplatesType } from "./types";
+import TwentyOneSecond from "@components/resume/21second";
 
 export const colorTable: [string, string][] = [
   ["White", "#ffffff"],
@@ -42,4 +43,5 @@ export const bullet = "•";
 export const templates: TemplatesType = {
   "Jake": Jake,
   "Kyvernetes": Kyvernetes,
+  "21Second" : TwentyOneSecond,
 };
