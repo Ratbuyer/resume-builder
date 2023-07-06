@@ -5,6 +5,7 @@ import {
     projectsListType, settingsType,
 } from "@constants/types";
 import {View} from "@react-pdf/renderer";
+import Education from "@components/resume/21second/education";
 
 const Content = (
     {
@@ -22,12 +23,7 @@ const Content = (
     }
 ) => {
     return <>
-        <View>
-
-        </View>
-        <View></View>
-        <View></View>
-        <View></View>
+        <Education education={educationList} settings={settings}/>
     </>
 }
 
