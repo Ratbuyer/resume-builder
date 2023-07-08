@@ -16,18 +16,18 @@ const Content = (
         projectList,
         awardsList,
         settings,
-    } : {
-        educationList : educationListType,
-        experienceList : experienceListType,
-        projectList : projectsListType,
-        awardsList : awardsListType,
-        settings : settingsType,
+    }: {
+        educationList: educationListType,
+        experienceList: experienceListType,
+        projectList: projectsListType,
+        awardsList: awardsListType,
+        settings: settingsType,
     }
 ) => {
     return <>
         <Education education={educationList} settings={settings}/>
         <Experience experience={experienceList} settings={settings}/>
-        <Projects projects={projectList} settings={settings} />
+        <Projects projects={projectList} settings={settings}/>
     </>
 }
 

@@ -13,14 +13,6 @@ const Projects = (
     }
 ) => {
     const styles = StyleSheet.create({
-        title_style: {
-            backgroundColor: "#f2f2f2",
-            textAlign: "left",
-            fontSize: settings.fontSize + 4,
-            fontWeight: "normal",
-            color: "#000f61",
-            margin: 10,
-        },
         record_style: {
             flexDirection: "row",
             marginHorizontal: 10,
@@ -41,7 +33,7 @@ const Projects = (
         }
     });
     return <>
-        <Text style={styles.title_style}> Projects </Text>
+        <Title21sec title={"Projects"} settings={settings}/>
         {projects.map((value, index) => {
             return (
                 <View key={index} style={styles.record_style}>

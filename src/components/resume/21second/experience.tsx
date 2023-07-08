@@ -1,6 +1,7 @@
 import {experienceListType, settingsType} from "@constants/types";
 import {StyleSheet, Text} from "@react-pdf/renderer";
 import {View} from "@react-pdf/renderer";
+import Title21sec from "@components/resume/components/title21sec";
 
 const Experience = (
     {
@@ -12,14 +13,6 @@ const Experience = (
     }
 ) => {
     const styles = StyleSheet.create({
-        title_style: {
-            backgroundColor: "#f2f2f2",
-            textAlign: "left",
-            fontSize: settings.fontSize + 4,
-            fontWeight: "normal",
-            color: "#000f61",
-            margin: 10,
-        },
         record_style: {
             flexDirection: "row",
             marginHorizontal: 10,
@@ -36,11 +29,11 @@ const Experience = (
             justifyContent: "space-between"
         },
         detail_style: {
-            fontWeight:"normal",
+            fontWeight: "normal",
         }
     });
     return <>
-        <Text style={styles.title_style}> Experience </Text>
+        <Title21sec title={"Experience"} settings={settings}/>
         {experience.map((value, index) => {
             return (
                 <View key={index} style={styles.record_style}>

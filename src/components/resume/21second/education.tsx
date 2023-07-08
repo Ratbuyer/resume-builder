@@ -1,5 +1,6 @@
 import {educationListType, settingsType} from "@constants/types";
 import {StyleSheet, Text, View} from "@react-pdf/renderer";
+import Title21sec from "@components/resume/components/title21sec";
 
 
 const Education = (
@@ -12,14 +13,6 @@ const Education = (
     }
 ) => {
     const styles = StyleSheet.create({
-        title_style: {
-            backgroundColor: "#f2f2f2",
-            textAlign: "left",
-            fontSize: settings.fontSize + 4,
-            fontWeight: "normal",
-            color: "#000f61",
-            margin: 10,
-        },
         record_style: {
             flexDirection: "column",
             marginHorizontal: 10,
@@ -39,7 +32,7 @@ const Education = (
     })
 
     return <>
-        <Text style={styles.title_style}> Education </Text>
+        <Title21sec title={"Education"} settings={settings}/>
         {education.map((record, index) => {
             const school_info = record.school + " - " + record.location
             return (
