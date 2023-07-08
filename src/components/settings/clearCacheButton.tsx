@@ -9,7 +9,7 @@ const clearCacheButton = ({
 
   <div className="flex justify-between items-center mb-5 text-sm">
     <button
-      className="rounded-lg bg-red-500 px-2 hover:scale-105"
+      className="rounded-lg bg-red-400 px-2 hover:scale-105 text-white"
       onClick={() => {
         clearLocalStorage();
         setMessage("Cache cleared!");
