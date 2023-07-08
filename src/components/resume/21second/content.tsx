@@ -7,6 +7,7 @@ import {
 import {View} from "@react-pdf/renderer";
 import Education from "@components/resume/21second/education";
 import Experience from "@components/resume/21second/experience";
+import Projects from "@components/resume/21second/projects";
 
 const Content = (
     {
@@ -26,7 +27,7 @@ const Content = (
     return <>
         <Education education={educationList} settings={settings}/>
         <Experience experience={experienceList} settings={settings}/>
-
+        <Projects projects={projectList} settings={settings} />
     </>
 }
 
