@@ -19,7 +19,7 @@ const Title21sec = (
         fontWeight: "normal",
         color: "#000f61",
         margin: 10,
-    }}>title</Text>
+    }}>{title}</Text>
 }
 
 export default Title21sec;

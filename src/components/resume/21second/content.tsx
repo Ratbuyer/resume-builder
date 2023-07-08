@@ -8,6 +8,7 @@ import {View} from "@react-pdf/renderer";
 import Education from "@components/resume/21second/education";
 import Experience from "@components/resume/21second/experience";
 import Projects from "@components/resume/21second/projects";
+import Award from "@components/resume/21second/award";
 
 const Content = (
     {
@@ -28,6 +29,7 @@ const Content = (
         <Education education={educationList} settings={settings}/>
         <Experience experience={experienceList} settings={settings}/>
         <Projects projects={projectList} settings={settings}/>
+        <Award awards={awardsList} settings={settings}/>
     </>
 }
 
