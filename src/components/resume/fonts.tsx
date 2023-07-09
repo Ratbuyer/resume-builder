@@ -92,7 +92,7 @@ Font.register({
       fontWeight: "regular",
     },
     {
-      src: "http://fonts.gstatic.com/s/notosans/v28/o-0NIpQlx3QUlC5A4PNjXhFlY9aA5Wl6PQ.ttf",
+      src: "https://fonts.gstatic.com/s/notosans/v28/o-0NIpQlx3QUlC5A4PNjXhFlY9aA5Wl6PQ.ttf",
       fontWeight: 'bold',
     },
   ],
