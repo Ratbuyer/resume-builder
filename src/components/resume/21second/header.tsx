@@ -1,7 +1,5 @@
 import type * as types from '@constants/types'
-import {View, Text, Image} from "@react-pdf/renderer";
-import {fonts} from "@constants/values";
-import Separator from "@components/resume/components/seperator";
+import {View, Text} from "@react-pdf/renderer";
 import Line from "@components/resume/components/line";
 const Header = (
     {

@@ -1,4 +1,4 @@
-import {experienceListType, settingsType} from "@constants/types";
+import type {experienceListType, settingsType} from "@constants/types";
 import {StyleSheet, Text} from "@react-pdf/renderer";
 import {View} from "@react-pdf/renderer";
 import Title21sec from "@components/resume/components/title21sec";
